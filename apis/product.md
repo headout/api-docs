@@ -6,22 +6,23 @@
 
 METHOD | URL | USAGE
 --- | --- | ---
-GET | [`/product/get/{product_id}`]() | Get product by `id`.
+GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | Get product by `id`.
 GET | [`/product/inventory/get/{product_id}`]() | Get product inventory by `id`
 GET | [`/product/listing/list-by/city`]() | List product listing by city
 
-### GET `/product/get/{product_id}`
+### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 
 Gets a product by `product_id`.
 
 #### Request
 
+MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
+--- | --- | --- | --- | ---
+PATH | product_id | string | no | Product id
+
 #### Response
 
 **Object:** [product-listing]()
-
-
-
 
 ```javascript
 {
@@ -39,27 +40,22 @@ Gets a product by `product_id`.
 		"localSymbol": "$",
 		"precision": 2,
 	},
-	"images": [	// not empty
+	"images": [
 		{
 			"url": "//cdn-imgix.headout.com/tour/647/TOUR-IMAGE/a9e14ae1-78ab-4cbe-8166-2e55f3060c42-512-new-york-wicked-07.jpg"[currency]()
 		}
 	],
-	"displayTags": [	// empty-able[currency]()[currency]()
+	"displayTags": [
 		"Broadway",
 		"Musical",
 		"Best of Broadway",
 		"Entertainment"
 	],
-	"content": [	// not empty
+	"content": [
 		{
 			"title": "Summary",
 			"html": "<p>Before Dorothy arrived in Oz, there was a girl with emerald-green skin — misunderstood, and extremely talented.</p>"
 		}
-		// The following currently come under this.
-		// summary, highlights, faq, cancellation, adhoc, seatingInfo, ticketDeliveryInfo, inclusions, exclusions, additionalInfo.
-		// This can now also support custom types.
-		// We can further include types for this too..
-		// "ticketDeliveryInfo" ==> This should finally be an enum. Right now it is hotel pickup instruction field in Database
 	],
 	"startLocation": {
 		"latitude": 40.762393951416016,
@@ -95,8 +91,8 @@ Gets a product by `product_id`.
 			"id": 654,
 			"name": "Orchestra (Center Rows: A-O,AA-CC, Side Rows:A-J)",	// nullable
 			"description": "The best view of all the seat groups",	// nullable
-			"duration": 9000000,
 			"inventoryType": "FIXED_START_FIXED_DURATION",
+			"duration": 9000000,
 			"pax": {
 				"min": 1,	// nullable
 				"max": 9,	// nullable
@@ -106,19 +102,19 @@ Gets a product by `product_id`.
 				"type": "PERCENTAGE",
 			},
 			"ticketDeliveryInfoHtml": "<p>Your booking confirmation will be emailed to you shortly.</p>",
-			"fields": [	// not empty
+			"inputFields": [	// not empty
 				{
-					"type": "NAME", // NAME, EMAIL, ADDRESS, PHONE, CUSTOM_<id>
-					"displayName": "Name",
+					"id": "SOME_ID", // NAME, EMAIL, ADDRESS, PHONE, CUSTOM_<id>
+					"name": "Name",
 					"dataType": "STRING",	// INT, FLOAT, STRING, BOOL, ENUM
 					"level": "PRIMARY_CUSTOMER"	// PRIMARY_CUSTOMER, ALL_CUSTOMERS, TOUR
 					"validation": [
+						"required": true,
 						"regex": "\\s*[^\\s]+\\s+[^\\s]+.*", // optional
 						"minLength": 3, // optional
 						"maxLength": 80	// optional
 						"minValue": null,		//optional
 						"maxValue": null, // optional
-						"required": true,
 						"values": [	// optional. This is available only when "dataType" == "ENUM"
 							"Vegetarian",
 							"Non-vegeratian",
@@ -131,23 +127,3 @@ Gets a product by `product_id`.
 	]
 }
 ```
-
-#### Response Fields
-
-`id`
-
-The `product_id`
-
-`name`
-
-Name of the product
-
-`neighbourhood`
-
-The neighbourhood of the location of the product
-
-`city`
-
-The city object representing the city of the product
-
-`city.code`s sdsdfsdf
