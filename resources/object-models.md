@@ -43,7 +43,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 title | string | no | Title of the content section
 html | string | no | The content of the section in html format.
 
-## <a name="ProductModels"></a>Common Models
+## <a name="CommonModels"></a>Common Models
 
 ### city
 
