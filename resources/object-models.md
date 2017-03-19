@@ -1,10 +1,10 @@
 # Object Models
 
-[Product Models](#Product%20Models)
+[Product Models](#ProductModels)
 * [product](#product)
 * [product-content](#product-content)
 
-[Common Models](#Common%20Models)
+[Common Models](#CommonModels)
 * [city](#city)
 * [currency](#currency)
 * [location](#location)
@@ -12,7 +12,7 @@
 * [address](#address)
 * [rating-cumulative](#rating-cumulative)
 
-## Product Models
+## <a name="ProductModels"></a>Product Models
 
 ### product
 
@@ -43,7 +43,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 title | string | no | Title of the content section
 html | string | no | The content of the section in html format.
 
-## Common
+## <a name="ProductModels"></a>Common Models
 
 ### city
 
