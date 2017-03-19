@@ -1,10 +1,10 @@
 # Object Models
 
-[Product Models](#Product Models)
+[Product Models](#Product%20Models)
 * [product](#product)
 * [product-content](#product-content)
 
-[Common Models](#Common Models)
+[Common Models](#Common%20Models)
 * [city](#city)
 * [currency](#currency)
 * [location](#location)
