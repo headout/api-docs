@@ -7,8 +7,8 @@
 METHOD | URL | USAGE
 --- | --- | ---
 GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | Get product by `id`.
-GET | [`/product/inventory/get/{product_id}`]() | Get product inventory by `id`
-GET | [`/product/listing/list-by/city`]() | List product listing by city
+GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | List product listing by city
+GET | [`/product/inventory/get/{product_id}`](#GET-/product/inventory/get/{product_id}) | Get product inventory by `id`
 
 ### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 
@@ -22,7 +22,7 @@ PATH | product_id | string | no | Product id
 
 #### Response
 
-**Object:** [product-listing]()
+**Object:** [product](/object-models/product-models.md#product)
 
 ```javascript
 {
@@ -42,7 +42,7 @@ PATH | product_id | string | no | Product id
 	},
 	"images": [
 		{
-			"url": "//cdn-imgix.headout.com/tour/647/TOUR-IMAGE/a9e14ae1-78ab-4cbe-8166-2e55f3060c42-512-new-york-wicked-07.jpg"[currency]()
+			"url": "//cdn-imgix.headout.com/tour/647/TOUR-IMAGE/a9e14ae1-78ab-4cbe-8166-2e55f3060c42-512-new-york-wicked-07.jpg"
 		}
 	],
 	"displayTags": [
@@ -77,7 +77,7 @@ PATH | product_id | string | no | Product id
 			"ine2": "222 W 51st Street",
 			"cityName": "New York",
 			"stateName": "New York",
-			"countryName": "United States"
+			"countryName": "United States",
 			"postalCode": "10036",
 		}
 	},
@@ -89,33 +89,33 @@ PATH | product_id | string | no | Product id
 	"variants": [
 		{
 			"id": 654,
-			"name": "Orchestra (Center Rows: A-O,AA-CC, Side Rows:A-J)",	// nullable
-			"description": "The best view of all the seat groups",	// nullable
+			"name": "Orchestra (Center Rows: A-O,AA-CC, Side Rows:A-J)",
+			"description": "The best view of all the seat groups",
 			"inventoryType": "FIXED_START_FIXED_DURATION",
 			"duration": 9000000,
 			"pax": {
-				"min": 1,	// nullable
-				"max": 9,	// nullable
+				"min": 1,
+				"max": 9,
 			},
-			"cashback": {	// nullable
+			"cashback": {
 				"value": 10,
 				"type": "PERCENTAGE",
 			},
 			"ticketDeliveryInfoHtml": "<p>Your booking confirmation will be emailed to you shortly.</p>",
-			"inputFields": [	// not empty
+			"inputFields": [
 				{
-					"id": "SOME_ID", // NAME, EMAIL, ADDRESS, PHONE, CUSTOM_<id>
+					"id": "SOME_ID",
 					"name": "Name",
-					"dataType": "STRING",	// INT, FLOAT, STRING, BOOL, ENUM
-					"level": "PRIMARY_CUSTOMER"	// PRIMARY_CUSTOMER, ALL_CUSTOMERS, TOUR
+					"dataType": "STRING",
+					"level": "PRIMARY_CUSTOMER",
 					"validation": [
 						"required": true,
-						"regex": "\\s*[^\\s]+\\s+[^\\s]+.*", // optional
-						"minLength": 3, // optional
-						"maxLength": 80	// optional
-						"minValue": null,		//optional
-						"maxValue": null, // optional
-						"values": [	// optional. This is available only when "dataType" == "ENUM"
+						"regex": "\\s*[^\\s]+\\s+[^\\s]+.*",
+						"minLength": 3,
+						"maxLength": 80,
+						"minValue": null,
+						"maxValue": null,
+						"values": [
 							"Vegetarian",
 							"Non-vegeratian",
 							"Diabetic"
@@ -126,4 +126,43 @@ PATH | product_id | string | no | Product id
 		}
 	]
 }
+```
+
+### <a name="GET-/product/listing/list-by/city"></a>GET `/product/listing/list-by/city`
+
+List product listing using city.
+
+#### Request
+
+MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
+--- | --- | --- | --- | ---
+QUERY | city-code | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
+
+#### Response
+
+**Object:** [product-listing](/object-models/product-models.md#product-listing)
+
+```javascript
+[{
+	"id": "Product ID",
+	"name": "Product Name",
+	"url": "https://product_url",
+	"city": {
+		"code": "NEW_YORK",
+		"displayName": "New York"
+	},
+	"imageUrl": "https://imageurl",
+	"neighbourhood": "Madison Square Garden",
+	"primaryCategory": {
+		"displayName": "Attraction"
+	},
+	"startGeolocation": {
+		"latitude": 40.701568603515625,
+		"longitude": -74.0091323852539
+	},
+	"ratingCumulative": {
+		"avg": 3.5,
+		"count": 5,
+	}
+}]
 ```

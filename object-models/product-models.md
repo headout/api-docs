@@ -9,6 +9,7 @@
 * [product-variant-cashback](#product-variant-cashback)
 * [product-variant-input-field](#product-variant-input-field)
 * [product-variant-input-field-validation](#product-variant-input-field-validation)
+* [product-listing](#product-listing)
 
 ## <a name="ProductModels"></a>Product Models
 
@@ -121,7 +122,7 @@ validation | [product-variant-input-field-validation](#product-variant-input-fie
 
 ### product-variant-input-field-validation
 
-Specified the validation contract for a variant input field.
+Specifies the validation contract for a variant input field.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
@@ -132,3 +133,19 @@ maxLength | int | yes | The maximum length required for the field. This can be `
 minValue | int | yes | The minimum value required for the field. This can be `null` if not applicable (example for `dataType` `STRING` fields)
 maxValue | int | yes | The maximum value required for the field. This can be `null` if not applicable (example for `dataType` `STRING` fields)
 values | array[string] | no | Specifies that the field values need to be restricted to entries in this array. This is applicable only for `dataType` `ENUM` fields. For other `dataType`, this will be `null`/empty.
+
+#### product-listing
+
+Represent a product's listing
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+id | string | no | Product ID.
+name | string | no | Product name.
+url | string | no | URL for the product
+city | [city](common-models#city) | no | City of the product
+imageUrl | string | no | The image url for the primary image of the product.
+neighbourhood | string | yes | The neighbourhood of the location of the product.
+primaryCategory | [category]() | no |
+startGeolocation | [geo-location](common-models#geolocation) | no | The geo location of the product.
+ratingCumulative | [rating-cumulative](#rating-cumulative) | no | The cumulative rating of the product.
