@@ -149,3 +149,63 @@ neighbourhood | string | yes | The neighbourhood of the location of the product.
 primaryCategory | [category]() | no | TODO: Decide field.
 startGeolocation | [geo-location](common-models#geolocation) | no | The geo location of the product.
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | The cumulative rating of the product.
+
+### inventory
+
+Represents the inventory of a variant.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+startDateTime | string | no | Start local date time for the inventory. Format: TODO
+endDateTime | string | no | End local date time for the inventory. Format: TODO
+availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. Ref: [inventory.availability](#inventory--availability)
+remaining | int | no | The total number of seats left which can be booked for this inventory.
+type | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. Ref: [inventory.type](#inventory--type). TODO: `priceType`
+persons | array[[price-person](#price-person)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` is `PER_PERSON`.
+groups | array[[price-group](#price-group)] | no | Specifies the specification for per person pricing. This is non-empty only if `priceType` is `PER_GROUP`.
+
+##### <a name="inventory--availability"></a>`inventory.availability`
+
+* `LIMITED`: Specifies that there is limited availability for this inventory and the remaining seats can be fetched from [inventory.remaining](#inventory)
+* `UNLIMITED`: Specifies that there is unlimited availability for this inventory and can be booked any number of times.
+* `CLOSED`: Specified that the inventory is closed.
+
+TODO: See if this is necessary.
+
+##### <a name="inventory--type"></a>`inventory.type`
+
+* `PER_PERSON`: A `PER_PERSON` type specifies that there is a price applicable for every person partaking in the booking. There can be different type of people like `Adult`, `Child`, `Senior` etc. with their own age specification. Each individual type can have it's own price point.
+* `PER_GROUP`: A `PER_GROUP` type specifies that the inventory is on group pricing. Group pricing signifies that a singular price applies to a group of people and might vary for a given range. For example, 1-4 people $100, 5-7 people $120, 8-10 people $150.
+
+TODO: Shouldn't this be on a Variant level?
+
+### price-person
+
+Specifies the specification for per person pricing. This is only applicable for `PER_PERSON` price types.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+id | string | no | The ID of the specification.
+name | string | no | The displayable name for the person. Ex: `Adult`, `Child`, `Senior`
+ageFrom | int | yes | The minimum age for the type. If this not specified then there is no minimum age.
+ageTo | int | no | The maximum age for the type. If this is not specified then there is no macimum age.
+price | float | no | The price payable for this type.
+
+TODO: Need to tell the type -> id, name change.
+
+### price-group
+
+Specifies the specification for per group pricing. This is only applicable for `PER_GROUP` price types.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+size | int | no | The upper bound of the size of this group. The lower bound is the next lowest size overall from this size plus 1.
+price | float | no | The price payable for this type.
+
+##### Eg:
+
+`size=4, price=100; size=7, price=120; size=10, prize=150`
+
+Signifies (For currency $):
+
+`1-4 persons cost $100; 5-7 persons cost $120; 8-10 persons cost $150`
