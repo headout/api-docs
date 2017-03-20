@@ -35,7 +35,7 @@ PATH | product_id | string | no | Product id
 	},
 	"currency": {
 		"code": "USD",
-		"currencyName": "United States Dollar",
+		"name": "United States Dollar",
 		"symbol": "US$",
 		"localSymbol": "$",
 		"precision": 2,
@@ -86,7 +86,7 @@ PATH | product_id | string | no | Product id
 		"avg": 4.2,
 		"count": 251
 	}
-	"variant": [
+	"variants": [
 		{
 			"id": 654,
 			"name": "Orchestra (Center Rows: A-O,AA-CC, Side Rows:A-J)",	// nullable

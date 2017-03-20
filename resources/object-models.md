@@ -27,7 +27,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 id | string | no | Product id
 name | string | no | Name of the product
-neighbourhood | string | no | Neighbourhood of the location of the product
+neighbourhood | string | yes | Neighbourhood of the location of the product
 city | [city](#city) | no | City of the product
 currency | [currency](#currency) | no | Native currency of the product. This depends on the country of the product.
 images | array[[image](#image)] | no | Product images
@@ -37,7 +37,7 @@ startLocation | [location](#location) | no | Location of the start point
 endLocation | [location](#location) | no | Location of the end point
 productType | array[string] | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | Cumulative rating of the product
-variant | array[[product-variant]()] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
+variants | array[[product-variant]()] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
 
 ### product-content
 
@@ -68,10 +68,10 @@ name | string | yes | Variant display name. Will be null/empty **only if** there
 description | string | yes | Variant description.
 inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. Ref: [product-variant.inventoryType](#product-variant.inventoryType)
 duration | int | yes | Specifies the duration of the variant. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION`
-pax | [product-variant-pax](product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
+pax | [product-variant-pax](#product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
 cashback | [product-variant-cashback](#product-variant-cashback) | yes | Specified the cashback that can be achieved by purchasing this variant. It can be `null` if there is no cashback available.
 ticketDeliveryInfoHtml | string | yes | Specified how the ticket will be delivered. Currently this is in HTML format. This will transition to an `enum` based approach in upcoming api iterations. This can be `null`/empty if the information is currently not available.
-inputFields | [product-variant-field](#product-variant-field) | no | These fields represent the information that need to be taken from the consumer and submitted while making a purchase.
+inputFields | [product-variant-input-field](#product-variant-input-field) | no | These fields represent the information that need to be taken from the consumer and submitted while making a purchase.
 
 ##### `product-variant.inventoryType`
 
