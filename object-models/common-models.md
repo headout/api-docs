@@ -6,6 +6,7 @@
 * [location](#location)
 * [geo-location](#geo-location)
 * [address](#address)
+* [price](#price)
 
 ### city
 
@@ -64,3 +65,12 @@ cityName | string | no | City name
 stateName | string | yes | State name
 countryName | string | no | Country name
 postalCode | string | yes | Postal/Zip code
+
+### price
+
+Represent a price with currency
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+amount | float | no | The amount of the price
+currencyCode | string | no | The currency of the price ISO 4217 currency codes. Example: `USD`, `AED`

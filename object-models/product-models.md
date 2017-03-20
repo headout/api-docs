@@ -29,7 +29,7 @@ displayTags | array[string] | yes | Tags signifying the product
 content | array[[product-content](#product-content)] | no | Content specifying the details of the product
 startLocation | [location](common-models.md#location) | no | Location of the start point
 endLocation | [location](common-models.md#location) | no | Location of the end point
-productType | array[string] | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
+productType | enum | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | Cumulative rating of the product
 variants | array[[product-variant](#product-variant)] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
 
@@ -144,8 +144,8 @@ id | string | no | Product ID.
 name | string | no | Product name.
 url | string | no | URL for the product
 city | [city](common-models#city) | no | City of the product
-imageUrl | string | no | The image url for the primary image of the product.
+imageUrl | string | no | The image url for the primary image of the product. TODO: Decide field structure.
 neighbourhood | string | yes | The neighbourhood of the location of the product.
-primaryCategory | [category]() | no |
+primaryCategory | [category]() | no | TODO: Decide field.
 startGeolocation | [geo-location](common-models#geolocation) | no | The geo location of the product.
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | The cumulative rating of the product.
