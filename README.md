@@ -14,5 +14,6 @@ The Headout API is implemented as JSON over HTTPS using all four verbs (GET/POST
 * [Product](apis/product.md)
 * [Booking](apis/booking.md)
 
-## Resources
-* [Object Models](resources/object-models.md)
+## Object Models
+* [Common Models](object-models/common-models.md)
+* [Product Models](object-models/product-models.md)
