@@ -35,12 +35,12 @@ Details of a singular customer
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 personType | string | no | TODO: Reference, inventory pricing personType.
-isPrimary | bool | no | Specifies whether this customer is the primary customer or not. There need to be exactly 1 primary customer in [booking-create-customer-details.customers](#booking-create-customer-details)
+isPrimary | bool | no | Specifies whether this customer is the primary customer or not. There need to be exactly 1 primary customer in [booking-create-customers-details.customers](#booking-create-customers-details)
 inputFields | array[[booking-create-input-field](#booking-create-input-field) | yes | All the input fields for this level customer as specified in [product-variant.inputFields](product-models.md#product-variant).
 
 ### booking-create-input-field
 
-An input field which represents the submission of the contract represented by [product-variant-input-field](product-models#product-variant-input-field)
+An input field which represents the submission of the contract represented by [product-variant-input-field](product-models.md#product-variant-input-field)
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
