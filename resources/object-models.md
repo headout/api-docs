@@ -11,9 +11,9 @@
 * [product-variant-input-field-validation](#product-variant-input-field-validation)
 
 [Common Models](#CommonModels)
-* [city](#city)
-* [currency](#currency)
-* [location](#location)
+* [city](/common/city)
+* [currency](common/currency)
+* [location](./common/location)
 * [geo-location](#geo-location)
 * [address](#address)
 
@@ -37,7 +37,7 @@ startLocation | [location](#location) | no | Location of the start point
 endLocation | [location](#location) | no | Location of the end point
 productType | array[string] | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | Cumulative rating of the product
-variants | array[[product-variant]()] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
+variants | array[[product-variant](#product-variant)] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
 
 ### product-content
 
@@ -66,14 +66,14 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Variant ID.
 name | string | yes | Variant display name. Will be null/empty **only if** there is only 1 variant in a product.
 description | string | yes | Variant description.
-inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. Ref: [product-variant.inventoryType](#product-variant.inventoryType)
+inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. Ref: [product-variant.inventoryType](#product-variant--inventoryType)
 duration | int | yes | Specifies the duration of the variant. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION`
 pax | [product-variant-pax](#product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
 cashback | [product-variant-cashback](#product-variant-cashback) | yes | Specified the cashback that can be achieved by purchasing this variant. It can be `null` if there is no cashback available.
 ticketDeliveryInfoHtml | string | yes | Specified how the ticket will be delivered. Currently this is in HTML format. This will transition to an `enum` based approach in upcoming api iterations. This can be `null`/empty if the information is currently not available.
 inputFields | [product-variant-input-field](#product-variant-input-field) | no | These fields represent the information that need to be taken from the consumer and submitted while making a purchase.
 
-##### `product-variant.inventoryType`
+##### <a name="product-variant--inventoryType"></a>`product-variant.inventoryType`
 
 * `FIXED_START_FIXED_DURATION`: Signifies that the variant experience has a fixed start time and a fixed duration. Eg: Broadway Show, it has a fixed start time and ends at a fixed time.
 * `FIXED_START_FLEXIBLE_DURATION`: Signifies that the variant experience has a fixed start time but a flexible duration. Eg: Entry for Rockefeller - Top of the rock observatory. It has a fixed start time, but once you're in, you can stay over there as long as you want till the place closes down.
@@ -108,11 +108,11 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 id | string | no | An ID representing the field for the variant.
 name | string | no | Display name of the field
-dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. Ref: [product-variant-input-field.dataType](#product-variant-input-field.dataType)
-level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. Ref: [product-variant-input-field.level](#product-variant-input-field.level).
+dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. Ref: [product-variant-input-field.dataType](#product-variant-input-field--dataType)
+level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. Ref: [product-variant-input-field.level](#product-variant-input-field--level).
 validation | [product-variant-input-field-validation](#product-variant-input-field-validation) | no | Specifies the validation required for the field.
 
-##### `product-variant-input-field.dataType`
+##### <a name="product-variant-input-field--dataType"></a>`product-variant-input-field.dataType`
 
 * `INT`: Represents an **integer** type.
 * `FLOAT`: Represents a **float**/**double** type.
@@ -120,7 +120,7 @@ validation | [product-variant-input-field-validation](#product-variant-input-fie
 * `BOOL`: Represents a **bool** type.
 * `ENUM`: Represents an **enumeration** type. The applicable values will be specified in [product-variant-input-field-validation](#product-variant-input-field-validation).`values`.
 
-##### `product-variant-input-field.level`
+##### <a name="product-variant-input-field--level"></a>`product-variant-input-field.level`
 
 * `PRIMARY_CUSTOMER`: Represents that the field only needs to be asked for the primary customer. A primary customer represents the customer who will be internally linked for the booking. There is only 1 primary customer per booking. There will always be atleast 1 input field representing the primary customer.  Typically **Full name**, **Email**, **Phone Number** & **Address** and mostly asked as information required for the primary customer.
 * `ALL_CUSTOMERS`: Represents that the field needs to be asked for all the customers included in the booking (including the primary customer). Typically fields asking for all customer information are not there. Nevertheless there can be cases where information like **Weight**, **Height**, **Meal preference** etc. are required for all the customers.
