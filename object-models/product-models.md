@@ -23,7 +23,7 @@ name | string | no | Name of the product
 neighbourhood | string | yes | Neighbourhood of the location of the product
 city | [city](common-models.md#city) | no | City of the product
 currency | [currency](common-models.md#currency) | no | Native currency of the product. This depends on the country of the product.
-images | array[[image](#image)] | no | Product images
+images | array[[image](#common-models.md#image)] | no | Product images
 displayTags | array[string] | yes | Tags signifying the product
 content | array[[product-content](#product-content)] | no | Content specifying the details of the product
 startLocation | [location](common-models.md#location) | no | Location of the start point

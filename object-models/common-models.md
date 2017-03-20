@@ -2,6 +2,7 @@
 
 * [city](#city)
 * [currency](#currency)
+* [image](#image)
 * [location](#location)
 * [geo-location](#geo-location)
 * [address](#address)
