@@ -1,6 +1,7 @@
-# Object Models
+# Product Models
 
-[Product Models](#ProductModels)
+Product signifies an experience that can be sold. Typically a product will consist of various variants which are the actual bookable entities. A product will have atleast 1 variant.
+
 * [product](#product)
 * [product-content](#product-content)
 * [rating-cumulative](#rating-cumulative)
@@ -10,8 +11,6 @@
 * [product-variant-input-field](#product-variant-input-field)
 * [product-variant-input-field-validation](#product-variant-input-field-validation)
 * [product-listing](#product-listing)
-
-## <a name="ProductModels"></a>Product Models
 
 ### product
 
@@ -134,7 +133,7 @@ minValue | int | yes | The minimum value required for the field. This can be `nu
 maxValue | int | yes | The maximum value required for the field. This can be `null` if not applicable (example for `dataType` `STRING` fields)
 values | array[string] | no | Specifies that the field values need to be restricted to entries in this array. This is applicable only for `dataType` `ENUM` fields. For other `dataType`, this will be `null`/empty.
 
-#### product-listing
+### product-listing
 
 Represent a product's listing
 
@@ -144,9 +143,9 @@ id | string | no | Product ID.
 name | string | no | Product name.
 url | string | no | URL for the product
 city | [city](common-models#city) | no | City of the product
-imageUrl | string | no | The image url for the primary image of the product. TODO: Decide field structure.
+image | [image](common-models.md#image) | no | The primary image for the product.
 neighbourhood | string | yes | The neighbourhood of the location of the product.
-primaryCategory | [category]() | no | TODO: Decide field.
+primaryCategory | [category](category-models.md#category) | no | The primary category for the product.
 startGeolocation | [geo-location](common-models#geolocation) | no | The geo location of the product.
 ratingCumulative | [rating-cumulative](#rating-cumulative) | no | The cumulative rating of the product.
 

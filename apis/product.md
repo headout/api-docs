@@ -151,10 +151,12 @@ QUERY | city-code | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
 		"code": "NEW_YORK",
 		"displayName": "New York"
 	},
-	"imageUrl": "https://imageurl",
+	"image": {
+		"url": "https://imageurl"
+	},
 	"neighbourhood": "Madison Square Garden",
 	"primaryCategory": {
-		"displayName": "Attraction"
+		"displayName": "Broadway"
 	},
 	"startGeolocation": {
 		"latitude": 40.701568603515625,
