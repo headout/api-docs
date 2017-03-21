@@ -93,6 +93,7 @@ PATH | product_id | string | no | Product id
 			"description": "The best view of all the seat groups",
 			"inventoryType": "FIXED_START_FIXED_DURATION",
 			"duration": 9000000,
+			"priceType": "PER_PERSON",
 			"pax": {
 				"min": 1,
 				"max": 9,
