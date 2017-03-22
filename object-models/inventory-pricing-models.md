@@ -13,13 +13,13 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 startDateTime | string | no | Start local date time for the inventory. This may even specify the opening local date time for the variant. Ref: [inventory.startDateTime](#inventory--startDateTime). Format: TODO
 endDateTime | string | no | End local date time for the inventory. Format: TODO
-availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. Ref: [inventory.availability](#inventory--availability)
+availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. *Ref: [inventory.availability](#inventory--availability)*
 remaining | int | no | The total number of seats left which can be booked for this inventory.
 pricing | [pricing](#pricing) | no | The pricing specifiction for the inventory.
 
 ##### <a name="inventory--startDateTime"></a>`inventory..startDateTime`
 
-This denotes the start time of the inventory for the variant concerned, if the variant has an `inventoryType` of `FIXED_START_FIXED_DURATION` or `FIXED_START_FLEXIBLE_DURATION`. Ref [product-variant.inventoryType](product-models.md#)
+This denotes the start time of the inventory for the variant concerned, if the variant has an `inventoryType` of `FIXED_START_FIXED_DURATION` or `FIXED_START_FLEXIBLE_DURATION`. *Ref [product-variant.inventoryType](product-models.md#)*
 
 TODO: Complete this.
 
@@ -33,8 +33,8 @@ TODO: Complete this.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-persons | array[[pricing-person](#pricing-person)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_PERSON`. Ref: [product-variant.priceType](product-models.md#product-variant)
-groups | array[[pricing-group](#pricing-group)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_GROUP`. Ref: [product-variant.priceType](product-models.md#product-variant)
+persons | array[[pricing-person](#pricing-person)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_PERSON`. *Ref: [product-variant.priceType](product-models.md#product-variant)*
+groups | array[[pricing-group](#pricing-group)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_GROUP`. *Ref: [product-variant.priceType](product-models.md#product-variant)*
 
 ### pricing-person
 

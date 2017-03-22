@@ -59,9 +59,9 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Variant ID.
 name | string | yes | Variant display name. Will be null/empty **only if** there is only 1 variant in a product.
 description | string | yes | Variant description.
-inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. Ref: [product-variant.inventoryType](#product-variant--inventoryType)
+inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. *Ref: [product-variant.inventoryType](#product-variant--inventoryType)*
 duration | int | yes | Specifies the duration of the variant. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION`
-priceType | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. Ref: [product-variant.priceType](#product-variant--priceType).
+priceType | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. *Ref: [product-variant.priceType](#product-variant--priceType).*
 pax | [product-variant-pax](#product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
 cashback | [product-variant-cashback](#product-variant-cashback) | yes | Specified the cashback that can be achieved by purchasing this variant. It can be `null` if there is no cashback available.
 ticketDeliveryInfoHtml | string | yes | Specified how the ticket will be delivered. Currently this is in HTML format. This will transition to an `enum` based approach in upcoming api iterations. This can be `null`/empty if the information is currently not available.
@@ -81,7 +81,7 @@ TODO: Ref to how inventory startDateTime & endDateTime meaning changes wrt this.
 * `PER_PERSON`: A `PER_PERSON` price type specifies that there is a price applicable for every person partaking in the booking. There can be different type of people like `Adult`, `Child`, `Senior` etc. with their own age specification. Each individual type can have it's own price point.
 * `PER_GROUP`: A `PER_GROUP` price type specifies that the inventory is on group pricing. Group pricing signifies that a singular price applies to a group of people and might vary for a given range. For example, 1-4 people $100, 5-7 people $120, 8-10 people $150.
 
-TODO: Ref to inventory.pricing.
+*See Also: [inventory.pricing](/inventory-pricing.md#inventory)*
 
 ### product-variant-pax
 
@@ -109,8 +109,8 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 id | string | no | An ID representing the field for the variant.
 name | string | no | Display name of the field
-dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. Ref: [product-variant-input-field.dataType](#product-variant-input-field--dataType)
-level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. Ref: [product-variant-input-field.level](#product-variant-input-field--level).
+dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. *Ref: [product-variant-input-field.dataType](#product-variant-input-field--dataType)*
+level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. *Ref: [product-variant-input-field.level](#product-variant-input-field--level)*
 validation | [product-variant-input-field-validation](#product-variant-input-field-validation) | no | Specifies the validation required for the field.
 
 ##### <a name="product-variant-input-field--dataType"></a>`product-variant-input-field.dataType`

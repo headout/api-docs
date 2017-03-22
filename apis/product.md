@@ -11,7 +11,7 @@ GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | Li
 
 ### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 
-Gets a product by `product_id`.
+Gets a product by `productId`.
 
 #### Request
 
@@ -21,7 +21,7 @@ PATH | productId | string | no | Product id
 
 #### Response
 
-**Object:** [product](/object-models/product-models.md#product)
+**Object:** [`product`](/object-models/product-models.md#product)
 
 ```javascript
 {
@@ -137,12 +137,12 @@ List product listing using city.
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
 QUERY | cityCode | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
-QUERY | offset | string | yes | The offset for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
-QUERY | limit | int | yes | The limit for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
+QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basic.md#Pagination--Request-Params)*
+QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basic.md#Pagination--Request-Params)*
 
 #### Response
 
-**Object:** [pagination-wrapper](/object-models/common-models.md#pagination-wrapper)<[product-listing](/object-models/product-models.md#product-listing)>
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
 
 ```javascript
 {

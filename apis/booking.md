@@ -14,7 +14,7 @@ Creates a booking
 
 #### Request
 
-**Object:** [booking-create](/object-models/booking-models.md#booking-create)
+**Object:** [`booking-create`](/object-models/booking-models.md#booking-create)
 
 ```javascript
 {
@@ -49,7 +49,7 @@ Creates a booking
 
 #### Response
 
-**Object:** [booking-create-response](/object-models/booking-models.md#booking-create-response)
+**Object:** [`booking-create-response`](/object-models/booking-models.md#booking-create-response)
 
 ```javascript
 {

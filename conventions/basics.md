@@ -14,6 +14,10 @@ APIs run over `https`. If you specify `http`, the url will be redirected to `htt
 
 All APIs are prefixed with `/api/v{version_number}`. If the current version number is `1` then the your api prefix will be `/api/v1`.
 
+## Authentication
+
+TODO:
+
 ## Pagination
 
 All apis which return a list result implement the pagination contract, until and unless, it's specified otherwise in the API which can only be in the case if the resulting list will theoretically always be small.

@@ -7,7 +7,7 @@
 * [geo-location](#geo-location)
 * [address](#address)
 * [price](#price)
-* [pagination-wrapper](#pagination-wrapper)
+* [pagination-wrapper&lt;T&gt;](#pagination-wrapper)
 
 ### city
 
@@ -76,7 +76,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 amount | float | no | The amount of the price
 currencyCode | string | no | The currency of the price ISO 4217 currency codes. Example: `USD`, `AED`
 
-### pagination-wrapper<T>
+### <a name="pagination-wrapper"></a>pagination-wrapper&lt;T&gt;
 
 Wrapper object to support pagination. Is used to wrap the the response by all the APIs if the response is a list of results which can be paginated. The API dictates whether it will be using a pagination wrapper or not.
 
