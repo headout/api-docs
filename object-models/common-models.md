@@ -1,15 +1,15 @@
 # Common Models
 
-* [city](#city)
-* [currency](#currency)
-* [image](#image)
-* [location](#location)
-* [geo-location](#geo-location)
-* [address](#address)
-* [price](#price)
-* [pagination-wrapper&lt;T&gt;](#pagination-wrapper)
+* [`city`](#city)
+* [`currency`](#currency)
+* [`image`](#image)
+* [`location`](#location)
+* [`geo-location`](#geo-location)
+* [`address`](#address)
+* [`price`](#price)
+* [`pagination-wrapper<T>`](#pagination-wrapper)
 
-### city
+### `city`
 
 Representation of a city
 
@@ -18,7 +18,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 code | string | no | Code name for the city. Example: `NEW_YORK`, `DUBAI`
 name | string | no | Display name of the city
 
-### currency
+### `currency`
 
 Complete representation of a currency
 
@@ -30,7 +30,7 @@ symbol | string | no | Full symbol representation of the currency. Example: `US$
 localSymbol | string | no | Shorthand symbol representation that would be understood by local people in the currency's native country. Example `$`
 precision | int | no | Precision of decimal digits for values in this currency
 
-### image
+### `image`
 
 Representation of an image
 
@@ -38,23 +38,23 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 url | string | no | Url of the image
 
-### location
+### `location``
 
 Representation of a point on the map with address information.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-geo | [geo-location](#geo-location) | no | The geo location of the point.
-address | [address](#address) | no | The address representing the point
+geo | [`geo-location`](#geo-location) | no | The geo location of the point.
+address | [`address`](#address) | no | The address representing the point
 
-### geo-location
+### `geo-location`
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 latitude | float | no | The latitude of the point.
 longitude | float | no | The latitude of the point.
 
-### address
+### `address`
 
 Represents an address
 
@@ -67,7 +67,7 @@ stateName | string | yes | State name
 countryName | string | no | Country name
 postalCode | string | yes | Postal/Zip code
 
-### price
+### `price`
 
 Represent a price with currency
 
@@ -76,7 +76,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 amount | float | no | The amount of the price
 currencyCode | string | no | The currency of the price ISO 4217 currency codes. Example: `USD`, `AED`
 
-### <a name="pagination-wrapper"></a>pagination-wrapper&lt;T&gt;
+### <a name="pagination-wrapper"></a>`pagination-wrapper<T>`
 
 Wrapper object to support pagination. Is used to wrap the the response by all the APIs if the response is a list of results which can be paginated. The API dictates whether it will be using a pagination wrapper or not.
 

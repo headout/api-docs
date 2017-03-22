@@ -2,11 +2,10 @@
 
 **API Version: 1**
 
-## Conventions
 * [Basics](conventions/basics.md)
 * [API naming scheme]()
 * [Field specification]()
-* [Pagination]()
+* [Formats](conventions/formats.md)
 
 ## APIs
 * [Product](apis/product.md)
