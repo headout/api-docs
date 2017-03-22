@@ -11,11 +11,17 @@ Represents the inventory specification.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-startDateTime | string | no | Start local date time for the inventory. Format: TODO
+startDateTime | string | no | Start local date time for the inventory. This may even specify the opening local date time for the variant. Ref: [inventory.startDateTime](#inventory--startDateTime). Format: TODO
 endDateTime | string | no | End local date time for the inventory. Format: TODO
 availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. Ref: [inventory.availability](#inventory--availability)
 remaining | int | no | The total number of seats left which can be booked for this inventory.
 pricing | [pricing](#pricing) | no | The pricing specifiction for the inventory.
+
+##### <a name="inventory--startDateTime"></a>`inventory..startDateTime`
+
+This denotes the start time of the inventory for the variant concerned, if the variant has an `inventoryType` of `FIXED_START_FIXED_DURATION` or `FIXED_START_FLEXIBLE_DURATION`. Ref [product-variant.inventoryType](product-models.md#)
+
+TODO: Complete this.
 
 ##### <a name="inventory--availability"></a>`inventory.availability`
 
@@ -28,7 +34,7 @@ pricing | [pricing](#pricing) | no | The pricing specifiction for the inventory.
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 persons | array[[pricing-person](#pricing-person)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_PERSON`. Ref: [product-variant.priceType](product-models.md#product-variant)
-groups | array[[pricing-group](#pricing-group)] | no | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_GROUP`. Ref: [product-variant.priceType](product-models.md#product-variant)
+groups | array[[pricing-group](#pricing-group)] | yes | Specifies the specification for per person pricing. This is non-empty only if `priceType` for the variant of the inventory is `PER_GROUP`. Ref: [product-variant.priceType](product-models.md#product-variant)
 
 ### pricing-person
 
@@ -39,7 +45,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 type | string | no | The person type. Eg: `ADULT`, `CHILD` etc.
 name | string | no | The displayable name for the person. Ex: `Adult`, `Child`, `Senior`
 ageFrom | int | yes | The minimum age for the type. If this not specified then there is no minimum age.
-ageTo | int | no | The maximum age for the type. If this is not specified then there is no macimum age.
+ageTo | int | yes | The maximum age for the type. If this is not specified then there is no macimum age.
 price | float | no | The price payable for this type.
 
 TODO: Need to tell the type -> id, name change. Need to make this change in booking too. Report to durga.

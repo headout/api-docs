@@ -7,6 +7,7 @@
 * [geo-location](#geo-location)
 * [address](#address)
 * [price](#price)
+* [pagination-wrapper](#pagination-wrapper)
 
 ### city
 
@@ -74,3 +75,15 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 amount | float | no | The amount of the price
 currencyCode | string | no | The currency of the price ISO 4217 currency codes. Example: `USD`, `AED`
+
+### pagination-wrapper<T>
+
+Wrapper object to support pagination. Is used to wrap the the response by all the APIs if the response is a list of results which can be paginated. The API dictates whether it will be using a pagination wrapper or not.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+items | array[T] | yes | The response object array whose whole result is being paginated. The object type T is dictated by the api. This can be empty if there were no results.
+nextUrl | string | yes | The next page url. Empty if this is the last page.
+prevUrl | string | yes | The previous page url. Empty if this is the first page.
+total | int | no | Specifies the total results.
+nextOffset | int | yes | Specifies the next offset which can be used to create the next url. This will be empty/`null` if there is the last page.

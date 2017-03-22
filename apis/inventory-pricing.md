@@ -16,36 +16,44 @@ Get the available inventory for a variant.
 
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
-QUERY | variant-id | string | no | The ID of the variant for which the inventory needs to be fetched.
+QUERY | variantId | string | no | The ID of the variant for which the inventory needs to be fetched.
+QUERY | offset | yes | The offset for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
+QUERY | limit | yes | The limit for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
 
 #### Response
 
-**Object:** [inventory](/object-models/inventory-models#inventory)
+**Object:** [pagination-wrapper](/object-models/common-models.md#pagination-wrapper)<[inventory](/object-models/inventory-models.md#inventory)>
 
 ```javascript
-[
-	{
-		"startDateTime": "2017-03-30T15:30:00",	// based on inventory_type, can serve as start or opening time
-		"endDateTime": "2017-03-30T15:30:00",	// based on inventory_type, can serve as end or closing time
-		"availability": "LIMITED/UNLIMITED/CLOSED",
-		"remaining": 5,
-		"pricing": {
-			"persons": [	// nullable
-				{
-					"type": "ADULT",
-					"name": "Adult",
-					"ageFrom": 6,	// nullable
-					"ageTo": 10,	// nullable
-					"price": 100
-				}
-			],
-			"groups": [	//nullable
-				{
-					"size": 4,
-					"price": 100,
-				}
-			]
+{
+	"items": [
+		{
+			"startDateTime": "2017-03-30T15:30:00",
+			"endDateTime": "2017-03-30T15:30:00",
+			"availability": "LIMITED/UNLIMITED/CLOSED",
+			"remaining": 5,
+			"pricing": {
+				"persons": [
+					{
+						"type": "ADULT",
+						"name": "Adult",
+						"ageFrom": 6,
+						"ageTo": 10,
+						"price": 100
+					}
+				],
+				"groups": [
+					{
+						"size": 4,
+						"price": 100,
+					}
+				]
+			}
 		}
-	}
-]
+	],
+	"nextUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variant-id=1234,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variant-id=1234,offset=0,limit=20",
+	"total": 100,
+	"nextOffset": 21
+}
 ```

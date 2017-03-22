@@ -8,7 +8,6 @@ METHOD | URL | USAGE
 --- | --- | ---
 GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | Get product by `id`.
 GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | List product listing by city
-GET | [`/product/inventory/get/{product_id}`](#GET-/product/inventory/get/{product_id}) | Get product inventory by `id`
 
 ### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 
@@ -18,7 +17,7 @@ Gets a product by `product_id`.
 
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
-PATH | product_id | string | no | Product id
+PATH | productId | string | no | Product id
 
 #### Response
 
@@ -137,35 +136,46 @@ List product listing using city.
 
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
-QUERY | city-code | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
+QUERY | cityCode | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
+QUERY | offset | string | yes | The offset for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
+QUERY | limit | int | yes | The limit for pagination. Ref: [Pagination.Request Params](/conventions/basic.md#Pagination--Request-Params)
 
 #### Response
 
-**Object:** [product-listing](/object-models/product-models.md#product-listing)
+**Object:** [pagination-wrapper](/object-models/common-models.md#pagination-wrapper)<[product-listing](/object-models/product-models.md#product-listing)>
 
 ```javascript
-[{
-	"id": "Product ID",
-	"name": "Product Name",
-	"url": "https://product_url",
-	"city": {
-		"code": "NEW_YORK",
-		"displayName": "New York"
-	},
-	"image": {
-		"url": "https://imageurl"
-	},
-	"neighbourhood": "Madison Square Garden",
-	"primaryCategory": {
-		"displayName": "Broadway"
-	},
-	"startGeolocation": {
-		"latitude": 40.701568603515625,
-		"longitude": -74.0091323852539
-	},
-	"ratingCumulative": {
-		"avg": 3.5,
-		"count": 5,
-	}
-}]
+{
+	"items": [
+		{
+			"id": "Product ID",
+			"name": "Product Name",
+			"url": "https://product_url",
+			"city": {
+				"code": "NEW_YORK",
+				"displayName": "New York"
+			},
+			"image": {
+				"url": "https://imageurl"
+			},
+			"neighbourhood": "Madison Square Garden",
+			"primaryCategory": {
+				"displayName": "Broadway"
+			},
+			"startGeolocation": {
+				"latitude": 40.701568603515625,
+				"longitude": -74.0091323852539
+			},
+			"ratingCumulative": {
+				"avg": 3.5,
+				"count": 5,
+			}
+		}
+	],
+	"nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?city-code=NEW_YORK,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?city-code=NEW_YORK,offset=0,limit=20",
+	"total": 100,
+	"nextOffset": 21
+}
+
 ```
