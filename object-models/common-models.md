@@ -24,7 +24,7 @@ Complete representation of a currency
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-code | string | no | ISO 4217 currency codes. Example: `USD`, `AED`
+code | string | no | ISO 4217 currency codes. Example: `USD`, `AED` *Ref: [https://en.wikipedia.org/wiki/ISO_4217](https://en.wikipedia.org/wiki/ISO_4217)*
 name | string | no | Display name of the currency
 symbol | string | no | Full symbol representation of the currency. Example: `US$`
 localSymbol | string | no | Shorthand symbol representation that would be understood by local people in the currency's native country. Example `$`
@@ -38,7 +38,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 url | string | no | Url of the image
 
-### `location``
+### `location`
 
 Representation of a point on the map with address information.
 
