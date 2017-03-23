@@ -60,7 +60,7 @@ id | string | no | Variant ID.
 name | string | yes | Variant display name. Will be null/empty **only if** there is only 1 variant in a product.
 description | string | yes | Variant description.
 inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. *Ref: [`product-variant.inventoryType`](#product-variant--inventoryType)*
-duration | int | yes | Specifies the duration of the variant in seconds. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION` TODO: Confirm with shivam that this is in seconds.
+duration | int | yes | Specifies the duration of the variant in seconds. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION`
 priceType | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. *Ref: [`product-variant.priceType`](#product-variant--priceType).*
 pax | [`product-variant-pax`](#product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
 cashback | [`product-variant-cashback`](#product-variant-cashback) | yes | Specified the cashback that can be achieved by purchasing this variant. It can be `null` if there is no cashback available.

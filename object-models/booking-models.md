@@ -24,7 +24,6 @@ Represents all the details for the customers partaking in the booking.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-priceType | enum | no | The price type as specified in the inventory. `enum: PER_PERSON, PER_GROUP`. TODO: Don't this this is required. Durga needs to confirm.
 count | int | no | The number of people partaking in the booking
 customers | array[[`booking-create-customer`](#booking-create-customer)] | no | Details of a singular customer
 

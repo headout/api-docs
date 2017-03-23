@@ -17,7 +17,7 @@ Gets a product by `productId`.
 
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
-PATH | productId | string | no | Product id
+PATH | product-id | string | no | Product id
 
 #### Response
 
@@ -160,7 +160,7 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 			},
 			"neighbourhood": "Madison Square Garden",
 			"primaryCategory": {
-				"displayName": "Broadway"
+				"name": "Broadway"
 			},
 			"startGeolocation": {
 				"latitude": 40.701568603515625,
