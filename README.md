@@ -8,8 +8,8 @@
 
 ## APIs
 * [Product](apis/product.md)
-* [Booking](apis/booking.md)
 * [Inventory & Pricing](apis/inventory-pricing.md)
+* [Booking](apis/booking.md)
 
 ## Object Models
 * [Common Models](object-models/common-models.md)
