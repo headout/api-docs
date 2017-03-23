@@ -35,7 +35,7 @@ A view can occur **only** after a resource.
 
 ##### Example
 
-`/product/listing/list-by/city`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models..md#product-listing)) for the `product` resource filtered by city.
+`/product/listing/list-by/city`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models.md#product-listing)) for the `product` resource filtered by city.
 
 ### Action
 
@@ -51,7 +51,7 @@ An action defines the verb which needs to be performed on the resource or on it'
 
 * `get`: Used to fetch the resource or it's view using the ID of the resource. It is mandatory to have `{id}` **immediately after** this action.
 * `list`: Used to fetch a list of the resource or it's view using multiple IDs of the resource. It is mandatory to have `ids` as a **query param** for this action.
-* `list-by`: Used to fetch a list of the resource or it's view which is filtered by the subsequent filter. The filer criteria is always input in the query params. *Ref: [Filter](#Filter)*
+* `list-by`: Used to fetch a list of the resource or it's view which is filtered by the subsequent filter. The filer criteria is always input in the query params. *Ref: [Filter](#filter)*
 * `create`: Used to create a resource.
 
 ##### Usage
@@ -62,7 +62,7 @@ An action can occur **only** after either a resource or it's view.
 
 `/product/get/{id}`: Fetch the [`product`](/object-models/product-models.md#product) resource identified by it's ID.
 
-`/product/listing/list`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models..md#product-listing)) for the `product` identified by the `product` IDs. This will have a query param `ids`.
+`/product/listing/list`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models.md#product-listing)) for the `product` identified by the `product` IDs. This will have a query param `ids`.
 
 `/inventory/list-by/variant`: Fetches a list of [`inventory`](/object-models/inventory-pricing-models.md#inventory)) resource filtered by variant. This will have a query param of `variantId`.
 
@@ -86,4 +86,4 @@ Filter can only be used after a `list-by` action.
 
 ##### Example
 
-`/product/listing/list-by/city`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models..md#product-listing)) for the `product` resource filtered by `city`. The filter criteria input will happen using the `cityCode` query param.
+`/product/listing/list-by/city`: Fetches a list of `listing` view ([`product-listing`](/object-models/product-models.md#product-listing)) for the `product` resource filtered by `city`. The filter criteria input will happen using the `cityCode` query param.
