@@ -14,5 +14,6 @@
 ## Object Models
 * [Common Models](object-models/common-models.md)
 * [Product Models](object-models/product-models.md)
-* [Booking Models](object-models/booking-models.md)
+* [Category Models](object-models/category-models.md)
 * [Inventory & Pricing Models](object-models/inventory-pricing-models.md)
+* [Booking Models](object-models/booking-models.md)
