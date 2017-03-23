@@ -1,19 +1,17 @@
 # Basics
 
-* [Domain](#Domain)
-* [API Response Format](#)
-* [HTTPS](#)
-* [Versioning](#Versioning)
-* [Authentication](#Authentication)
-* [Pagination](#Pagination)
+* [Domain](#domain)
+* [API Response Format](#api-response-format)
+* [HTTPS](#https)
+* [Versioning](#versioning)
+* [Authentication](#authentication)
+* [Pagination](#pagination)
 
-## <a href="#a.b"></a>Domain
+## Domain
 
 All API calls (both production and test sandbox) need to be sent to `https://www.headout.com`
 
-## <a name="api.key"></a>API Response Format
-
-## <a href="#b.c"></a>test
+## API Response Format
 
 All APIs return a response in JSON format.
 
