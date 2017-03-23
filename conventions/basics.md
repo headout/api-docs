@@ -11,7 +11,7 @@
 
 All API calls (both production and test sandbox) need to be sent to `https://www.headout.com`
 
-## <a href="#API-Response.Format"></a>API Response Format
+## API Response Format
 
 All APIs return a response in JSON format.
 
