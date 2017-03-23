@@ -11,13 +11,13 @@ Represents the inventory specification.
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-startDateTime | string | no | Start local date time for the inventory. This may even specify the opening local date time for the variant. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.startDateTime`](#inventory--startDateTime)*
-endDateTime | string | no | End local date time for the inventory. This may even specify the closing local date time for the variant.  *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.endDateTime`](#inventory--endDateTime)*
-availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. *Ref: [`inventory.availability`](#inventory--availability)*
+startDateTime | string | no | Start local date time for the inventory. This may even specify the opening local date time for the variant. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.startDateTime`](#inventory.startDateTime)*
+endDateTime | string | no | End local date time for the inventory. This may even specify the closing local date time for the variant.  *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.endDateTime`](#inventory.endDateTime)*
+availability | enum | no | Specifies the type of availability for the inventory. `enum: LIMITED, UNLIMITED, CLOSED`. *Ref: [`inventory.availability`](#inventory.availability)*
 remaining | int | no | The total number of seats left which can be booked for this inventory.
 pricing | [`pricing`](#pricing) | no | The pricing specifiction for the inventory.
 
-##### <a name="inventory--startDateTime"></a>`inventory.startDateTime`
+##### <a name="inventory.startDateTime"></a>`inventory.startDateTime`
 
 This denotes the start time of the inventory for the variant concerned, if the variant has an `inventoryType` of `FIXED_START_FIXED_DURATION` or `FIXED_START_FLEXIBLE_DURATION`.
 
@@ -25,7 +25,7 @@ If the `inventoryType` is `FLEXIBLE_START_FIXED_DURATION` or `FLEXIBLE_START_FLE
 
 *Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
 
-##### <a name="inventory--endDateTime"></a>`inventory.endDateTime`
+##### <a name="inventory.endDateTime"></a>`inventory.endDateTime`
 
 This denotes the end time of the inventory for the variant concerned, if the variant has an `inventoryType` of `FIXED_START_FIXED_DURATION`.
 
@@ -33,7 +33,7 @@ If the `inventoryType` is `FIXED_START_FLEXIBLE_DURATION`, `FLEXIBLE_START_FIXED
 
 *Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
 
-##### <a name="inventory--availability"></a>`inventory.availability`
+##### <a name="inventory.availability"></a>`inventory.availability`
 
 * `LIMITED`: Specifies that there is limited availability for this inventory and the remaining seats can be fetched from [`inventory.remaining`](#inventory)
 * `UNLIMITED`: Specifies that there is unlimited availability for this inventory and can be booked any number of times.
