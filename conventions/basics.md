@@ -31,7 +31,7 @@ There are certain APIs which can only be executed with appropriate authenticatio
 
 Currently the authorization happens via api keys provided to concerned parties.
 
-### API Key based
+### <a href="#b.c"></a>API Key based
 
 #### `Headout-Auth` header
 
