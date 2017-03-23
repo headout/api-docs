@@ -23,7 +23,7 @@ This denotes the start time of the inventory for the variant concerned, if the v
 
 If the `inventoryType` is `FLEXIBLE_START_FIXED_DURATION` or `FLEXIBLE_START_FLEXIBLE_DURATION`, then it means that the variant does not have a fixed start time ever. In such a case this can be interpreted as the opening time for the variant's inventory. For eg: Disneyland will have an `inventoryType` of `FLEXIBLE_START_FLEXIBLE_DURATION` and it's `startDateTime` will be 8:00am which signifies it's opening time. If this inventory is bought, the customer can still enter after 8:00am.
 
-*Ref: [`product-variant.inventoryType`](product-models.md#product-variant--inventoryType)*
+*Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
 
 ##### <a name="inventory--endDateTime"></a>`inventory.endDateTime`
 
@@ -31,7 +31,7 @@ This denotes the end time of the inventory for the variant concerned, if the var
 
 If the `inventoryType` is `FIXED_START_FLEXIBLE_DURATION`, `FLEXIBLE_START_FIXED_DURATION` or `FLEXIBLE_START_FLEXIBLE_DURATION`, then it means that the variant does not have a fixed end time ever. In such a case this can be interpreted as the closing time for the variant's inventory. For eg: A Hot-air balloon ride might have an `inventoryType` of `FLEXIBLE_START_FIXED_DURATION` and it's `endDateTime` will be 7:00pm which signifies it's end time. If this inventory is bought, the customer can enter anytime after the `startDateTime` and before `endDateTime` the the hot air balloon ride being of fixed duration.
 
-*Ref: [`product-variant.inventoryType`](product-models.md#product-variant--inventoryType)*
+*Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
 
 ##### <a name="inventory--availability"></a>`inventory.availability`
 

@@ -59,27 +59,27 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Variant ID.
 name | string | yes | Variant display name. Will be null/empty **only if** there is only 1 variant in a product.
 description | string | yes | Variant description.
-inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. *Ref: [`product-variant.inventoryType`](#product-variant--inventoryType)*
+inventoryType | enum | no | Specifies the inventory type of the variant. `enum: FIXED_START_FIXED_DURATION, FIXED_START_FLEXIBLE_DURATION, FLEXIBLE_START_FIXED_DURATION, FLEXIBLE_START_FLEXIBLE_DURATION`. *Ref: [`product-variant.inventoryType`](#product-variant.inventoryType)*
 duration | int | yes | Specifies the duration of the variant in seconds. Will be `null` only for `inventoryType` `FIXED_START_FLEXIBLE_DURATION` & `FLEXIBLE_START_FLEXIBLE_DURATION`
-priceType | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. *Ref: [`product-variant.priceType`](#product-variant--priceType).*
+priceType | enum | no | The pricing type for this inventory. `enum: PER_PERSON, PER_GROUP`. *Ref: [`product-variant.priceType`](#product-variant.priceType).*
 pax | [`product-variant-pax`](#product-variant-pax) | no | Specifies the pax/people limit specification for the variant.
 cashback | [`product-variant-cashback`](#product-variant-cashback) | yes | Specified the cashback that can be achieved by purchasing this variant. It can be `null` if there is no cashback available.
 ticketDeliveryInfoHtml | string | yes | Specified how the ticket will be delivered. Currently this is in HTML format. This will transition to an `enum` based approach in upcoming api iterations. This can be `null`/empty if the information is currently not available.
 inputFields | [`product-variant-input-field`](#product-variant-input-field) | no | These fields represent the information that need to be taken from the consumer and submitted while making a purchase.
 
-##### <a name="product-variant--inventoryType"></a>`product-variant.inventoryType`
+##### <a name="product-variant.inventoryType"></a>`product-variant.inventoryType`
 
 * `FIXED_START_FIXED_DURATION`: Signifies that the variant experience has a fixed start time and a fixed duration. Eg: Broadway Show, it has a fixed start time and ends at a fixed time.
 * `FIXED_START_FLEXIBLE_DURATION`: Signifies that the variant experience has a fixed start time but a flexible duration. Eg: Entry for Rockefeller - Top of the rock observatory. It has a fixed start time, but once you're in, you can stay over there as long as you want till the place closes down.
 * `FLEXIBLE_START_FIXED_DURATION`: Signifies that the variant experience has a flexible start time but a fixed duration. Eg: Hot air balloon ride, you can enter at any time, but the duration of the experience is fixed.
 * `FLEXIBLE_START_FLEXIBLE_DURATION`: Signifies that the variant experience has a flexible start time and a flexible duration. Eg: Entry tickets for Disneyland, you can enter at any time and can stay there till any time (till the venue closes down).
 
-##### <a name="product-variant--priceType"></a>`product-variant.priceType`
+##### <a name="product-variant.priceType"></a>`product-variant.priceType`
 
 * `PER_PERSON`: A `PER_PERSON` price type specifies that there is a price applicable for every person partaking in the booking. There can be different type of people like `Adult`, `Child`, `Senior` etc. with their own age specification. Each individual type can have it's own price point.
 * `PER_GROUP`: A `PER_GROUP` price type specifies that the inventory is on group pricing. Group pricing signifies that a singular price applies to a group of people and might vary for a given range. For example, 1-4 people $100, 5-7 people $120, 8-10 people $150.
 
-*See Also: [`inventory.pricing`](/inventory-pricing.md#inventory)*
+*See Also: [`inventory.pricing`](/inventory-pricing-models.md#inventory)*
 
 ### `product-variant-pax`
 
