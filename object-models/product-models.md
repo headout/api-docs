@@ -79,7 +79,7 @@ inputFields | [`product-variant-input-field`](#product-variant-input-field) | no
 * `PER_PERSON`: A `PER_PERSON` price type specifies that there is a price applicable for every person partaking in the booking. There can be different type of people like `Adult`, `Child`, `Senior` etc. with their own age specification. Each individual type can have it's own price point.
 * `PER_GROUP`: A `PER_GROUP` price type specifies that the inventory is on group pricing. Group pricing signifies that a singular price applies to a group of people and might vary for a given range. For example, 1-4 people $100, 5-7 people $120, 8-10 people $150.
 
-*See Also: [`inventory.pricing`](/inventory-pricing-models.md#inventory)*
+*See Also: [`inventory.pricing`](/object-models/inventory-pricing-models.md#inventory)*
 
 ### `product-variant-pax`
 
@@ -107,19 +107,19 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 id | string | no | An ID representing the field for the variant.
 name | string | no | Display name of the field
-dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. *Ref: [`product-variant-input-field.dataType`](#product-variant-input-field--dataType)*
-level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. *Ref: [`product-variant-input-field.level`](#product-variant-input-field--level)*
+dataType | enum | no | Data type of the field. `enum: INT, FLOAT, STRING, BOOL, ENUM`. *Ref: [`product-variant-input-field.dataType`](#product-variant-input-field.dataType)*
+level | enum | no | Specified the level of applicability of the field. `enum: PRIMARY_CUSTOMER`, `ALL_CUSTOMERS`, `TOUR`. *Ref: [`product-variant-input-field.level`](#product-variant-input-field.level)*
 validation | [`product-variant-input-field-validation`](#product-variant-input-field-validation) | no | Specifies the validation required for the field.
 
-##### <a name="product-variant-input-field--dataType"></a>`product-variant-input-field.dataType`
+##### <a name="product-variant-input-field.dataType"></a>`product-variant-input-field.dataType`
 
 * `INT`: Represents an **integer** type.
 * `FLOAT`: Represents a **float**/**double** type.
 * `STRING`: Represents a **string** type.
 * `BOOL`: Represents a **bool** type.
-* `ENUM`: Represents an **enumeration** type. The applicable values will be specified in [`product-variant-input-field-validation`](#product-variant-input-field-validation).`values`.
+* `ENUM`: Represents an **enumeration** type. The applicable values will be specified in [`product-variant-input-field-validation.values`](#product-variant-input-field-validation).
 
-##### <a name="product-variant-input-field--level"></a>`product-variant-input-field.level`
+##### <a name="product-variant-input-field.level"></a>`product-variant-input-field.level`
 
 * `PRIMARY_CUSTOMER`: Represents that the field only needs to be asked for the primary customer. A primary customer represents the customer who will be internally linked for the booking. There is only 1 primary customer per booking. There will always be atleast 1 input field representing the primary customer.  Typically **Full name**, **Email**, **Phone Number** & **Address** and mostly asked as information required for the primary customer.
 * `ALL_CUSTOMERS`: Represents that the field needs to be asked for all the customers included in the booking (including the primary customer). Typically fields asking for all customer information are not there. Nevertheless there can be cases where information like **Weight**, **Height**, **Meal preference** etc. are required for all the customers.
@@ -148,9 +148,9 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Product ID.
 name | string | no | Product name.
 url | string | no | URL for the product
-city | [`city`](common-models#city) | no | City of the product
+city | [`city`](common-models.md#city) | no | City of the product
 image | [`image`](common-models.md#image) | no | The primary image for the product.
 neighbourhood | string | yes | The neighbourhood of the location of the product.
 primaryCategory | [`category`](category-models.md#category) | no | The primary category for the product.
-startGeolocation | [`geo-location`](common-models#geolocation) | no | The geo location of the product.
+startGeolocation | [`geo-location`](common-models.md#geolocation) | no | The geo location of the product.
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | The cumulative rating of the product.
