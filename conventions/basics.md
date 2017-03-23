@@ -13,6 +13,8 @@ All API calls (both production and test sandbox) need to be sent to `https://www
 
 ## <a name="api.key"></a>API Response Format
 
+## <a href="#b.c"></a>test
+
 All APIs return a response in JSON format.
 
 ## HTTPS
@@ -31,9 +33,7 @@ There are certain APIs which can only be executed with appropriate authenticatio
 
 Currently the authorization happens via api keys provided to concerned parties.
 
-### <a href="#b.c"></a>API Key based
-
-### api.key
+### API Key based
 
 #### `Headout-Auth` header
 
