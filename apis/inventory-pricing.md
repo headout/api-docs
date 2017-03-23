@@ -22,7 +22,7 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`inventory`](/object-models/inventory-models.md#inventory)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`inventory`](/object-models/inventory-pricing-models.md#inventory)`>`
 
 ```javascript
 {
