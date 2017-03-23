@@ -33,6 +33,8 @@ Currently the authorization happens via api keys provided to concerned parties.
 
 ### <a href="#b.c"></a>API Key based
 
+### api.key
+
 #### `Headout-Auth` header
 
 You need to specify your api key in `Headout-Auth` header with a request for authorization to happen.
