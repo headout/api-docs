@@ -1,14 +1,14 @@
-# Booking API
+# Booking APIs
 
 **Resource path param:** `/booking`
 
 ## APIs
 
-METHOD | URL | USAGE
---- | --- | ---
-POST | [`/booking/create`](#POST-/booking/create) | Create a booking.
+METHOD | URL | AUTH | USAGE
+--- | --- | --- | ---
+POST | [`/booking/create`](#POST-/booking/create) | yes | Create a booking.
 
-### <a name="POST-/booking/create"></a>GET `/booking/create`
+### <a name="POST-/booking/create"></a>POST `/booking/create`
 
 Creates a booking
 

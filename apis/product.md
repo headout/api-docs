@@ -1,13 +1,13 @@
-# Product
+# Product APIs
 
 **Resource path param:** `/product`
 
 ## APIs
 
-METHOD | URL | USAGE
---- | --- | ---
-GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | Get product by `id`.
-GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | List product listing by city
+METHOD | URL | AUTH | USAGE
+--- | --- | --- | ---
+GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | no | Get product by `id`.
+GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | no | List product listing by city
 
 ### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 

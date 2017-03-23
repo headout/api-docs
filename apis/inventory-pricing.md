@@ -1,12 +1,12 @@
-# Inventory API
+# Inventory & Pricing APIs
 
 **Resource path param:** `/inventory`
 
 ## APIs
 
-METHOD | URL | USAGE
---- | --- | ---
-GET | [`/inventory/list-by/variant`](#GET-/inventory/list-by/variant) | Get the available inventory for a variant.
+METHOD | URL | AUTH | USAGE
+--- | --- | --- | ---
+GET | [`/inventory/list-by/variant`](#GET-/inventory/list-by/variant) | no | Get the available inventory for a variant.
 
 ### <a name="GET-/inventory/list-by/variant"></a>GET `/inventory/list-by/variant`
 
