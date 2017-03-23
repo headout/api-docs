@@ -33,7 +33,7 @@ Details of a singular customer
 
 KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
-personType | string | yes | The person type if the `priceType` is `PER_PERSON`. Not required if `priceType` is `PER_GROUP`. *Ref: [`product-variant.priceType`](#product-models.md#product-variant.priceType) & [`pricing.persons`](inventory-pricing-models.md#pricing.persons)*
+personType | string | yes | The person type if the `priceType` is `PER_PERSON`. Not required if `priceType` is `PER_GROUP`. *Ref: [`product-variant.priceType`](product-models.md#product-variant.priceType) & [`pricing.persons`](inventory-pricing-models.md#pricing)*
 isPrimary | bool | no | Specifies whether this customer is the primary customer or not. There need to be exactly 1 primary customer in [`booking-create-customers-details.customers`](#booking-create-customers-details)
 inputFields | array[[`booking-create-input-field`](#booking-create-input-field) | yes | All the input fields for this level customer as specified in [`product-variant.inputFields`](product-models.md#product-variant).
 
