@@ -1,6 +1,17 @@
 # Basics
 
-## API Response Format
+* [Domain](#Domain)
+* [API Response Format](#API-Response-Format)
+* [HTTPS](#HTTPS)
+* [Versioning](#Versioning)
+* [Authentication](#Authentication)
+* [Pagination](#Pagination)
+
+## Domain
+
+All API calls (both production and test sandbox) need to be sent to `https://www.headout.com`
+
+## <a name="API-Response-Format"></a>API Response Format
 
 All APIs return a response in JSON format.
 
@@ -16,7 +27,34 @@ All APIs are prefixed with `/api/v{version_number}`. If the current version numb
 
 ## Authentication
 
-TODO:
+There are certain APIs which can only be executed with appropriate authentication/authorization in place. Although there are open APIs which do not required authorization, it is recommended that you provide the authorization for every API call so that you do no need to care about which API mandates it.
+
+Currently the authorization happens via api keys provided to concerned parties.
+
+### API Key based
+
+#### `Headout-Auth` header
+
+You need to specify your api key in `Headout-Auth` header with a request for authorization to happen.
+
+`Headout-Auth: {api-token}`
+
+**Example:** `Headout-Auth: pk_fgjsfg597sf7g5shsfhgf7hs7fg57s64sfg74h`
+
+#### Key types
+
+There are two types of api keys, production and testing. You will always get both the keys.
+
+* Production Keys: Production keys will only authorize in our production environment and are prefixed with `pk_`. All live production work should use this key.
+* Testing Keys: Testing keys will only authorize in our testing sandbox environment and are prefixed with `tk_`. All testing work should use this key.
+
+#### Testing sandboxing
+
+Test sandboxing can be done by using the test api key. Both production and test sandbox requests need to be send to `https://www.headout.com`.
+
+#### Get an API Key
+
+Please write to <a href="mailto:apikey@headout.com">apikey AT headout.com</a> to receive the api key couple.
 
 ## Pagination
 
