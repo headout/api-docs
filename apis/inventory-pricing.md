@@ -17,8 +17,8 @@ Get the available inventory for a variant.
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
 QUERY | variantId | string | no | The ID of the variant for which the inventory needs to be fetched.
-QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basic.md#Pagination--Request-Params)*
-QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basic.md#Pagination--Request-Params)*
+QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
+QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
 
 #### Response
 
