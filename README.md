@@ -3,8 +3,6 @@
 **API Version: 1**
 
 * [Basics](conventions/basics.md)
-* [API naming scheme]()
-* [Field specification]()
 * [Formats](conventions/formats.md)
 
 ## APIs

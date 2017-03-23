@@ -177,5 +177,4 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 	"total": 100,
 	"nextOffset": 21
 }
-
 ```
