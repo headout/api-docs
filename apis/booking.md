@@ -32,7 +32,7 @@ Creates a booking
 	                "value": "a@b.com"  
 	            }]
         	}
-        }]  
+        ]  
     },
     "variantInputFields": [
 		{
