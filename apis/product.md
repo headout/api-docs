@@ -172,8 +172,8 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 			}
 		}
 	],
-	"nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?city-code=NEW_YORK,offset=21,limit=20",
-	"prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?city-code=NEW_YORK,offset=0,limit=20",
+	"nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=0,limit=20",
 	"total": 100,
 	"nextOffset": 21
 }
