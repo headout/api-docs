@@ -17,6 +17,8 @@ Get the available inventory for a variant.
 MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 --- | --- | --- | --- | ---
 QUERY | variantId | string | no | The ID of the variant for which the inventory needs to be fetched.
+QUERY | startDateTime | string | yes | The start date time from which the inventory needs to be fetched. If unspecified then the current timestamp is taken into consideration. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.startDateTime`](#inventory.startDateTime)*
+QUERY | endDateTime | string | yes | The end date time till which the inventory needs to be fetched. If unspecified then this is taken as infinity. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.startDateTime`](#inventory.startDateTime)*
 QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
 QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
 
