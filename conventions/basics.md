@@ -79,6 +79,6 @@ Pagination responses are wrapped with a [`pagination-wrapper<T>`](/object-models
 	"nextUrl": "https://next-url",
 	"prevUrl": "https://prev-url",
 	"total": 100,
-	"nextOffset": 21
+	"nextOffset": 20
 }
 ```
