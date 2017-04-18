@@ -138,23 +138,19 @@ If the booking capturing doesn't happen within an hour then the booking status i
 	"inventoryId": "1455",
 	"customersDetails": {
 		"count": 3,
-		"customers": [
-			{
-				"personType": "ADULT",
-				"isPrimary": true,
-				"inputFields": [{
-					"id": "EMAIL",
-					"value": "a@b.com"  
-				}]
-			}
-		]  
+		"customers": [{
+			"personType": "ADULT",
+			"isPrimary": true,
+			"inputFields": [{
+				"id": "EMAIL",
+				"value": "a@b.com"  
+			}]
+		}]  
 	},
-	"variantInputFields": [
-		{
-			"id": "",
-			"value": ""
-		}
-	],
+	"variantInputFields": [{
+		"id": "",
+		"value": ""
+	}],
 	"price": {
 		"amount": 100,
 		"currencyCode": "USD"
@@ -182,25 +178,21 @@ If the booking capturing doesn't happen within an hour then the booking status i
 	},
 	"customersDetails": {
 		"count": 3,
-		"customers": [
-			{
-				"personType": "ADULT",
-				"isPrimary": true,
-				"inputFields": [{
-					"id": "EMAIL",
-					"name": "Name",
-					"value": "a@b.com"  
-				}]
-			}
-		]  
+		"customers": [{
+			"personType": "ADULT",
+			"isPrimary": true,
+			"inputFields": [{
+				"id": "EMAIL",
+				"name": "Name",
+				"value": "a@b.com"  
+			}]
+		}]  
 	},
-	"variantInputFields": [
-		{
-			"id": "TRANSPORTATION_TYPE",
-			"name": "Transportation Type",
-			"value": "Limousine"
-		}
-	],
+	"variantInputFields": [{
+		"id": "TRANSPORTATION_TYPE",
+		"name": "Transportation Type",
+		"value": "Limousine"
+	}],
 	"price": {
 		"amount": 100,
 		"currencyCode": "USD"
@@ -245,25 +237,21 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 	},
 	"customersDetails": {
 		"count": 3,
-		"customers": [
-			{
-				"personType": "ADULT",
-				"isPrimary": true,
-				"inputFields": [{
-					"id": "EMAIL",
-					"name": "Name",
-					"value": "a@b.com"  
-				}]
-			}
-		]  
+		"customers": [{
+			"personType": "ADULT",
+			"isPrimary": true,
+			"inputFields": [{
+				"id": "EMAIL",
+				"name": "Name",
+				"value": "a@b.com"  
+			}]
+		}]  
 	},
-	"variantInputFields": [
-		{
-			"id": "TRANSPORTATION_TYPE",
-			"name": "Transportation Type"
-			"value": "Limousine"
-		}
-	],
+	"variantInputFields": [{
+		"id": "TRANSPORTATION_TYPE",
+		"name": "Transportation Type",
+		"value": "Limousine"
+	}],
 	"price": {
 		"amount": 100,
 		"currencyCode": "USD"
@@ -288,23 +276,19 @@ Creates a booking
 	"customersDetails": {
 		"priceType" : "PER_PERSON",
 		"count": 3,
-		"customers": [
-			{
-				"personType": "ADULT",
-				"isPrimary": true,
-				"inputFields": [{
-					"id": "EMAIL",
-					"value": "a@b.com"  
-				}]
-			}
-		]  
+		"customers": [{
+			"personType": "ADULT",
+			"isPrimary": true,
+			"inputFields": [{
+				"id": "EMAIL",
+				"value": "a@b.com"  
+			}]
+		}]  
 	},
-	"variantInputFields": [
-		{
-			"id": "",
-			"value": ""
-		}
-	],
+	"variantInputFields": [{
+		"id": "",
+		"value": ""
+	}],
 	"price": {
 		"amount": 100,
 		"currencyCode": "USD"
