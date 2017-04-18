@@ -11,6 +11,8 @@ Product signifies an experience that can be sold. Typically a product will consi
 * [`product-variant-input-field`](#product-variant-input-field)
 * [`product-variant-input-field-validation`](#product-variant-input-field-validation)
 * [`product-listing`](#product-listing)
+* [`product-listing-pricing`](#product-listing-pricing)
+* [`product-listing-pricing-price`](#product-listing-pricing-price)
 
 ### `product`
 
