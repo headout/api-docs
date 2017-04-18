@@ -20,7 +20,7 @@ List all bookings.
 
 **Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking`](/object-models/booking-models.md#booking)`>`
 
-```javascript
+```json
 {
 	"items": [
 		{
@@ -53,7 +53,7 @@ List all bookings.
 			"variantInputFields": [
 				{
 					"id": "TRANSPORTATION_TYPE",
-					"name": "Transportation Type"
+					"name": "Transportation Type",
 					"value": "Limousine"
 				}
 			],
@@ -86,45 +86,45 @@ PATH | id | string | no | The booking id.
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-```javascript
+```json
 {
 	"bookingId": "126890",
 	"partnerReferenceId": "AX67873DDFSR",
-    "variantId": "1234",
-    "startDateTime": "2017-04-12T19:30:00",
+	"variantId": "1234",
+	"startDateTime": "2017-04-12T19:30:00",
 	"product": {
-    	"id": "2832",
-    	"name": "Aladdin",
-    	"variant": {
-    		"id": "4384",
-        	"name": "Grand Circle"
-    	}
-    },
-    "customersDetails": {
-        "count": 3,
-        "customers": [
+		"id": "2832",
+		"name": "Aladdin",
+		"variant": {
+			"id": "4384",
+			"name": "Grand Circle"
+		}
+	},
+	"customersDetails": {
+		"count": 3,
+		"customers": [
 			{
-	            "personType": "ADULT",
-	            "isPrimary": true,
-	            "inputFields": [{
-	                "id": "EMAIL",
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
 					"name": "Name",
-	                "value": "a@b.com"  
-	            }]
-        	}
-        ]  
-    },
-    "variantInputFields": [
+					"value": "a@b.com"  
+				}]
+			}
+		]  
+	},
+	"variantInputFields": [
 		{
-	        "id": "TRANSPORTATION_TYPE",
-			"name": "Transportation Type"
-	        "value": "Limousine"
-    	}
+			"id": "TRANSPORTATION_TYPE",
+			"name": "Transportation Type",
+			"value": "Limousine"
+		}
 	],
-    "price": {
-        "amount": 100,
-        "currencyCode": "USD"
-    },
+	"price": {
+		"amount": 100,
+		"currencyCode": "USD"
+	},
 	"status": "PENDING",
 	"creationTimestamp": 1491902295
 }
@@ -142,33 +142,33 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-```javascript
+```json
 {
-    "variantId": "1234",
-    "inventoryId": "1455",
-    "customersDetails": {
-        "count": 3,
-        "customers": [
+	"variantId": "1234",
+	"inventoryId": "1455",
+	"customersDetails": {
+		"count": 3,
+		"customers": [
 			{
-	            "personType": "ADULT",
-	            "isPrimary": true,
-	            "inputFields": [{
-	                "id": "EMAIL",
-	                "value": "a@b.com"  
-	            }]
-        	}
-        ]  
-    },
-    "variantInputFields": [
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
+					"value": "a@b.com"  
+				}]
+			}
+		]  
+	},
+	"variantInputFields": [
 		{
-	        "id": "",
-	        "value": ""
-    	}
+			"id": "",
+			"value": ""
+		}
 	],
-    "price": {
-        "amount": 100,
-        "currencyCode": "USD"
-    }       
+	"price": {
+		"amount": 100,
+		"currencyCode": "USD"
+	}       
 }
 ```
 
@@ -176,46 +176,45 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-
-```javascript
+```json
 {
 	"bookingId": "126890",
 	"partnerReferenceId": null,
-    "variantId": "1234",
-    "startDateTime": "2017-04-12T19:30:00",
+	"variantId": "1234",
+	"startDateTime": "2017-04-12T19:30:00",
 	"product": {
-    	"id": "2832",
-    	"name": "Aladdin",
-    	"variant": {
-    		"id": "4384",
-        	"name": "Grand Circle"
-    	}
-    },
-    "customersDetails": {
-        "count": 3,
-        "customers": [
+		"id": "2832",
+		"name": "Aladdin",
+		"variant": {
+			"id": "4384",
+			"name": "Grand Circle"
+		}
+	},
+	"customersDetails": {
+		"count": 3,
+		"customers": [
 			{
-	            "personType": "ADULT",
-	            "isPrimary": true,
-	            "inputFields": [{
-	                "id": "EMAIL",
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
 					"name": "Name",
-	                "value": "a@b.com"  
-	            }]
-        	}
-        ]  
-    },
-    "variantInputFields": [
+					"value": "a@b.com"  
+				}]
+			}
+		]  
+	},
+	"variantInputFields": [
 		{
-	        "id": "TRANSPORTATION_TYPE",
-			"name": "Transportation Type"
-	        "value": "Limousine"
-    	}
+			"id": "TRANSPORTATION_TYPE",
+			"name": "Transportation Type",
+			"value": "Limousine"
+		}
 	],
-    "price": {
-        "amount": 100,
-        "currencyCode": "USD"
-    },
+	"price": {
+		"amount": 100,
+		"currencyCode": "USD"
+	},
 	"status": "UNCAPTURED",
 	"creationTimestamp": 1491902295
 }
@@ -229,7 +228,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-```javascript
+```json
 {
 	"status": "PENDING",
 	"partnerReferenceId": "AX67873DDFSR"
@@ -240,7 +239,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-```javascript
+```json
 {
 	"bookingId": "126890",
 	"partnerReferenceId": "AX67873DDFSR",
