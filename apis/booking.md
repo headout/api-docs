@@ -6,10 +6,71 @@
 
 METHOD | URL | AUTH | USAGE
 --- | --- | --- | ---
+GET | [`/booking`](#GET-/booking) | yes | Fetch all bookings.
 GET | [`/booking/{id}`](#GET-/booking/{id}) | yes | Fetch a booking by it's id.
 POST | [`/booking`](#POST-/booking) | yes | Create a booking in `UNCAPTURED` state.
 PUT | [`/booking`](#PUT-/booking) | yes | Modify the state of the booking.
 POST | *`DEPRECATED`* [~~`/booking/create`~~](#POST-/booking/create) | yes | Create a booking. Use: [`POST /booking`](#POST-/booking)
+
+### <a name="GET-/booking"></a>GET `/booking`
+
+List all bookings.
+
+#### Response
+
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking-create`](/object-models/booking-models.md#booking)`>`
+
+```javascript
+{
+	"items": [
+		{
+			"bookingId": "126890",
+			"partnerReferenceId": "AX67873DDFSR",
+			"variantId": "1234",
+			"startDateTime": "2017-04-12T19:30:00",
+			"product": {
+				"id": "2832",
+				"name": "Aladdin",
+				"variant": {
+					"id": "4384",
+					"name": "Grand Circle"
+				}
+			},
+			"customersDetails": {
+				"count": 3,
+				"customers": [
+					{
+						"personType": "ADULT",
+						"isPrimary": true,
+						"inputFields": [{
+							"id": "EMAIL",
+							"name": "Name",
+							"value": "a@b.com"  
+						}]
+					}
+				]  
+			},
+			"variantInputFields": [
+				{
+					"id": "TRANSPORTATION_TYPE",
+					"name": "Transportation Type"
+					"value": "Limousine"
+				}
+			],
+			"price": {
+				"amount": 100,
+				"currencyCode": "USD"
+			},
+			"status": "PENDING",
+			"creationTimestamp": 1491902295
+		}
+	],
+	"nextUrl": "https://www.headout.com/api/v1/booking?offset=1&limit=1",
+	"prevUrl": null,
+	"total": 100,
+	"nextOffset": 1
+}
+```
 
 ### <a name="GET-/booking/{id}"></a>GET `/booking/{id}`
 
