@@ -22,49 +22,43 @@ List all bookings.
 
 ```json
 {
-	"items": [
-		{
-			"bookingId": "126890",
-			"partnerReferenceId": "AX67873DDFSR",
-			"variantId": "1234",
-			"startDateTime": "2017-04-12T19:30:00",
-			"product": {
-				"id": "2832",
-				"name": "Aladdin",
-				"variant": {
-					"id": "4384",
-					"name": "Grand Circle"
-				}
-			},
-			"customersDetails": {
-				"count": 3,
-				"customers": [
-					{
-						"personType": "ADULT",
-						"isPrimary": true,
-						"inputFields": [{
-							"id": "EMAIL",
-							"name": "Name",
-							"value": "a@b.com"  
-						}]
-					}
-				]  
-			},
-			"variantInputFields": [
-				{
-					"id": "TRANSPORTATION_TYPE",
-					"name": "Transportation Type",
-					"value": "Limousine"
-				}
-			],
-			"price": {
-				"amount": 100,
-				"currencyCode": "USD"
-			},
-			"status": "PENDING",
-			"creationTimestamp": 1491902295
-		}
-	],
+	"items": [{
+		"bookingId": "126890",
+		"partnerReferenceId": "AX67873DDFSR",
+		"variantId": "1234",
+		"startDateTime": "2017-04-12T19:30:00",
+		"product": {
+			"id": "2832",
+			"name": "Aladdin",
+			"variant": {
+				"id": "4384",
+				"name": "Grand Circle"
+			}
+		},
+		"customersDetails": {
+			"count": 3,
+			"customers": [{
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
+					"name": "Name",
+					"value": "a@b.com"  
+				}]
+			}]  
+		},
+		"variantInputFields": [{
+			"id": "TRANSPORTATION_TYPE",
+			"name": "Transportation Type",
+			"value": "Limousine"
+		}],
+		"price": {
+			"amount": 100,
+			"currencyCode": "USD"
+		},
+		"status": "PENDING",
+		"creationTimestamp": 1491902295
+	}],
 	"nextUrl": "https://www.headout.com/api/v1/booking?offset=1&limit=1",
 	"prevUrl": null,
 	"total": 100,
