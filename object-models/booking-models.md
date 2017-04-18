@@ -17,7 +17,7 @@ bookingId | string | `GET` | no | The id of the booking.
 partnerReferenceId | string | `GET` `PUT` | yes | The reference id provided by a partner while making the booking. This is provided in the second booking step called using `PUT`.
 variantId | string | `GET` `POST` | no | ID of the variant of the product that needs to be booked. Every product has atleast 1 bookable variant entry.
 inventoryId | string | `POST` | no | ID of the inventory that needs to be booked. This id itself will not be stored, but will be used to fetch `startDateTime`, pricing profile for price validation etc.
-startDateTime | string | `GET` | no | The start date time of the experience. This could also signify the opening time for an attraction depending upon the inventory type. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)* *Ref: [`product-variant.inventoryType`](#product-variant.inventoryType)*
+startDateTime | string | `GET` | no | The start date time of the experience. This could also signify the opening time for an attraction depending upon the inventory type. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)* *Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
 product | [`booking.product`](#booking-product) | `GET` | no | Minimalistic information about the product booked.
 customerDetails | [`booking-customers-details`](#booking-customers-details) | `GET` `POST` | no | All the details of the customers partaking in the booking.
 variantInputFields | array[[`booking-input-field`](#booking-input-field)] | `GET` `POST` | yes | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).
