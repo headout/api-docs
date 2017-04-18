@@ -244,41 +244,41 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 {
 	"bookingId": "126890",
 	"partnerReferenceId": "AX67873DDFSR",
-    "variantId": "1234",
-    "startDateTime": "2017-04-12T19:30:00",
+	"variantId": "1234",
+	"startDateTime": "2017-04-12T19:30:00",
 	"product": {
-    	"id": "2832",
-    	"name": "Aladdin",
-    	"variant": {
-    		"id": "4384",
-        	"name": "Grand Circle"
-    	}
-    },
-    "customersDetails": {
-        "count": 3,
-        "customers": [
+		"id": "2832",
+		"name": "Aladdin",
+		"variant": {
+			"id": "4384",
+			"name": "Grand Circle"
+		}
+	},
+	"customersDetails": {
+		"count": 3,
+		"customers": [
 			{
-	            "personType": "ADULT",
-	            "isPrimary": true,
-	            "inputFields": [{
-	                "id": "EMAIL",
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
 					"name": "Name",
-	                "value": "a@b.com"  
-	            }]
-        	}
-        ]  
-    },
-    "variantInputFields": [
+					"value": "a@b.com"  
+				}]
+			}
+		]  
+	},
+	"variantInputFields": [
 		{
-	        "id": "TRANSPORTATION_TYPE",
+			"id": "TRANSPORTATION_TYPE",
 			"name": "Transportation Type"
-	        "value": "Limousine"
-    	}
+			"value": "Limousine"
+		}
 	],
-    "price": {
-        "amount": 100,
-        "currencyCode": "USD"
-    },
+	"price": {
+		"amount": 100,
+		"currencyCode": "USD"
+	},
 	"status": "PENDING",
 	"creationTimestamp": 1491902295
 }
@@ -327,12 +327,12 @@ Creates a booking
 
 **Object:** [`booking-create-response`](/object-models/booking-models.md#booking-create-response)
 
-```javascript
+```json
 {
-  "itineraryId": "122725",
-  "price": {
-    "amount": 102,
-    "currencyCode": "GBP"
-  }
+	"itineraryId": "122725",
+	"price": {
+		"amount": 102,
+		"currencyCode": "GBP"
+	}
 }
 ```
