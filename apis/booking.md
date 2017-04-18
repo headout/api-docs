@@ -96,25 +96,21 @@ PATH | id | string | no | The booking id.
 	},
 	"customersDetails": {
 		"count": 3,
-		"customers": [
-			{
-				"personType": "ADULT",
-				"isPrimary": true,
-				"inputFields": [{
-					"id": "EMAIL",
-					"name": "Name",
-					"value": "a@b.com"  
-				}]
-			}
-		]  
+		"customers": [{
+			"personType": "ADULT",
+			"isPrimary": true,
+			"inputFields": [{
+				"id": "EMAIL",
+				"name": "Name",
+				"value": "a@b.com"  
+			}]
+		}]  
 	},
-	"variantInputFields": [
-		{
-			"id": "TRANSPORTATION_TYPE",
-			"name": "Transportation Type",
-			"value": "Limousine"
-		}
-	],
+	"variantInputFields": [{
+		"id": "TRANSPORTATION_TYPE",
+		"name": "Transportation Type",
+		"value": "Limousine"
+	}],
 	"price": {
 		"amount": 100,
 		"currencyCode": "USD"
