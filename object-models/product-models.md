@@ -154,3 +154,24 @@ neighbourhood | string | yes | The neighbourhood of the location of the product.
 primaryCategory | [`category`](category-models.md#category) | no | The primary category for the product.
 startGeolocation | [`geo-location`](common-models.md#geolocation) | no | The geo location of the product.
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | The cumulative rating of the product.
+pricing | [`product-listing-pricing`](#product-listing-pricing) | no | Specifies the pricing data for the product listing
+
+### `product-listing-pricing`
+
+Represents the pricing data for the product listing
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+type | enum | no | Specifies the price type for the product. `enum: PER_PERSON, PER_GROUP`. Although this is on a variant level, nevertheless, right now we don't support any products with variants of different price types. Hence this is value is currently specified over here. This might get deprecated in the future. *Ref: [`product-variant.priceType`](#product-variant.priceType).*
+currencyCode | string | no | The currency code of the price.
+minimumPrice | [`product-listing-pricing-price`](#product-listing-pricing-price) | no | Object specifying the minimum price applicable for the product.
+bestDiscount | int | no | The best discount available across all available inventory.
+
+### `product-listing-pricing-price`
+
+Represents a price object for listing pricing.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+originalPrice | float | no | The original retail price for the corresponding final price
+finalPrice | float | no | The final sale price.

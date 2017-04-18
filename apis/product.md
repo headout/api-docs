@@ -168,7 +168,16 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 			},
 			"ratingCumulative": {
 				"avg": 3.5,
-				"count": 5,
+				"count": 5
+			},
+			"pricing": {
+			    "type": "PER_PERSON",
+			    "currencyCode": "AED",
+			    "minimumPrice": {
+			        "originalPrice": 551,
+			        "finalPrice": 518,
+			    }
+			    "bestDiscount": 28
 			}
 		}
 	],
