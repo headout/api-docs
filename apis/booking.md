@@ -18,7 +18,7 @@ List all bookings.
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking-create`](/object-models/booking-models.md#booking)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking`](/object-models/booking-models.md#booking)`>`
 
 ```javascript
 {
@@ -84,7 +84,7 @@ PATH | id | string | no | The booking id.
 
 #### Response
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 ```javascript
 {
@@ -140,7 +140,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 #### Request
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 ```javascript
 {
@@ -174,7 +174,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 #### Response
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 
 ```javascript
@@ -227,7 +227,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 #### Request
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 ```javascript
 {
@@ -238,7 +238,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 #### Response
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 ```javascript
 {
@@ -290,7 +290,7 @@ Creates a booking
 
 #### Request
 
-**Object:** [`booking-create`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/booking-models.md#booking)
 
 ```javascript
 {
