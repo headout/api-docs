@@ -294,32 +294,32 @@ Creates a booking
 
 ```json
 {
-    "variantId": "1234",
-    "inventoryId": "1455",
-    "customersDetails": {
-        "priceType" : "PER_PERSON",
-        "count": 3,
-        "customers": [
+	"variantId": "1234",
+	"inventoryId": "1455",
+	"customersDetails": {
+		"priceType" : "PER_PERSON",
+		"count": 3,
+		"customers": [
 			{
-	            "personType": "ADULT",
-	            "isPrimary": true,
-	            "inputFields": [{
-	                "id": "EMAIL",
-	                "value": "a@b.com"  
-	            }]
-        	}
-        ]  
-    },
-    "variantInputFields": [
+				"personType": "ADULT",
+				"isPrimary": true,
+				"inputFields": [{
+					"id": "EMAIL",
+					"value": "a@b.com"  
+				}]
+			}
+		]  
+	},
+	"variantInputFields": [
 		{
-	        "id": "",
-	        "value": ""
-    	}
+			"id": "",
+			"value": ""
+		}
 	],
-    "price": {
-        "amount": 100,
-        "currencyCode": "USD"
-    }       
+	"price": {
+		"amount": 100,
+		"currencyCode": "USD"
+	}       
 }
 ```
 
