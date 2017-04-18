@@ -292,7 +292,7 @@ Creates a booking
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
-```javascript
+```json
 {
     "variantId": "1234",
     "inventoryId": "1455",
