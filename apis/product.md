@@ -84,7 +84,9 @@ PATH | product-id | string | no | Product id
 	"ratingCumulative": {
 		"avg": 4.2,
 		"count": 251
-	}
+	},
+	"hasInstantConfirmation": true,
+	"hasMobileTicket": true,
 	"variants": [
 		{
 			"id": 654,

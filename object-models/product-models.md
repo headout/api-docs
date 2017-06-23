@@ -32,6 +32,8 @@ startLocation | [`location`](common-models.md#location) | no | Location of the s
 endLocation | [`location`](common-models.md#location) | no | Location of the end point
 productType | enum | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | Cumulative rating of the product
+hasInstantConfirmation | boolean | no | `true` if the booking will be instantly confirmed and the tickets will be delivered. If `false` then the booking confirmation and ticket delivery will happen within 20 minutes.
+hasMobileTicket | boolean | no | `true` if the ticket can be shown on the mobile at the venue. If `false` you might have to take a print out or show the mobile ticket to get the actual tickets at the venue. The specifics will be mentioned in the product description.
 variants | array[[`product-variant`](#product-variant)] | no | Variants of the product. Every product has variants which are the actual bookable entities. If there is only 1 variant, the variant does not have any special significance. If there are more than 1 variant then each variant will have it's own name and description.
 
 ### product-content
