@@ -9,7 +9,7 @@ METHOD | URL | AUTH | USAGE
 GET | [`/booking`](#GET-/booking) | yes | Fetch all bookings.
 GET | [`/booking/{id}`](#GET-/booking/{id}) | yes | Fetch a booking by it's id.
 POST | [`/booking`](#POST-/booking) | yes | Create a booking in `UNCAPTURED` state.
-PUT | [`/booking`](#PUT-/booking) | yes | Modify the state of the booking.
+PUT | [`/booking/{id}`](#PUT-/booking) | yes | Modify the state of the booking given it's id.
 POST | *`DEPRECATED`* [~~`/booking/create`~~](#POST-/booking/create) | yes | Create a booking. Use: [`POST /booking`](#POST-/booking)
 
 ### <a name="GET-/booking"></a>GET `/booking`
