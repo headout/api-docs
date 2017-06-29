@@ -202,7 +202,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 }
 ```
 
-### <a name="PUT-/booking"></a>PUT `/booking`
+### <a name="PUT-/booking"></a>PUT `/booking/{id}`
 
 Used to modify a booking. Currently this is only used for capturing the booking and assigning a `partnerTrackingId`. Use this method to capture the booking by specifying the status as `PENDING`. The booking will be fulfilled on our end only once you capture it.
 
