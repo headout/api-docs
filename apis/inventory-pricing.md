@@ -53,8 +53,8 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 			}
 		}
 	],
-	"nextUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variant-id=1234,offset=21,limit=20",
-	"prevUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variant-id=1234,offset=0,limit=20",
+	"nextUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variantId=1234,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variantId=1234,offset=0,limit=20",
 	"total": 100,
 	"nextOffset": 21
 }
