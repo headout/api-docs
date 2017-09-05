@@ -23,6 +23,7 @@ customerDetails | [`booking-customers-details`](#booking-customers-details) | `G
 variantInputFields | array[[`booking-input-field`](#booking-input-field)] | `GET` `POST` | yes | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).
 price | [`price`](common-models.md#price) | `GET` `POST` | no | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.
 status | enum | `GET` `PUT` | no | The current status of the booking. After `POST` this will always be `UNCAPTURED`. The status can be changed using `PUT` to `PENDING` to specify to the backend. `enum: UNCAPTURED ,PENDING ,COMPLETED ,CANCELLED ,DIRTY , CAPTURE_TIMEDOUT`. *Ref: [`booking.status`](#booking.status)*
+voucherUrl | string | `GET` | no | Link to the voucher of the booking.
 creationTimestamp | int | `GET` | no | The epoch timestamp specifying the time when the booking was created. *Format: [fm-timestamp](/conventions/formats.md#fm-timestamp)*.
 
 ##### <a name="booking.status"></a>`booking.status`

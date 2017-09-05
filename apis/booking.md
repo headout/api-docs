@@ -57,8 +57,8 @@ List all bookings.
 			"currencyCode": "USD"
 		},
 		"status": "PENDING",
-		"creationTimestamp": 1491902295,
-		"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+		"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
+		"creationTimestamp": 1491902295
 
 	}],
 	"nextUrl": "https://www.headout.com/api/v1/booking?offset=1&limit=1",
@@ -118,8 +118,8 @@ PATH | id | string | no | The booking id.
 		"currencyCode": "USD"
 	},
 	"status": "PENDING",
-	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
+	"creationTimestamp": 1491902295
 
 }
 ```
@@ -202,8 +202,8 @@ If the booking capturing doesn't happen within an hour then the booking status i
 		"currencyCode": "USD"
 	},
 	"status": "UNCAPTURED",
-	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
+	"creationTimestamp": 1491902295
 
 }
 ```
@@ -263,8 +263,8 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 		"currencyCode": "USD"
 	},
 	"status": "PENDING",
-	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
+	"creationTimestamp": 1491902295
 
 }
 ```
