@@ -58,7 +58,7 @@ List all bookings.
 		},
 		"status": "PENDING",
 		"creationTimestamp": 1491902295,
-		"voucherUrl": "https://www.headout.com/voucher/157977?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+		"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
 
 	}],
 	"nextUrl": "https://www.headout.com/api/v1/booking?offset=1&limit=1",
@@ -119,7 +119,7 @@ PATH | id | string | no | The booking id.
 	},
 	"status": "PENDING",
 	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/157977?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
 
 }
 ```
@@ -203,7 +203,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 	},
 	"status": "UNCAPTURED",
 	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/157977?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
 
 }
 ```
@@ -264,7 +264,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 	},
 	"status": "PENDING",
 	"creationTimestamp": 1491902295,
-	"voucherUrl": "https://www.headout.com/voucher/157977?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
+	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D"
 
 }
 ```
