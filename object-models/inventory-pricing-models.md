@@ -57,6 +57,7 @@ name | string | no | The displayable name for the person. Ex: `Adult`, `Child`, 
 ageFrom | int | yes | The minimum age for the type. If this not specified then there is no minimum age.
 ageTo | int | yes | The maximum age for the type. If this is not specified then there is no macimum age.
 price | float | no | The price payable for this type.
+originalPrice | float | no | The original (retail) price of for this type
 
 ### `pricing-group`
 
@@ -66,11 +67,8 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 size | int | no | The upper bound of the size of this group. The lower bound is the next lowest size overall from this size plus 1.
 price | float | no | The price payable for this type.
-
+originalPrice | float | no | The original (retail) price for this type
 ##### Eg:
-
-`size=4, price=100; size=7, price=120; size=10, prize=150`
-
-Signifies (For currency $):
-
-`1-4 persons cost $100; 5-7 persons cost $120; 8-10 persons cost $150`
+(Assume all currency is in dollars)
+* `size=4, price=100, originalPrice=120` means headout price for 1-4 persons is 100$ while retail price is $120 (i.e. 20% discount)
+* `size=7, price=120, originalPrice=120` means headout price for 1-7 people is 120$ and is same as retail price (no discount)

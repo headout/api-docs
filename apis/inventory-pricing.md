@@ -30,6 +30,7 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 {
 	"items": [
 		{
+			"id": "1212121"
 			"startDateTime": "2017-03-30T15:30:00",
 			"endDateTime": "2017-03-30T15:30:00",
 			"availability": "LIMITED/UNLIMITED/CLOSED",
@@ -39,15 +40,25 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 					{
 						"type": "ADULT",
 						"name": "Adult",
-						"ageFrom": 6,
-						"ageTo": 10,
-						"price": 100
+						"ageFrom": 13,
+						"ageTo": null,
+						"price": 100,
+						"originalPrice": 110
+					},
+					{
+						"type": "CHILD",
+						"name": "Child",
+						"ageFrom": 4,
+						"ageTo": 12,
+						"price": 50,
+						"originalPrice": 60
 					}
 				],
 				"groups": [
 					{
 						"size": 4,
 						"price": 100,
+						"originalPrice": 120
 					}
 				]
 			}
