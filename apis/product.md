@@ -141,6 +141,7 @@ MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
 QUERY | cityCode | string | no | The city code. Eg: `NEW_YORK`, `DUBAI`
 QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
 QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
+QUERY | currencyCode | string | yes | The currency in which pricing information will be returned. Eg: `USD`, `AED`. *Ref: [https://en.wikipedia.org/wiki/ISO_4217](https://en.wikipedia.org/wiki/ISO_4217)*
 
 #### Response
 
