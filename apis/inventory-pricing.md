@@ -21,6 +21,7 @@ QUERY | startDateTime | string | yes | The start date time from which the invent
 QUERY | endDateTime | string | yes | The end date time till which the inventory needs to be fetched. If unspecified then this is taken as infinity. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)*. *Ref: [`inventory.startDateTime`](#inventory.startDateTime)*
 QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
 QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
+QUERY | currencyCode | string | yes | The currency in which pricing information will be returned. Eg: `USD`, `AED`. *Ref: [https://en.wikipedia.org/wiki/ISO_4217](https://en.wikipedia.org/wiki/ISO_4217)*
 
 #### Response
 
