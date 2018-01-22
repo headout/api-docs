@@ -57,6 +57,15 @@ List all bookings.
 			"currencyCode": "USD"
 		},
 		"status": "PENDING",
+		"tickets": [
+		{
+			"publicId": "9e4d8330-abc7-40f8-951d-19b9e8731dcf",
+			"url": "https://cdn-s3.headout.com/itinerary/126890/voucher-9e4d8330-abc7-40f8-951d-19b9e8731dcf.pdf"
+		},
+		{
+			"publicId": "93ef74f1-abc7-40f8-951d-19b9e7031dcf",
+			"url": "https://cdn-s3.headout.com/itinerary/126890/voucher-93ef74f1-abc7-40f8-951d-19b9e7031dcf.pdf"
+		}],
 		"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
 		"creationTimestamp": 1491902295
 
@@ -118,9 +127,17 @@ PATH | id | string | no | The booking id.
 		"currencyCode": "USD"
 	},
 	"status": "PENDING",
+	"tickets": [
+	{
+		"publicId": "9e4d8330-abc7-40f8-951d-19b9e8731dcf",
+		"url": "https://cdn-s3.headout.com/itinerary/126890/voucher-9e4d8330-abc7-40f8-951d-19b9e8731dcf.pdf"
+	},
+	{
+		"publicId": "93ef74f1-abc7-40f8-951d-19b9e7031dcf",
+		"url": "https://cdn-s3.headout.com/itinerary/126890/voucher-93ef74f1-abc7-40f8-951d-19b9e7031dcf.pdf"
+	}],
 	"voucherUrl": "https://www.headout.com/voucher/126890?key=AAAD6AAAABhsDVGlVXsL2YDAf65qMsOQAlqJZdsw80eczQCIL6sa5rITsvOjxoD5NwaoBDiwlEY%3D",
 	"creationTimestamp": 1491902295
-
 }
 ```
 
