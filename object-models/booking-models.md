@@ -6,6 +6,7 @@
 * [`booking-customer`](#booking-customer)
 * [`booking-input-field`](#booking-input-field)
 * [`booking-create-response`](#booking-create-response)
+* [`ticket`](#ticket)
 
 ### `booking`
 
@@ -23,7 +24,8 @@ customerDetails | [`booking-customers-details`](#booking-customers-details) | `G
 variantInputFields | array[[`booking-input-field`](#booking-input-field)] | `GET` `POST` | yes | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).
 price | [`price`](common-models.md#price) | `GET` `POST` | no | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.
 status | enum | `GET` `PUT` | no | The current status of the booking. After `POST` this will always be `UNCAPTURED`. The status can be changed using `PUT` to `PENDING` to specify to the backend. `enum: UNCAPTURED ,PENDING ,COMPLETED ,CANCELLED ,DIRTY , CAPTURE_TIMEDOUT`. *Ref: [`booking.status`](#booking.status)*
-voucherUrl | string | `GET` | no | Link to the voucher of the booking.
+voucherUrl | string | `GET` | no | Link to the voucher of the booking. Voucher is inherently a dynamic entity and currently can either be a PDF or an HTML page.
+tickets | array[[`ticket`](#ticket)] | `GET` | yes | An array of tickets associated with this booking. This can be empty if the booking hasn't been confirmed or cancelled.
 creationTimestamp | int | `GET` | no | The epoch timestamp specifying the time when the booking was created. *Format: [fm-timestamp](/conventions/formats.md#fm-timestamp)*.
 
 ##### <a name="booking.status"></a>`booking.status`
@@ -87,3 +89,12 @@ KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | --- | ---
 itineraryId | string | `GET` | no | The ID for the booking.
 price | [`price`](common-models.md#price) | `GET` | no | The price payed for the booking.
+
+### `ticket`
+
+Represents information of a ticket. The ticket accessed via `url` is always in PDF format.
+
+KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | --- | ---
+publicId | string | `GET` | no | The public id for the ticket.
+url | string | `GET` | no | The url to access the ticket.

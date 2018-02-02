@@ -9,7 +9,7 @@
 
 ## Domain
 
-All production API calls need to be sent to `https://www.headout.com` For testing, use the sandbox environment.
+All production API calls need to be sent to <a href="https://www.headout.com">`https://www.headout.com`</a>. For testing, use the [testing sandbox environment](#Authentication--Testing-Sandbox).
 
 ## API Response Format
 
@@ -48,13 +48,13 @@ There are two types of api keys, production and testing. You will always get bot
 * Production Keys: Production keys will only authorize in our production environment and are prefixed with `pk_`. All live production work should use this key.
 * Testing Keys: Testing keys will only authorize in our testing sandbox environment and are prefixed with `tk_`. All testing work should use this key.
 
-#### Testing sandboxing
+#### <a name="Authentication--Testing-Sandbox">Testing Sandbox
 
-Test sandboxing can be done by using the test api key. All sandbox requests should be sent to `https://www.test-headout.com`. Production keys (`pk_`) will be invalid in this environment and test keys will be invalid in production environment.
+Our testing sandbox can be accessed at <a href="https://www.test-headout.com">`https://www.test-headout.com`</a>. You will need to use the test api key to access the same.
 
-#### Get an API Key
+#### Get API Keys
 
-Please write to <a href="mailto:apikey@headout.com">apikey AT headout.com</a> to receive the api key couple.
+Please signup on our <a href="https://www.headout.com/concierge/signup">Affiliate platform</a> to receive your api keys via email.
 
 ## Pagination
 
