@@ -8,6 +8,7 @@ METHOD | URL | AUTH | USAGE
 --- | --- | --- | ---
 GET | [`/product/get/{product_id}`](#GET-/product/get/{product_id}) | no | Get product by `id`.
 GET | [`/product/listing/list-by/city`](#GET-/product/listing/list-by/city) | no | List product listing by city
+GET | [`/product/listing/list-by/category`](#GET-/product/listing/list-by/category) | no | List product listing by category
 
 ### <a name="GET-/product/get/{product_id}"></a>GET `/product/get/{product_id}`
 
@@ -163,7 +164,10 @@ QUERY | currencyCode | string | yes | The currency in which pricing information 
 			},
 			"neighbourhood": "Madison Square Garden",
 			"primaryCategory": {
-				"name": "Broadway"
+				"id": "123",
+				"name": "Broadway",
+				"cityCode": "NEW_YORK",
+				"canonicalUrl": "https://www.headout.com/category/24/broadway"
 			},
 			"startGeolocation": {
 				"latitude": 40.701568603515625,
@@ -184,8 +188,72 @@ QUERY | currencyCode | string | yes | The currency in which pricing information 
 			}
 		}
 	],
-	"nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=21,limit=20",
-	"prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=0,limit=20",
+	"nextUrl": "https://www.headout.com/api/public/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/public/v1/product/listing/list-by/city?cityCode=NEW_YORK,offset=0,limit=20",
+	"total": 100,
+	"nextOffset": 21
+}
+```
+
+### <a name="GET-/product/listing/list-by/category"></a>GET `/product/listing/list-by/category`
+
+List product listing using category.
+
+#### Request
+
+MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
+--- | --- | --- | --- | ---
+QUERY | categoryId | string | no | The id of the category.
+QUERY | offset | string | yes | The offset for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
+QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Request Params](/conventions/basics.md#Pagination--Request-Params)*
+QUERY | currencyCode | string | yes | The currency in which pricing information will be returned. Eg: `USD`, `AED`. *Ref: [https://en.wikipedia.org/wiki/ISO_4217](https://en.wikipedia.org/wiki/ISO_4217)*
+
+#### Response
+
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
+
+```javascript
+{
+	"items": [
+		{
+			"id": "Product ID",
+			"name": "Product Name",
+			"url": "https://product_url",
+			"city": {
+				"code": "NEW_YORK",
+				"displayName": "New York"
+			},
+			"image": {
+				"url": "https://imageurl"
+			},
+			"neighbourhood": "Madison Square Garden",
+			"primaryCategory": {
+				"id": "123",
+				"name": "Broadway",
+				"cityCode": "NEW_YORK",
+				"canonicalUrl": "https://www.headout.com/category/24/broadway"
+			},
+			"startGeolocation": {
+				"latitude": 40.701568603515625,
+				"longitude": -74.0091323852539
+			},
+			"ratingCumulative": {
+				"avg": 3.5,
+				"count": 5
+			},
+			"pricing": {
+			    "type": "PER_PERSON",
+			    "currencyCode": "AED",
+			    "minimumPrice": {
+			        "originalPrice": 551,
+			        "finalPrice": 518,
+			    }
+			    "bestDiscount": 28
+			}
+		}
+	],
+	"nextUrl": "https://www.headout.com/api/public/v1/product/listing/list-by/category?categoryId=23,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/public/v1/product/listing/list-by/category?categoryId=23,offset=0,limit=20",
 	"total": 100,
 	"nextOffset": 21
 }
