@@ -65,8 +65,8 @@ QUERY | currencyCode | string | yes | The currency in which pricing information 
 			}
 		}
 	],
-	"nextUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variantId=1234,offset=21,limit=20",
-	"prevUrl": "https://www.headout.com/api/v1/inventory/list-by/variant?variantId=1234,offset=0,limit=20",
+	"nextUrl": "https://www.headout.com/api/public/v1/inventory/list-by/variant?variantId=1234,offset=21,limit=20",
+	"prevUrl": "https://www.headout.com/api/public/v1/inventory/list-by/variant?variantId=1234,offset=0,limit=20",
 	"total": 100,
 	"nextOffset": 21
 }

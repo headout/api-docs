@@ -66,7 +66,7 @@ List all bookings.
 		"creationTimestamp": 1491902295
 
 	}],
-	"nextUrl": "https://www.headout.com/api/v1/booking?offset=1&limit=1",
+	"nextUrl": "https://www.headout.com/api/public/v1/booking?offset=1&limit=1",
 	"prevUrl": null,
 	"total": 100,
 	"nextOffset": 1

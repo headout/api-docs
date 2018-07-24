@@ -10,6 +10,8 @@
 * [Product](apis/product.md)
 * [Inventory & Pricing](apis/inventory-pricing.md)
 * [Booking](apis/booking.md)
+* [City](apis/city.md)
+* [Category](apis/category.md)
 
 ## Object Models
 * [Common Models](object-models/common-models.md)
