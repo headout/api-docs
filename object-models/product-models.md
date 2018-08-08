@@ -13,6 +13,7 @@ Product signifies an experience that can be sold. Typically a product will consi
 * [`product-listing`](#product-listing)
 * [`product-listing-pricing`](#product-listing-pricing)
 * [`product-listing-pricing-price`](#product-listing-pricing-price)
+* [`product-category`](#product-category)
 
 ### `product`
 
@@ -155,7 +156,7 @@ url | string | no | URL for the product
 city | [`city`](common-models.md#city) | no | City of the product
 image | [`image`](common-models.md#image) | no | The primary image for the product.
 neighbourhood | string | yes | The neighbourhood of the location of the product.
-primaryCategory | [`category`](category-models.md#category) | no | The primary category for the product.
+primaryCategory | [`product-category`](#product-category) | no | The primary category for the product.
 startGeolocation | [`geo-location`](common-models.md#geolocation) | no | The geo location of the product.
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | The cumulative rating of the product.
 pricing | [`product-listing-pricing`](#product-listing-pricing) | no | Specifies the pricing data for the product listing
@@ -179,3 +180,13 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 originalPrice | float | no | The original retail price for the corresponding final price
 finalPrice | float | no | The final sale price.
+
+### `product-category`
+
+Represents a minimal category object for product.
+
+KEY | TYPE | NULL/EMPTY | DESCRIPTION
+--- | --- | --- | ---
+id | string | no | The ID of the category.
+name | string | no | The display name of the category.
+cityCode | string | no | The city of the category. Eg: `NEW_YORK`, `DUBAI`
