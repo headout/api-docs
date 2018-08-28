@@ -17,6 +17,7 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | ---
 code | string | no | Code name for the city. Example: `NEW_YORK`, `DUBAI`
 name | string | no | Display name of the city
+image | [`image`](common-models.md#image) | no | The primary image for the city.
 
 ### `currency`
 
