@@ -28,7 +28,8 @@ QUERY | limit | int | yes | The limit for pagination. *Ref: [Pagination - Reques
 	"items": [
 		{
 			"code": "NEW_YORK",
-			"name": "New York"
+			"name": "New York",
+			"image": "https://cdn-imgix.headout.com/cities/new-york/images/mobile/morning.jpg"
 		}
 	],
 	"nextUrl": "https://www.headout.com/api/public/v1/city?offset=21,limit=20",
