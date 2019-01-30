@@ -190,3 +190,4 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | The ID of the category.
 name | string | no | The display name of the category.
 cityCode | string | no | The city of the category. Eg: `NEW_YORK`, `DUBAI`
+url | string | no | The relative url for the category page.
