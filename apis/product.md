@@ -111,7 +111,7 @@ PATH | product-id | string | no | Product id
 					"name": "Name",
 					"dataType": "STRING",
 					"level": "PRIMARY_CUSTOMER",
-					"validation": [
+					"validation": {
 						"required": true,
 						"regex": "\\s*[^\\s]+\\s+[^\\s]+.*",
 						"minLength": 3,
@@ -123,7 +123,7 @@ PATH | product-id | string | no | Product id
 							"Non-vegeratian",
 							"Diabetic"
 						]
-					]
+					}
 				}
 			]
 		}
