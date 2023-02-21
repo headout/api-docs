@@ -56,7 +56,7 @@ There are two types of api keys, production and testing. You will always get bot
 Our testing sandbox can be accessed at <a href="https://www.test-headout.com">`https://www.test-headout.com`</a>. You will need to use the test api key to access the same.
 
 #### Get API Keys
-
+<!-- ##Not working -->
 Please signup on our <a href="https://www.headout.com/concierge/signup">Affiliate platform</a> to receive your api keys via email.
 
 ## Pagination
