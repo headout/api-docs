@@ -44,11 +44,11 @@ sendMessageToIframe = (type, data) => {
     }}
 />
 
-options: {
-    date: '2023-03-03',
-    time: '19:30:00'
-    currencyCode: 'GBP',
-	deviceType: 'MOBILE' | 'DESKTOP'
+options = {
+    'date' : '2023-03-03',
+    'time' : '19:30:00',
+    'currencyCode' : 'GBP',
+	'deviceType' : 'MOBILE' | 'DESKTOP'
 }
 ```
 
@@ -78,23 +78,25 @@ sendMessageToIframe("addSeat", { id })
 To receive events from Iframe you can use event listener shown in the example below
 
 ```javascript
-window.addEventListener('message', message =>
-	const { data: stringifyData, origin } = message;
-	const parsedData = JSON.parse(stringifyData);
-	const { data, type } = parsedData;
-	switch (type) {
-		case 'onSeatAdded': {
-			// do stuff
-		}
+window.addEventListener('message', message => {
+        const {data: stringifyData, origin} = message;
+        const parsedData = JSON.parse(stringifyData);
+        const {data, type} = parsedData;
+        switch (type) {
+            case 'onSeatAdded': {
+                // do stuff
+            }
+        }
+    }
 );
 ```
 
 As seen in the example above with each message contains origin and data
-data is stringified object of actual data and type
+is stringified object of actual data and type
 
 These are the types of events that you will receive from Iframe
 
-**onSeatAdded** - Triggerd when seat is selected within Iframe. With this event you will receive seat object being added as data. 
+**onSeatAdded** - Triggered when seat is selected within Iframe. With this event you will receive seat object being added as data. 
 
 ```javascript
 Object: Seat

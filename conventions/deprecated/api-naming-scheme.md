@@ -10,7 +10,7 @@ The API naming is structured into 4 components. Resource, view, action and filte
 
 ##### Definition
 
-Resource specifies a particular model which has it's own identity. Typically a resource will always have a `id` and it will make sense to refer these resources by their IDs and do operations over them.
+Resource specifies a particular model which has its own identity. Typically, a resource will always have a `id` and it will make sense to refer these resources by their IDs and do operations over them.
 
 ##### Usage
 
@@ -47,11 +47,11 @@ A view can occur **only** after a resource.
 
 ##### Definition
 
-An action defines the verb which needs to be performed on the resource or on it's view. Each action has a specific functionality.
+An action defines the verb which needs to be performed on the resource or on its view. Each action has a specific functionality.
 
-* `get`: Used to fetch the resource or it's view using the ID of the resource. It is mandatory to have `{id}` **immediately after** this action.
-* `list`: Used to fetch a list of the resource or it's view using multiple IDs of the resource. It is mandatory to have `ids` as a **query param** for this action.
-* `list-by`: Used to fetch a list of the resource or it's view which is filtered by the subsequent filter. The filer criteria is always input in the query params. *Ref: [Filter](#filter)*
+* `get`: Used to fetch the resource, or it's view using the ID of the resource. It is mandatory to have `{id}` **immediately after** this action.
+* `list`: Used to fetch a list of the resource, or it's view using multiple IDs of the resource. It is mandatory to have `ids` as a **query param** for this action.
+* `list-by`: Used to fetch a list of the resource, or it's view which is filtered by the subsequent filter. The filer criteria is always input in the query params. *Ref: [Filter](#filter)*
 * `create`: Used to create a resource.
 
 ##### Usage

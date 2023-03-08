@@ -30,56 +30,56 @@ creationTimestamp | int | `GET` | no | The epoch timestamp specifying the time w
 
 ##### <a name="booking.status"></a>`booking.status`
 
-* `UNCAPTURED`: This state means that the booking entry is created on our system but in a dormant state. It will not be processed by our system until the state is changed to `PENDING`. Bookings with `UNCAPTURED` status are automatically moved to `CAPTURE_TIMEOUT` state after 1 hour and are then rendered uncapturable.
+* `UNCAPTURED`: This state means that the booking entry is created on our system but in a dormant state. It will not be processed by our system until the state is changed to `PENDING`. Bookings with `UNCAPTURED` status are automatically moved to `CAPTURE_TIMEOUT` state after 1 hour and are then can not be captured.
 * `PENDING`: This state means that the booking has been captured and is now being processed by our system.
 * `COMPLETED`: The booking is successful and has been completed.
 * `CANCELLED`: The booking has been cancelled.
-* `DIRTY`: The booking has been modified from it's original specification. This happens only when specific booking modification requests are made by the customer. This might evolve into a different specification in the future.
-* `CAPTURE_TIMEOUT`: If a booking has been there on our system in `UNCAPTURED` state for more than an hour it is move to `CAPTURE_TIMEOUT` state and then cannot be captured.
+* `DIRTY`: The booking has been modified from its original specification. This happens only when specific booking modification requests are made by the customer. This might evolve into a different specification in the future.
+* `CAPTURE_TIMEOUT`: If a booking has been there on our system in `UNCAPTURED` state for more than an hour it is moved to `CAPTURE_TIMEOUT` state and then cannot be captured.
 
 ### `booking-product`
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-id | string | `GET` | no | The id of the product
-name | string | `GET` | no | The name of the product
-variant | [`booking-product-variant`](#booking-product-variant) | `GET` | no | The variant of the product which was booked.
+| KEY     | TYPE                                                  | METHOD | NULL/EMPTY | DESCRIPTION                                  |
+|---------|-------------------------------------------------------|--------|------------|----------------------------------------------|
+| id      | string                                                | `GET`  | no         | The id of the product                        |
+| name    | string                                                | `GET`  | no         | The name of the product                      |
+| variant | [`booking-product-variant`](#booking-product-variant) | `GET`  | no         | The variant of the product which was booked. |
 
 ### `booking-product-variant`
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-id | string | `GET` | no | The is of the variant
-name | string | `GET` | yes | The name of the variant. This can be empty if this is the default variant of the product.
+| KEY  | TYPE   | METHOD | NULL/EMPTY | DESCRIPTION                                                                               |
+|------|--------|--------|------------|-------------------------------------------------------------------------------------------|
+| id   | string | `GET`  | no         | The is of the variant                                                                     |
+| name | string | `GET`  | yes        | The name of the variant. This can be empty if this is the default variant of the product. |
 
 ### `booking-customers-details`
 
 Represents all the details for the customers partaking in the booking.
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-count | int | `GET` `POST` | no | The number of people partaking in the booking.
-customers | array[[`booking-customer`](#booking-customer)] | `GET` `POST` | no | Array of details of every customer.
+| KEY       | TYPE                                           | METHOD       | NULL/EMPTY | DESCRIPTION                                    |
+|-----------|------------------------------------------------|--------------|------------|------------------------------------------------|
+| count     | int                                            | `GET` `POST` | no         | The number of people partaking in the booking. |
+| customers | array[[`booking-customer`](#booking-customer)] | `GET` `POST` | no         | Array of details of every customer.            |
 
 ### `booking-customer`
 
 Details of a singular customer
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-personType | string | `GET` `POST` | yes | The person type if the `priceType` is `PER_PERSON`. Not required/present if `priceType` is `PER_GROUP`. *Ref: [`product-variant.priceType`](product-models.md#product-variant.priceType) & [`pricing.persons`](inventory-pricing-models.md#pricing)*
-isPrimary | bool | `GET` `POST` | no | Specifies whether this customer is the primary customer or not. There needs to be exactly 1 primary customer in [`booking-customers-details.customers`](#booking-customers-details)
-inputFields | array[[`booking-input-field`](#booking-input-field) | `GET` `POST` | yes | All the input fields for this level customer as specified in [`product-variant.inputFields`](product-models.md#product-variant).
+| KEY         | TYPE                                                | METHOD       | NULL/EMPTY | DESCRIPTION                                                                                                                                                                                                                                          |
+|-------------|-----------------------------------------------------|--------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| personType  | string                                              | `GET` `POST` | yes        | The person type if the `priceType` is `PER_PERSON`. Not required/present if `priceType` is `PER_GROUP`. *Ref: [`product-variant.priceType`](product-models.md#product-variant.priceType) & [`pricing.persons`](inventory-pricing-models.md#pricing)* |
+| isPrimary   | bool                                                | `GET` `POST` | no         | Specifies whether this customer is the primary customer or not. There needs to be exactly 1 primary customer in [`booking-customers-details.customers`](#booking-customers-details)                                                                  |
+| inputFields | array[[`booking-input-field`](#booking-input-field) | `GET` `POST` | yes        | All the input fields for this level customer as specified in [`product-variant.inputFields`](product-models.md#product-variant).                                                                                                                     |
 
 ### `booking-input-field`
 
 An input field which represents the submission of the contract represented by [`product-variant-input-field`](product-models.md#product-variant-input-field)
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-id | string | `GET` `POST` | no | The ID of the field.
-name | string | `GET` | no | The name of the field. Not required for `POST` since the id field signifies the same.
-value | string | `GET` `POST` | no | The submitted value of the field.
+| KEY   | TYPE   | METHOD       | NULL/EMPTY | DESCRIPTION                                                                           |
+|-------|--------|--------------|------------|---------------------------------------------------------------------------------------|
+| id    | string | `GET` `POST` | no         | The ID of the field.                                                                  |
+| name  | string | `GET`        | no         | The name of the field. Not required for `POST` since the id field signifies the same. |
+| value | string | `GET` `POST` | no         | The submitted value of the field.                                                     |
 
 ### `booking-create-response`
 
@@ -94,7 +94,7 @@ price | [`price`](../common-models.md#price) | `GET` | no | The price payed for 
 
 Represents information of a ticket. The ticket accessed via `url` is always in PDF format.
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-publicId | string | `GET` | no | The public id for the ticket.
-url | string | `GET` | no | The url to access the ticket.
+| KEY      | TYPE   | METHOD | NULL/EMPTY | DESCRIPTION                   |
+|----------|--------|--------|------------|-------------------------------|
+| publicId | string | `GET`  | no         | The public id for the ticket. |
+| url      | string | `GET`  | no         | The url to access the ticket. |
