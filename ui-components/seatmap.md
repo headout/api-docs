@@ -1,31 +1,41 @@
 # Web components
 
 ## Seatmap Inventory
-As Inventory is seat based here which means for each seat there is a unique inventory.There could be different prices and position for each of the seat which means proper visualizations becomes very important for selling these seats.However painting this layout can become very tedious for our partners with the api hence we offers it as readmade UI component for inventory and there is no api support. This UI component can be loaded through Iframe within partners website.
+Since the inventory is seat-based in this situation, there is a unique inventory for each seat. Due to the possibility of various pricing and position for each seat, it is crucial to visualise the seatmap inventory.However, with just api support, drawing this layout can grow tiresome for our partners. Hence we offers it as ready-made web component for seatmap inventory and there is no api support. This web component can be loaded through Iframe within partners website.
 
 All communication therefore happens through postMessage to Iframe and event listeners for receiving messages.
 
-To send events to Iframe you can use the following code snippet
+**Iframe Url** - /seatmap/tour-group/:productId
+
+For this Iframe to work we need to set date, time, currencyCode, deviceType which is done by initPlugin explained below in events or you can you use directly use the Iframe by passing an additonal param showOnly=true along with these parameters
+
+Ex - 
+```
+https://www.headout.com/seatmap/tour-group/3023?date=2023-03-11&time=19:30:00&deviceType=MOBILE&currencyCode=GBP&showOnly=true
+```
+
+P.S - Not all domains are allowed to use this Iframe to prevent misue. Please register your domain with us to use this Iframe
+
+### Events can be sent to Iframe using postMessage. Ex -
 
 ```javascript
 sendMessageToIframe = (type, data) => {
-		const iframeWindow = IframeRef.contentWindow;
-		if (iframeWindow) {
-			iframeWindow.postMessage(
-				JSON.stringify({
-					type,
-					data,
-				}),
-				'*',
-			);
-		}
-	};
+	const iframeWindow = IframeRef.contentWindow;
+	if (iframeWindow) {
+		iframeWindow.postMessage(
+			JSON.stringify({
+				type,
+				data,
+			}),
+			'*',
+		);
+	}
+};
 ```
-Our Iframe listens to following types of events
+### Our Iframe listens to following types of events
 
-**initPlugin** - This is to initalize the Iframe. On load of Iframe all consumers must send this message with the configuration options
+**initPlugin** - This is to initalize the Iframe. Initalization can be done either through passing relevant config options in Iframe url or by triggering this event.All consumers must send some config options as explained in example below
 
-Ex - 
 
 ```javascript
 <iframe						
@@ -35,27 +45,35 @@ Ex -
 />
 
 options: {
-    date,
-    time
-    currencyCode,
-	deviceType
+    date: '2023-03-03',
+    time: '19:30:00'
+    currencyCode: 'GBP',
+	deviceType: 'MOBILE' | 'DESKTOP'
 }
 ```
 
-**setInventorySlot** - This is to trigger date/time change to load new Iframe.With this we expect the following data to be send
+**setInventorySlot** - This is to trigger date/time change to load new inventory in Iframe for this slot.With this we expect the following data to be send
  {
     date,
     time
     currencyCode
 }
 
-selectSeats
 
-**addSeat** - This event is triggered if for any usecase a seat should be added from selected seats within Iframe
 
-**removeSeat** - This event is triggered if for any usecase a seat should be removed from selected seats within Iframe
+**addSeat** - This event is triggered to add a seat within seatmap from any interaction outside Iframe. This expects an object with id element as data along with the event. Id is part of seat object.
 
-Our seatmap Iframe will also send certain events to the parent window
+Ex - 
+```javascript
+sendMessageToIframe("addSeat", { id })
+```
+
+**removeSeat** - This event is triggered to add a seat within seatmap from any interaction outside Iframe. This expects an object with id element as data along with the event. Id is part of seat object.
+
+**selectSeats** - This event removes the previous selected seats within Iframe and adds the new seats. This expects an object with bookableIds element as data along with the event
+
+
+### Our seatmap Iframe will also send certain events to the parent window
 
 To receive events from Iframe you can use event listener shown in the example below
 
@@ -77,6 +95,25 @@ data is stringified object of actual data and type
 These are the types of events that you will receive from Iframe
 
 **onSeatAdded** - Triggerd when seat is selected within Iframe. With this event you will receive seat object being added as data. 
+
+```javascript
+Object: Seat
+{
+	id
+	currency
+	seatNumber,
+	seatRow: row.attr("display"),
+	color: seat.attr("allotedSeatColor"),
+	seatCode: seat.attr("display").concat(row.attr("display")),
+	seatSection: section.attr("display"),
+	remaining: parseInt(seat.attr("remaining")),
+	maxAvailable: parseInt(seat.attr("max-available")),
+	description: seat.attr("description"),
+	price,
+	originalPrice,
+	discounted: originalPrice > price,
+}
+```
 
 **onSeatRemoved** - Triggered when seat is removed within Iframe. With this event you will receive seat object that is being removed.
 
@@ -104,21 +141,4 @@ These are the types of events that you will receive from Iframe
 
 **applyFilterClicked** - This event is triggered when apply filters is clicked in mobile view to apply price filters. 
 
-
-Seat object
-{
-	id
-	currency
-	seatNumber,
-	seatRow: row.attr("display"),
-	color: seat.attr("allotedSeatColor"),
-	seatCode: seat.attr("display").concat(row.attr("display")),
-	seatSection: section.attr("display"),
-	remaining: parseInt(seat.attr("remaining")),
-	maxAvailable: parseInt(seat.attr("max-available")),
-	description: seat.attr("description"),
-	price,
-	originalPrice,
-	discounted: originalPrice > price,
-}
 	
