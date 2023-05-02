@@ -9,7 +9,7 @@
 
 ## Domain
 
-All production API calls need to be sent to <a href="https://www.headout.com">`https://www.headout.com`</a>. For testing, use the [testing sandbox environment](#Authentication--Testing-Sandbox).
+All production API calls need to be sent to <a href="https://www.headout.com">`https://www.headout.com`</a>. For testing, use the <a href="https://sandbox.api.test-headout.com/">`https://sandbox.api.test-headout.com`</a>
 
 ## API Response Format
 
@@ -53,7 +53,7 @@ There are two types of api keys, production and testing. You will always get bot
 
 #### <a name="Authentication--Testing-Sandbox">Testing Sandbox
 
-Our testing sandbox can be accessed at <a href="https://www.test-headout.com">`https://www.test-headout.com`</a>. You will need to use the test api key to access the same.
+Our testing sandbox can be accessed at <a href="https://sandbox.api.test-headout.com">`https://sandbox.api.test-headout.com`</a>. You will need to use the test api key to access the same.
 
 #### Get API Keys
 
