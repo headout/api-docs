@@ -74,7 +74,7 @@ PATH | product-id | string | no | Product id
 		}
 		"address": {
 			"line1": "The Gershwin Theatre",
-			"ine2": "222 W 51st Street",
+			"line2": "222 W 51st Street",
 			"cityName": "New York",
 			"stateName": "New York",
 			"countryName": "United States",
