@@ -13,6 +13,9 @@
 * [City](apis/city.md)
 * [Category](apis/category.md)
 
+## Web components
+* [ Seatmap Inventory](ui-components/seatmap.md)
+
 ## Object Models
 * [Common Models](object-models/common-models.md)
 * [Product Models](object-models/product-models.md)
