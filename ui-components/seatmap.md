@@ -5,7 +5,7 @@ Given that the inventory in this scenario is based on seats, it implies that the
 
 All communication through Iframe therefore happens through postMessage for sending messages and event listeners for receiving messages.Here is the url structure for Iframe
 
-**Iframe Url** - https://www.headout.com/seatmap/tour-group/:productId
+**Iframe Url** - $baseUrl/seatmap/tour-group/:productId
 
 For this Iframe to work we need to set date, time, currencyCode, deviceType which is done by initPlugin event explained below in events or you can you also directly use the Iframe by passing an additonal param showOnly=true along with parameters of initPlugin event
 
