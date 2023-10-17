@@ -189,8 +189,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/city?cit
 
 #### Response
 
-**Object:
-** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
 
 ```json
 {
@@ -270,8 +269,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/category
 
 #### Response
 
-**Object:
-** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
 
 ```json
 {
