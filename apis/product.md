@@ -32,7 +32,7 @@ curl --location 'https://api.headout.com/api/v1/product/get/3336?currencyCode=EU
 
 **Object:** [`product`](/object-models/product-models.md#product)
 
-```json5
+```json
 {
   "id": 512,
   "name": "Wicked",
@@ -192,7 +192,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/city?cit
 **Object:
 ** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
 
-```json5
+```json
 {
   "items": [
     {
@@ -273,7 +273,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/category
 **Object:
 ** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
 
-```json5
+```json
 {
   "items": [
     {
