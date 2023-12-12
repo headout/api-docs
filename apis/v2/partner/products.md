@@ -1,241 +1,30 @@
-# Partner Product API v2
+# Products API
 
 ## Overview
-The Partner Product API v2 provides endpoints for accessing collections, categories, subcategories, and Products. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
+The Partner Products API v2 provides endpoints for accessing the products. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
 
 ## Endpoints
 
-### 1. Fetch Collections
-**GET** `/api/partners/v2/collections`
-
-#### Parameters:
-- `cityCode` (required): The city code to fetch collections for.
-- `languageCode` (optional, default `EN`): Language code.
-- `offset` (optional, default `0`): Offset for pagination.
-- `limit` (optional, default `10`): Limit for pagination.
-
-#### Headers:
-- `Headout-Auth` (required): The Authorization Token.
-
-<details>
-<summary>Response Example</summary>
-
-```json
-{
-    "city": "NEW_YORK",
-    "collections": [
-        {
-            "id": "24",
-            "name": "Broadway",
-            "city": "NEW_YORK",
-            "urlSlugs": {
-                "EN": "/broadway-tickets-c-24/",
-                "ES": "/es/entradas-espectaculos-de-broadway-c-24/",
-                "FR": "/fr/billets-comedie-musicale-broadway-c-24/",
-                "IT": "/it/broadway-biglietti-c-24/",
-                "DE": "/de/broadway-tickets-c-24/",
-                "PT": "/pt/broadway-c-24/",
-                "NL": "/nl/broadway-c-24/"
-            },
-            "canonicalUrl": "https://www.headout.com/broadway-tickets-c-24/"
-        },
-        {
-            "id": "3546",
-            "name": "Cruceros por el río Hudson",
-            "city": "NEW_YORK",
-            "urlSlugs": {
-                "EN": "/hudson-river-cruises-c-3546/",
-                "ES": "/es/cruceros-por-el-rio-hudson-c-3546/",
-                "FR": "/fr/croisieres-sur-la-riviere-hudson-c-3546/",
-                "IT": "/it/crociere-hudson-rive-c-3546/",
-                "DE": "/de/hudson-rive-kreuzfahrten-c-3546/",
-                "PT": "/pt/cruzeiros-em-hudson-rive-c-3546/",
-                "NL": "/nl/hudson-rive-cruises-c-3546/"
-            },
-            "canonicalUrl": "https://www.headout.com/hudson-river-cruises-c-3546/"
-        },
-        {
-            "id": "234",
-            "name": "Edificio Empire State",
-            "city": "NEW_YORK",
-            "urlSlugs": {
-                "EN": "/empire-state-building-tickets-c-234/",
-                "ES": "/es/entradas-empire-state-building-c-234/",
-                "FR": "/fr/empire-state-building-c-234/",
-                "IT": "/it/biglietti-empire-state-building-c-234/",
-                "DE": "/de/buchen-sie-empire-state-building-tickets-skip-the-line-zugang-c-234/",
-                "PT": "/pt/ingressos-empire-state-building-c-234/",
-                "NL": "/nl/boek-tickets-voor-het-empire-state-building-toegang-tot-de-wachtrij-c-234/"
-            },
-            "canonicalUrl": "https://www.headout.com/empire-state-building-tickets-c-234/"
-        }
-    ],
-    "nextUrl": "https://api.headout.com/api/partners/v2/collections?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
-    "prevUrl": null,
-    "total": 39,
-    "nextOffset": 3
-}
-```
-
-</details>
-
----
-
-### 2. Fetch Categories
-**GET** `/api/partners/v2/categories`
-
-#### Parameters:
-- `cityCode` (required): The city code to fetch categories for.
-- `languageCode` (optional, default `EN`): Language code.
-
-#### Headers:
-- `Headout-Auth` (required): The Authorization Token.
-
-<details>
-<summary>Response Example</summary>
-
-```json
-{
-    "categories": [
-        {
-            "id": "1",
-            "name": "Tickets",
-            "urlSlugs": {
-                "EN": "/tickets-new_york-ca-1~21553/",
-                "ES": "/es/entradas-new_york-ca-1~21553/",
-                "FR": "/fr/billets-new_york-ca-1~21553/",
-                "IT": "/it/biglietti-new_york-ca-1~21553/",
-                "DE": "/de/tickets-new_york-ca-1~21553/",
-                "PT": "/pt/ingressos-new_york-ca-1~21553/",
-                "NL": "/nl/tickets-new_york-ca-1~21553/"
-            },
-            "canonicalUrl": "https://www.headout.com/tickets-new_york-ca-1~21553/"
-        },
-        {
-            "id": "2",
-            "name": "Tours",
-            "urlSlugs": {
-                "EN": "/tours-new_york-ca-2~21553/",
-                "ES": "/es/tours-new_york-ca-2~21553/",
-                "FR": "/fr/visites-new_york-ca-2~21553/",
-                "IT": "/it/tour-new_york-ca-2~21553/",
-                "DE": "/de/touren-new_york-ca-2~21553/",
-                "PT": "/pt/tours-new_york-ca-2~21553/",
-                "NL": "/nl/tours-new_york-ca-2~21553/"
-            },
-            "canonicalUrl": "https://www.headout.com/tours-new_york-ca-2~21553/"
-        },
-        {
-            "id": "7",
-            "name": "Entertainment",
-            "urlSlugs": {
-                "EN": "/entertainment-new_york-ca-7~21553/",
-                "ES": "/es/entretenimiento-new_york-ca-7~21553/",
-                "FR": "/fr/loisirs-new_york-ca-7~21553/",
-                "IT": "/it/intrattenimento-new_york-ca-7~21553/",
-                "DE": "/de/unterhaltung-new_york-ca-7~21553/",
-                "PT": "/pt/entretenimento-new_york-ca-7~21553/",
-                "NL": "/nl/entertainment-new_york-ca-7~21553/"
-            },
-            "canonicalUrl": "https://www.headout.com/entertainment-new_york-ca-7~21553/"
-        }
-    ],
-    "language": "ES",
-    "city": "NEW_YORK"
-}
-```
-
-</details>
-
----
-
-### 3. Fetch Subcategories
-**GET** `/api/partners/v2/subcategories`
-
-#### Parameters:
-- `cityCode` (required): The city code to fetch subcategories for.
-- `languageCode` (optional, default `EN`): Language code.
-
-#### Headers:
-- `Headout-Auth` (required): The Authorization Token.
-
-<details>
-<summary>Response Example</summary>
-
-```json
-{
-    "subCategories": [
-        {
-            "id": "1001",
-            "name": "Theme Parks",
-            "categoryId": "1",
-            "canonicalUrl": "https://www.headout.com/theme-parks-new_york-sc-1001~21553/",
-            "urlSlugs": {
-                "EN": "/theme-parks-new_york-sc-1001~21553/",
-                "ES": "/es/parques-tematicos-new_york-sc-1001~21553/",
-                "FR": "/fr/parcs-a-theme-new_york-sc-1001~21553/",
-                "IT": "/it/parchi-a-tema-new_york-sc-1001~21553/",
-                "DE": "/de/freizeitparks-new_york-sc-1001~21553/",
-                "PT": "/pt/parques-tematicos-new_york-sc-1001~21553/",
-                "NL": "/nl/themaparken-new_york-sc-1001~21553/"
-            }
-        },
-        {
-            "id": "1002",
-            "name": "Museums",
-            "categoryId": "1",
-            "canonicalUrl": "https://www.headout.com/museums-new_york-sc-1002~21553/",
-            "urlSlugs": {
-                "EN": "/museums-new_york-sc-1002~21553/",
-                "ES": "/es/museos-new_york-sc-1002~21553/",
-                "FR": "/fr/musees-new_york-sc-1002~21553/",
-                "IT": "/it/musei-new_york-sc-1002~21553/",
-                "DE": "/de/museen-new_york-sc-1002~21553/",
-                "PT": "/pt/museus-new_york-sc-1002~21553/",
-                "NL": "/nl/musea-new_york-sc-1002~21553/"
-            }
-        },
-        {
-            "id": "1003",
-            "name": "Zoos",
-            "categoryId": "1",
-            "canonicalUrl": "https://www.headout.com/zoos-new_york-sc-1003~21553/",
-            "urlSlugs": {
-                "EN": "/zoos-new_york-sc-1003~21553/",
-                "ES": "/es/zoo-y-acuarios-new_york-sc-1003~21553/",
-                "FR": "/fr/zoos-new_york-sc-1003~21553/",
-                "IT": "/it/zoo-e-acquari-new_york-sc-1003~21553/",
-                "DE": "/de/zoos-und-aquarien-new_york-sc-1003~21553/",
-                "PT": "/pt/zoos-e-aquarios-new_york-sc-1003~21553/",
-                "NL": "/nl/dierentuinen-en-aquariums-new_york-sc-1003~21553/"
-            }
-        }
-    ],
-    "language": "ES",
-    "city": "NEW_YORK"
-}
-```
-
-</details>
-
----
-
-### 4. Fetch Products
+### 1. Fetch Products
 **GET** `/api/partners/v2/products`
 
-#### Parameters:
-- `cityCode` (required): The city code to fetch products for.
-- `collectionId` (optional): Collection ID to filter products.
-- `categoryId` (optional): Category ID to filter products.
-- `subCategoryId` (optional): Subcategory ID to filter products.
-- `languageCode` (optional, default `EN`): Language code.
-- `currencyCode` (optional): Currency code.
-- `campaignName` (optional): Campaign name for filtering.
-- `offset` (optional, default `0`): Offset for pagination.
-- `limit` (optional, default `20`): Limit for pagination.
+#### API Parameters
+| Parameter       | Required / Optional | Description                          | Default Value |
+|-----------------|---------------------|--------------------------------------|---------------|
+| `cityCode`      | Required            | The city code to fetch products for. |               |
+| `collectionId`  | Optional            | Collection ID to filter products.    |               |
+| `categoryId`    | Optional            | Category ID to filter products.      |               |
+| `subCategoryId` | Optional            | Subcategory ID to filter products.   |               |
+| `languageCode`  | Optional            | Language code.                       | `EN`          |
+| `currencyCode`  | Optional            | Currency code.                       |               |
+| `campaignName`  | Optional            | Campaign name for filtering.         |               |
+| `offset`        | Optional            | Offset for pagination.               | `0`           |
+| `limit`         | Optional            | Limit for pagination.                | `20`          |
 
-#### Headers:
-- `Headout-Auth` (required): The Authorization Token.
+#### API Headers
+| Header         | Required / Optional | Description              |
+|----------------|---------------------|--------------------------|
+| `Headout-Auth` | Required            | The Authorization Token. |
 
 <details>
 <summary>Response Example</summary>
@@ -683,5 +472,3 @@ If any required parameter is missing in the request, the API responds with a `40
 - Ensure that all required parameters are included in your requests.
 - Use appropriate city and language codes as per your application requirements.
 - Pagination parameters (`offset` and `limit`) help in managing large datasets.
-
-For more information or support, please contact [support email/contact details].

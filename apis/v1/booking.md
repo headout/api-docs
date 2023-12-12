@@ -4,13 +4,13 @@
 
 ## APIs
 
-METHOD | URL | AUTH | USAGE
---- | --- | --- | ---
-GET | [`/booking`](#GET-/booking) | yes | Fetch all bookings.
-GET | [`/booking/{id}`](#GET-/booking/{id}) | yes | Fetch a booking by it's id.
-POST | [`/booking`](#POST-/booking) | yes | Create a booking in `UNCAPTURED` state.
-PUT | [`/booking/{id}`](#PUT-/booking) | yes | Modify the state of the booking given it's id.
-POST | *`DEPRECATED`* [~~`/booking/create`~~](#POST-/booking/create) | yes | Create a booking. Use: [`POST /booking`](#POST-/booking)
+| METHOD | URL                                                           | AUTH | USAGE                                                    |
+|--------|---------------------------------------------------------------|------|----------------------------------------------------------|
+| GET    | [`/booking`](#GET-/booking)                                   | yes  | Fetch all bookings.                                      |
+| GET    | [`/booking/{id}`](#GET-/booking/{id})                         | yes  | Fetch a booking by it's id.                              |
+| POST   | [`/booking`](#POST-/booking)                                  | yes  | Create a booking in `UNCAPTURED` state.                  |
+| PUT    | [`/booking/{id}`](#PUT-/booking)                              | yes  | Modify the state of the booking given it's id.           |
+| POST   | *`DEPRECATED`* [~~`/booking/create`~~](#POST-/booking/create) | yes  | Create a booking. Use: [`POST /booking`](#POST-/booking) |
 
 ### <a name="GET-/booking"></a>GET `/booking`
 
@@ -19,6 +19,9 @@ List all bookings.
 #### Response
 
 **Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking`](/object-models/booking-models.md#booking)`>`
+
+<details>
+<summary>Response Example</summary>
 
 ```json
 {
@@ -73,19 +76,24 @@ List all bookings.
 }
 ```
 
+</details>
+
 ### <a name="GET-/booking/{id}"></a>GET `/booking/{id}`
 
 Get a booking by it's ID.
 
 #### Request
 
-MODE | KEY | TYPE | OPTIONAL | DESCRIPTION
---- | --- | --- | --- | ---
-PATH | id | string | no | The booking id.
+| MODE | KEY | TYPE   | OPTIONAL | DESCRIPTION     |
+|------|-----|--------|----------|-----------------|
+| PATH | id  | string | no       | The booking id. |
 
 #### Response
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
+
+<details>
+<summary>Response Example</summary>
 
 ```json
 {
@@ -132,6 +140,7 @@ PATH | id | string | no | The booking id.
 	"creationTimestamp": 1491902295
 }
 ```
+</details>
 
 ### <a name="POST-/booking"></a>POST `/booking`
 
@@ -144,6 +153,9 @@ If the booking capturing doesn't happen within an hour then the booking status i
 #### Request
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
+
+<details>
+<summary>Request Example</summary>
 
 ```json
 {
@@ -170,10 +182,14 @@ If the booking capturing doesn't happen within an hour then the booking status i
 	}       
 }
 ```
+</details>
 
 #### Response
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
+
+<details>
+<summary>Response Example</summary>
 
 ```json
 {
@@ -217,6 +233,8 @@ If the booking capturing doesn't happen within an hour then the booking status i
 }
 ```
 
+</details>
+
 ### <a name="PUT-/booking"></a>PUT `/booking/{id}`
 
 Used to modify a booking. Currently this is only used for capturing the booking and assigning a `partnerReferenceId`. Use this method to capture the booking by specifying the status as `PENDING`. The booking will be fulfilled on our end only once you capture it.
@@ -225,16 +243,23 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
 
+<details>
+<summary>Request Example</summary>
+
 ```json
 {
 	"status": "PENDING",
 	"partnerReferenceId": "AX67873DDFSR"
 }
 ```
+</details>
 
 #### Response
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
+
+<details>
+<summary>Response Example</summary>
 
 ```json
 {
@@ -278,6 +303,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 }
 ```
+</details>
 
 ### <a name="POST-/booking/create"></a>`DEPRECATED` ~~POST `/booking/create`~~
 
@@ -286,6 +312,9 @@ Creates a booking
 #### Request
 
 **Object:** [`booking`](/object-models/booking-models.md#booking)
+
+<details>
+<summary>Request Example</summary>
 
 ```json
 {
@@ -313,10 +342,14 @@ Creates a booking
 	}       
 }
 ```
+</details>
 
 #### Response
 
 **Object:** [`booking-create-response`](/object-models/booking-models.md#booking-create-response)
+
+<details>
+<summary>Response Example</summary>
 
 ```json
 {
@@ -327,3 +360,4 @@ Creates a booking
 	}
 }
 ```
+</details>
