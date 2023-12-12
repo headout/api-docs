@@ -7,11 +7,15 @@
 * [Formats](conventions/formats.md)
 
 ## APIs
-* [Product](apis/v1/product.md)
+* [Product V1](apis/v1/product.md)
+* [Product V2](apis/v2/partner/products.md)
 * [Inventory & Pricing](apis/v1/inventory-pricing.md)
 * [Booking](apis/v1/booking.md)
 * [City](apis/v1/city.md)
-* [Category](apis/v1/category.md)
+* [Category V1](apis/v1/category.md)
+* [Category V2](apis/v2/partner/categories.md)
+* [Collection](apis/v2/partner/collections.md)
+* [Subcategory](apis/v2/partner/subcategories.md)
 
 ## Web components
 * [ Seatmap Inventory](ui-components/seatmap.md)
