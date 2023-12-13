@@ -8,6 +8,21 @@ The Partner Categories API v2 provides endpoints for accessing the categories. T
 ### 1. Fetch Categories
 **GET** `/api/partners/v2/categories`
 
+
+#### Curl
+
+- ##### Format
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/categories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
+- ##### Sample Request
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/categories?cityCode=NEW_YORK' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
 #### API Parameters
 | Parameter      | Required / Optional | Description                            | Default Value |
 |----------------|---------------------|----------------------------------------|---------------|

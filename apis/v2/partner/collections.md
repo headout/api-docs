@@ -8,6 +8,21 @@ The Partner Collections API v2 provides endpoints for accessing the collections.
 ### 1. Fetch Collections
 **GET** `/api/partners/v2/collections`
 
+
+#### Curl
+
+- ##### Format
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
+- ##### Sample Request
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=NEW_YORK' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
 #### API Parameters
 | Parameter      | Required / Optional | Description                             | Default Value |
 |----------------|---------------------|-----------------------------------------|---------------|

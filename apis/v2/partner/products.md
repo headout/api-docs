@@ -8,6 +8,20 @@ The Partner Products API v2 provides endpoints for accessing the products. This 
 ### 1. Fetch Products
 **GET** `/api/partners/v2/products`
 
+#### Curl
+
+- ##### Format
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=<CITY_CODE>&collectionId=<COLLECTION_ID>&campaignName=<CAMPAIGN_NAME>&languageCode=<LANGUAGE_CODE>&currencyCode=<CURRENCY_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
+- ##### Sample Request
+```shell
+curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=NEW_YORK' \
+--header 'Headout-Auth: <YOUR_API_KEY>'
+```
+
 #### API Parameters
 | Parameter       | Required / Optional | Description                          | Default Value |
 |-----------------|---------------------|--------------------------------------|---------------|
