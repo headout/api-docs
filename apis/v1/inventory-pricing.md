@@ -25,7 +25,7 @@ Get the available inventory for a variant.
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`inventory`](/object-models/inventory-pricing-models.md#inventory)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`inventory`](/object-models/v1/inventory-pricing-models.md#inventory)`>`
 
 <details>
 <summary>Response Example</summary>

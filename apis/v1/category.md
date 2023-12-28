@@ -22,7 +22,7 @@ List all categories by city.
 
 #### Response
 
-**Object:** [`category`](/object-models/category-models.md#category)
+**Object:** [`category`](/object-models/v1/category-models.md#category)
 
 <details>
 <summary>Response Example</summary>

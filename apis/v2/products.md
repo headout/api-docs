@@ -1,26 +1,27 @@
 # Products API
 
-## Overview
+**Resource path param:** `/products`
+
+## 1. <a name="GET - /products"></a>GET `/products`
+
+### Overview
 The Partner Products API v2 provides endpoints for accessing the products. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
 
-## Endpoints
+### Curl
 
-### 1. Fetch Products
-**GET** `/api/partners/v2/products`
-
-#### Curl
-
-- ##### Format
+#### Format
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=<CITY_CODE>&collectionId=<COLLECTION_ID>&campaignName=<CAMPAIGN_NAME>&languageCode=<LANGUAGE_CODE>&currencyCode=<CURRENCY_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+curl --location 'https://www.headout.com/api/partners/v2/products?cityCode=<CITY_CODE>&collectionId=<COLLECTION_ID>&campaignName=<CAMPAIGN_NAME>&languageCode=<LANGUAGE_CODE>&currencyCode=<CURRENCY_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
-- ##### Sample Request
+#### Sample Request
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/partners/v2/products?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
+
+### Request
 
 #### API Parameters
 | Parameter       | Required / Optional | Description                          | Default Value |
@@ -39,6 +40,11 @@ curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=NEW_Y
 | Header         | Required / Optional | Description              |
 |----------------|---------------------|--------------------------|
 | `Headout-Auth` | Required            | The Authorization Token. |
+
+
+### Response
+
+**Object:** [`category`](/object-models/v2/Product.md)
 
 <details>
 <summary>Response Example</summary>
@@ -453,7 +459,7 @@ curl --location 'https://api.headout.com/api/partners/v2/products?cityCode=NEW_Y
             }
         }
     ],
-    "nextUrl": "https://api.headout.com/api/partners/v2/products?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
+    "nextUrl": "https://www.headout.com/api/partners/v2/products?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
     "prevUrl": null,
     "total": 75,
     "nextOffset": 3

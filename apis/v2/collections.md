@@ -1,27 +1,27 @@
 # Collections API
 
-## Overview
+**Resource path param:** `/collections`
+
+## 1. <a name="GET - /collections"></a>GET `/collections`
+
+### Overview
 The Partner Collections API v2 provides endpoints for accessing the collections. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
 
-## Endpoints
+### Curl
 
-### 1. Fetch Collections
-**GET** `/api/partners/v2/collections`
-
-
-#### Curl
-
-- ##### Format
+#### Format
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
-- ##### Sample Request
+#### Sample Request
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
+
+### Request
 
 #### API Parameters
 | Parameter      | Required / Optional | Description                             | Default Value |
@@ -35,6 +35,11 @@ curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=NE
 | Header         | Required / Optional | Description              |
 |----------------|---------------------|--------------------------|
 | `Headout-Auth` | Required            | The Authorization Token. |
+
+
+### Response
+
+**Object:** [`category`](/object-models/v2/Collection.md)
 
 <details>
 <summary>Response Example</summary>
@@ -89,7 +94,7 @@ curl --location 'https://api.headout.com/api/partners/v2/collections?cityCode=NE
             "canonicalUrl": "https://www.headout.com/empire-state-building-tickets-c-234/"
         }
     ],
-    "nextUrl": "https://api.headout.com/api/partners/v2/collections?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
+    "nextUrl": "https://www.headout.com/api/partners/v2/collections?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
     "prevUrl": null,
     "total": 39,
     "nextOffset": 3

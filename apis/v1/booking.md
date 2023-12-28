@@ -18,7 +18,7 @@ List all bookings.
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking`](/object-models/booking-models.md#booking)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`booking`](/object-models/v1/booking-models.md#booking)`>`
 
 <details>
 <summary>Response Example</summary>
@@ -90,7 +90,7 @@ Get a booking by it's ID.
 
 #### Response
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Response Example</summary>
@@ -152,7 +152,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 #### Request
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Request Example</summary>
@@ -186,7 +186,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 #### Response
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Response Example</summary>
@@ -241,7 +241,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 #### Request
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Request Example</summary>
@@ -256,7 +256,7 @@ Used to modify a booking. Currently this is only used for capturing the booking 
 
 #### Response
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Response Example</summary>
@@ -311,7 +311,7 @@ Creates a booking
 
 #### Request
 
-**Object:** [`booking`](/object-models/booking-models.md#booking)
+**Object:** [`booking`](/object-models/v1/booking-models.md#booking)
 
 <details>
 <summary>Request Example</summary>
@@ -346,7 +346,7 @@ Creates a booking
 
 #### Response
 
-**Object:** [`booking-create-response`](/object-models/booking-models.md#booking-create-response)
+**Object:** [`booking-create-response`](/object-models/v1/booking-models.md#booking-create-response)
 
 <details>
 <summary>Response Example</summary>

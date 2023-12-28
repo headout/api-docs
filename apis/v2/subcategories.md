@@ -1,27 +1,27 @@
 # Subcategories API
 
-## Overview
+**Resource path param:** `/subcategories`
+
+## 1. <a name="GET - /subcategories"></a>GET `/subcategories`
+
+### Overview
 The Partner Subcategories API v2 provides endpoints for accessing the subcategories. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
 
-## Endpoints
+### Curl
 
-### 1. Fetch Subcategories
-**GET** `/api/partners/v2/subcategories`
-
-
-#### Curl
-
-- ##### Format
+#### Format
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
+curl --location 'https://www.headout.com/api/partners/v2/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
-- ##### Sample Request
+#### Sample Request
 ```shell
-curl --location 'https://api.headout.com/api/partners/v2/subcategories?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/partners/v2/subcategories?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
+
+### Request
 
 #### API Parameters
 | Parameter      | Required / Optional | Description                            | Default Value |
@@ -33,6 +33,11 @@ curl --location 'https://api.headout.com/api/partners/v2/subcategories?cityCode=
 | Header         | Required / Optional | Description              |
 |----------------|---------------------|--------------------------|
 | `Headout-Auth` | Required            | The Authorization Token. |
+
+
+### Response
+
+**Object:** [`category`](/object-models/v2/Subcategory.md)
 
 <details>
 <summary>Response Example</summary>

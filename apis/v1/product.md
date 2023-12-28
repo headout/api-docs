@@ -16,7 +16,7 @@ Gets a product by `productId`.
 
 #### Example curl
 ```shell
-curl --location 'https://api.headout.com/api/v1/product/get/3336?currencyCode=EUR&language=PT&fetch-variants=true'
+curl --location 'https://www.headout.com/api/v1/product/get/3336?currencyCode=EUR&language=PT&fetch-variants=true'
 ```
 
 #### Request
@@ -30,7 +30,7 @@ curl --location 'https://api.headout.com/api/v1/product/get/3336?currencyCode=EU
 
 #### Response
 
-**Object:** [`product`](/object-models/product-models.md#product)
+**Object:** [`product`](/object-models/v1/product-models.md#product)
 
 <details>
 <summary>Response Example</summary>
@@ -178,7 +178,7 @@ List product listing using city.
 
 #### Example curl
 ```shell
-curl --location 'https://api.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=CAD&language=FR&limit=10&offset=10'
+curl --location 'https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=CAD&language=FR&limit=10&offset=10'
 ```
 
 #### Request
@@ -193,7 +193,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/city?cit
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/v1/product-models.md#product-listing)`>`
 
 <details>
 <summary>Response Example</summary>
@@ -248,8 +248,8 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/city?cit
       "hasInstantConfirmation": true
     }
   ],
-  "nextUrl": "https://api.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=USD&language=EN&offset=11&limit=1",
-  "prevUrl": "https://api.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=USD&language=EN&offset=9&limit=1",
+  "nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=USD&language=EN&offset=11&limit=1",
+  "prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/city?cityCode=LONDON&currencyCode=USD&language=EN&offset=9&limit=1",
   "total": 224,
   "nextOffset": 11
 }
@@ -262,7 +262,7 @@ List product listing using category.
 
 #### Example curl
 ```shell
-curl --location 'https://api.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&limit=20&offset=10'
+curl --location 'https://www.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&limit=20&offset=10'
 ```
 
 #### Request
@@ -277,7 +277,7 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/category
 
 #### Response
 
-**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/product-models.md#product-listing)`>`
+**Object:** [`pagination-wrapper`](/object-models/common-models.md#pagination-wrapper)`<`[`product-listing`](/object-models/v1/product-models.md#product-listing)`>`
 
 <details>
 <summary>Response Example</summary>
@@ -331,8 +331,8 @@ curl --location 'https://api.headout.com/api/v1/product/listing/list-by/category
       "hasInstantConfirmation": true
     }
   ],
-  "nextUrl": "https://api.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&offset=11&limit=1",
-  "prevUrl": "https://api.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&offset=9&limit=1",
+  "nextUrl": "https://www.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&offset=11&limit=1",
+  "prevUrl": "https://www.headout.com/api/v1/product/listing/list-by/category?categoryId=3956&language=ES&currencyCode=EUR&offset=9&limit=1",
   "total": 25,
   "nextOffset": 11
 }
