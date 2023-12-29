@@ -23,7 +23,6 @@ APIs run over `HTTPS`. If you specify `HTTP`, the url will be redirected to `HTT
 
 ### Url Prefix
 
-<<<<<<< Updated upstream
 All Partner APIs are prefixed with `/api/partners/v{api_version}`. If the current version number is `1` then the API prefix will be `/api/partners/v1`. All previous APIs which worked under the previous paradigm of `/api/v{version_numer}` or `/api/public/v{version_number}` will still work, but it is recommended to shift to the new url structure. 
 
 _Note: All `v1` APIs which worked under the previous paradigm of `/api/v{version_numer}` & `/api/public/v{version_number}` will still work but it is recommended to shift to the new url structure. These might be removed completely in the future._
