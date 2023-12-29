@@ -39,7 +39,7 @@ curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=NE
 
 ### Response
 
-**Object:** [`category`](/object-models/v2/Collection.md)
+**Object:** [`collection`](/object-models/v2/Collection.md)
 
 <details>
 <summary>Response Example</summary>

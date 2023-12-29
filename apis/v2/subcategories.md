@@ -37,7 +37,7 @@ curl --location 'https://www.headout.com/api/partners/v2/subcategories?cityCode=
 
 ### Response
 
-**Object:** [`category`](/object-models/v2/Subcategory.md)
+**Object:** [`subcategory`](/object-models/v2/Subcategory.md)
 
 <details>
 <summary>Response Example</summary>
