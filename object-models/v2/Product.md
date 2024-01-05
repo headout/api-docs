@@ -19,7 +19,7 @@ Represents the detailed information of a partner product.
 | listingPrice           | [`ListingPrice`](#amlistingprice)?                       | yes        | Optional pricing details of the product.                                        |
 | currency               | [`TourGroupCurrency`](#amtourgroupcurrency)              | no         | Currency details used for the product.                                          |
 | language               | Language                                                 | no         | Language in which the product information is presented.                         |
-| urlSlugs               | Map<Language, String>?                                   | yes        | Optional mapping of languages to their respective URL slugs for the product.    |
+| localeSpecificUrls     | Map<Language, String>?                                   | yes        | Optional mapping of languages to their respective URL slugs for the product.    |
 | hidden                 | Boolean                                                  | no         | Indicates whether the product is hidden or not.                                 |
 | hasInstantConfirmation | Boolean                                                  | no         | `true` if the product has instant booking confirmation.                         |
 | primaryCategory        | [`Category`](#ampartnercategoryv2)?                      | yes        | Optional primary category of the product.                                       |
@@ -93,21 +93,21 @@ Currency details.
 
 Category details of the product.
 
-| KEY          | TYPE                  | NULL/EMPTY | DESCRIPTION                             |
-|--------------|-----------------------|------------|-----------------------------------------|
-| id           | String                | no         | Category identifier.                    |
-| name         | String                | no         | Name of the category.                   |
-| urlSlugs     | Map<Language, String> | no         | URL slugs for different languages.      |
-| canonicalUrl | String?               | yes        | Optional canonical URL of the category. |
+| KEY                | TYPE                  | NULL/EMPTY | DESCRIPTION                             |
+|--------------------|-----------------------|------------|-----------------------------------------|
+| id                 | String                | no         | Category identifier.                    |
+| name               | String                | no         | Name of the category.                   |
+| localeSpecificUrls | Map<Language, String> | no         | URL slugs for different languages.      |
+| canonicalUrl       | String?               | yes        | Optional canonical URL of the category. |
 
 ### `SubCategory`
 
 Subcategory details.
 
-| KEY          | TYPE    | NULL/EMPTY | DESCRIPTION                                |
-|--------------|---------|------------|--------------------------------------------|
-| id           | String  | no         | Subcategory identifier.                    |
-| name         | String  | no         | Name of the subcategory.                   |
-| categoryId   | String  | no         | Identifier of the parent category.         |
-| canonicalUrl | String? | yes        | Optional canonical URL of the subcategory. |
-| urlSlugs     | Map<    |            |                                            |
+| KEY                | TYPE    | NULL/EMPTY | DESCRIPTION                                |
+|--------------------|---------|------------|--------------------------------------------|
+| id                 | String  | no         | Subcategory identifier.                    |
+| name               | String  | no         | Name of the subcategory.                   |
+| categoryId         | String  | no         | Identifier of the parent category.         |
+| canonicalUrl       | String? | yes        | Optional canonical URL of the subcategory. |
+| localeSpecificUrls | Map<    |            |                                            |

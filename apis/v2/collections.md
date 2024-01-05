@@ -11,13 +11,13 @@ The Partner Collections API v2 provides endpoints for accessing the collections.
 
 #### Format
 ```shell
-curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+curl --location 'https://www.headout.com/api/public/v2/collections?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
 #### Sample Request
 ```shell
-curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/public/v2/collections?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
@@ -94,7 +94,7 @@ curl --location 'https://www.headout.com/api/partners/v2/collections?cityCode=NE
             "canonicalUrl": "https://www.headout.com/empire-state-building-tickets-c-234/"
         }
     ],
-    "nextUrl": "https://www.headout.com/api/partners/v2/collections?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
+    "nextUrl": "https://www.headout.com/api/public/v2/collections?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
     "prevUrl": null,
     "total": 39,
     "nextOffset": 3

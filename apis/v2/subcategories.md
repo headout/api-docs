@@ -11,13 +11,13 @@ The Partner Subcategories API v2 provides endpoints for accessing the subcategor
 
 #### Format
 ```shell
-curl --location 'https://www.headout.com/api/partners/v2/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
+curl --location 'https://www.headout.com/api/public/v2/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
 #### Sample Request
 ```shell
-curl --location 'https://www.headout.com/api/partners/v2/subcategories?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/public/v2/subcategories?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
