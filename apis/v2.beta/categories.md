@@ -10,13 +10,13 @@ The Partner Categories API v2 provides endpoints for accessing the categories. T
 
 #### Format
 ```shell
-curl --location 'https://www.headout.com/api/public/v2/categories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
+curl --location 'https://www.headout.com/api/public/v2.beta/categories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
 #### Sample Request
 ```shell
-curl --location 'https://www.headout.com/api/public/v2/categories?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/public/v2.beta/categories?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 

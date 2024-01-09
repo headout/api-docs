@@ -11,13 +11,13 @@ The Partner Products API v2 provides endpoints for accessing the products. This 
 
 #### Format
 ```shell
-curl --location 'https://www.headout.com/api/public/v2/products?cityCode=<CITY_CODE>&collectionId=<COLLECTION_ID>&campaignName=<CAMPAIGN_NAME>&languageCode=<LANGUAGE_CODE>&currencyCode=<CURRENCY_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
+curl --location 'https://www.headout.com/api/public/v2.beta/products?cityCode=<CITY_CODE>&collectionId=<COLLECTION_ID>&campaignName=<CAMPAIGN_NAME>&languageCode=<LANGUAGE_CODE>&currencyCode=<CURRENCY_CODE>&limit=<LIMIT>&offset=<OFFSET>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
 #### Sample Request
 ```shell
-curl --location 'https://www.headout.com/api/public/v2/products?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/public/v2.beta/products?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
@@ -459,7 +459,7 @@ curl --location 'https://www.headout.com/api/public/v2/products?cityCode=NEW_YOR
             }
         }
     ],
-    "nextUrl": "https://www.headout.com/api/public/v2/products?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
+    "nextUrl": "https://www.headout.com/api/public/v2.beta/products?cityCode=NEW_YORK&campaignName=SOME_CAMPAIGN&languageCode=ES&currencyCode=INR&offset=3&limit=3",
     "prevUrl": null,
     "total": 75,
     "nextOffset": 3
