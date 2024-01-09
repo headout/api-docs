@@ -27,7 +27,7 @@ APIs run over `HTTPS`. If you specify `HTTP`, the url will be redirected to `HTT
 
 ## Authentication
 
-There are certain APIs which can only be executed with appropriate authentication/authorization in place. Although there are open APIs which do not required authorization, it is recommended that you provide the authorization for every API call so that you do no need to care about which API mandates it.
+In dealing with v1 and v2 APIs, it's important to note that while v1 APIs have a mix of open APIs that don't require authorization and those that do, it's generally best to use authorization for all API calls. This eliminates the need to differentiate between those that require it and those that don't. However, in the case of v2 APIs, authorization is a mandatory requirement for every API call, without exception.
 
 Currently, the authorization happens via api keys provided to concerned parties.
 
