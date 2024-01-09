@@ -17,9 +17,6 @@
     * [Collection](apis/v2.beta/collections.md)
     * [Subcategory](apis/v2.beta/subcategories.md)
 
-## Web components
-* [Seatmap Inventory](ui-components/seatmap.md)
-
 ## Object Models
 * Common Models
     * [Common Models](object-models/common-models.md)
@@ -34,3 +31,5 @@
     * [Collection Models](object-models/v2.beta/Collection.md)
     * [SubCategory Models](object-models/v2.beta/Subcategory.md)
 
+## Web components
+* [Seatmap Inventory](ui-components/seatmap.md)
