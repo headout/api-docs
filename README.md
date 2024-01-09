@@ -1,7 +1,5 @@
 # Headout API Documentation
 
-**API Version: 1**
-
 * [Basics](conventions/basics.md)
 * [API naming scheme](conventions/api-naming-scheme.md)
 * [Formats](conventions/formats.md)
