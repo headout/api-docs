@@ -29,8 +29,8 @@
     * [Inventory & Pricing Models](object-models/v1/inventory-pricing-models.md)
     * [Booking Models](object-models/v1/booking-models.md)
 * v2.beta
-    * [Product Models](object-models/v2/Product.md)
-    * [Category Models](object-models/v2/Category.md)
-    * [Collection Models](object-models/v2/Collection.md)
-    * [SubCategory Models](object-models/v2/Subcategory.md)
+    * [Product Models](object-models/v2.beta/Product.md)
+    * [Category Models](object-models/v2.beta/Category.md)
+    * [Collection Models](object-models/v2.beta/Collection.md)
+    * [SubCategory Models](object-models/v2.beta/Subcategory.md)
 

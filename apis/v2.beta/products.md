@@ -44,7 +44,7 @@ curl --location 'https://www.headout.com/api/public/v2.beta/products?cityCode=NE
 
 ### Response
 
-**Object:** [`product`](/object-models/v2/Product.md)
+**Object:** [`product`](/object-models/v2.beta/Product.md)
 
 <details>
 <summary>Response Example</summary>
