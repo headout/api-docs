@@ -22,7 +22,7 @@ APIs run over `HTTPS`. If you specify `HTTP`, the url will be redirected to `HTT
 ## Versioning
 
 ### Endpoints
-- All Partner APIs are prefixed with `/api/public/v{api_version}`.  
+- All Partner APIs are prefixed with `/api/public/v{api_version}`. E.g. if the version of the API is `v2.beta`, the url will be `/api/public/v2.beta`. 
 - For V1 which worked under the previous paradigm of `/api/v1` or `/api/public/v1` will still work, but it is recommended to shift to the new url structure.
 
 ## Authentication
