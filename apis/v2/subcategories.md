@@ -11,13 +11,13 @@ The Partner Subcategories API v2 provides endpoints for accessing the subcategor
 
 #### Format
 ```shell
-curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
+curl --location 'https://www.headout.com/api/public/v2/subcategories?cityCode=<CITY_CODE>&languageCode=<LANGUAGE_CODE>' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
 #### Sample Request
 ```shell
-curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCode=NEW_YORK' \
+curl --location 'https://www.headout.com/api/public/v2/subcategories?cityCode=NEW_YORK' \
 --header 'Headout-Auth: <YOUR_API_KEY>'
 ```
 
@@ -37,7 +37,7 @@ curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCo
 
 ### Response
 
-**Object:** [`subcategory`](/object-models/v2.beta/Subcategory.md)
+**Object:** [`SubCategory`](/object-models/v2/Subcategory.md)
 
 <details>
 <summary>Response Example</summary>
@@ -46,26 +46,11 @@ curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCo
 {
   "subCategories": [
     {
-      "id": "1001",
-      "name": "Theme Parks",
-      "categoryId": "1",
-      "canonicalUrl": "https://www.headout.com/theme-parks-new_york-sc-1001~21553/",
-      "urlSlugs": {
-        "EN": "/theme-parks-new_york-sc-1001~21553/",
-        "ES": "/es/parques-tematicos-new_york-sc-1001~21553/",
-        "FR": "/fr/parcs-a-theme-new_york-sc-1001~21553/",
-        "IT": "/it/parchi-a-tema-new_york-sc-1001~21553/",
-        "DE": "/de/freizeitparks-new_york-sc-1001~21553/",
-        "PT": "/pt/parques-tematicos-new_york-sc-1001~21553/",
-        "NL": "/nl/themaparken-new_york-sc-1001~21553/"
-      }
-    },
-    {
       "id": "1002",
       "name": "Museums",
       "categoryId": "1",
       "canonicalUrl": "https://www.headout.com/museums-new_york-sc-1002~21553/",
-      "urlSlugs": {
+      "localeSpecificUrls": {
         "EN": "/museums-new_york-sc-1002~21553/",
         "ES": "/es/museos-new_york-sc-1002~21553/",
         "FR": "/fr/musees-new_york-sc-1002~21553/",
@@ -76,23 +61,36 @@ curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCo
       }
     },
     {
-      "id": "1003",
-      "name": "Zoos",
+      "id": "1006",
+      "name": "Religious Sites",
       "categoryId": "1",
-      "canonicalUrl": "https://www.headout.com/zoos-new_york-sc-1003~21553/",
-      "urlSlugs": {
-        "EN": "/zoos-new_york-sc-1003~21553/",
-        "ES": "/es/zoo-y-acuarios-new_york-sc-1003~21553/",
-        "FR": "/fr/zoos-new_york-sc-1003~21553/",
-        "IT": "/it/zoo-e-acquari-new_york-sc-1003~21553/",
-        "DE": "/de/zoos-und-aquarien-new_york-sc-1003~21553/",
-        "PT": "/pt/zoos-e-aquarios-new_york-sc-1003~21553/",
-        "NL": "/nl/dierentuinen-en-aquariums-new_york-sc-1003~21553/"
+      "canonicalUrl": "https://www.headout.com/religious-sites-new_york-sc-1006~21553/",
+      "localeSpecificUrls": {
+        "EN": "/religious-sites-new_york-sc-1006~21553/",
+        "ES": "/es/sitios-religiosos-new_york-sc-1006~21553/",
+        "FR": "/fr/site-religieux-new_york-sc-1006~21553/",
+        "IT": "/it/siti-religiosi-new_york-sc-1006~21553/",
+        "DE": "/de/religiose-statten-new_york-sc-1006~21553/",
+        "PT": "/pt/locais-religiosos-new_york-sc-1006~21553/",
+        "NL": "/nl/religieuze-plaatsen-new_york-sc-1006~21553/"
+      }
+    },
+    {
+      "id": "1007",
+      "name": "Landmarks",
+      "categoryId": "1",
+      "canonicalUrl": "https://www.headout.com/landmarks-new_york-sc-1007~21553/",
+      "localeSpecificUrls": {
+        "EN": "/landmarks-new_york-sc-1007~21553/",
+        "ES": "/es/principales-atracciones-new_york-sc-1007~21553/",
+        "FR": "/fr/monuments-new_york-sc-1007~21553/",
+        "IT": "/it/punti-di-interesse-new_york-sc-1007~21553/",
+        "DE": "/de/wahrzeichen-new_york-sc-1007~21553/",
+        "PT": "/pt/marcos-historicos-new_york-sc-1007~21553/",
+        "NL": "/nl/bezienswaardigheden-new_york-sc-1007~21553/"
       }
     }
-  ],
-  "language": "ES",
-  "city": "NEW_YORK"
+  ]
 }
 ```
 
@@ -101,24 +99,7 @@ curl --location 'https://www.headout.com/api/public/v2.beta/subcategories?cityCo
 ---
 
 ## Error Handling
-
-### Missing Request Parameters
-If any required parameter is missing in the request, the API responds with a `400 Bad Request` status and details about the missing parameter.
-
-<details>
-<summary>Example Error Response</summary>
-
-```json
-{
-  "status": 400,
-  "error": {
-    "code": "E_MISSING_PARAMETER",
-    "message": "Missing required parameter: [parameter_name]"
-  }
-}
-```
-
-</details>
+Refer to [this](./error-handling.md) document for handling errors in the APIs.
 
 ## Notes
 - Ensure that all required parameters are included in your requests.

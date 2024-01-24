@@ -22,12 +22,12 @@ APIs run over `HTTPS`. If you specify `HTTP`, the url will be redirected to `HTT
 ## Versioning
 
 ### Endpoints
-- All Partner APIs are prefixed with `/api/public/v{api_version}`. E.g. if the version of the API is `v2.beta`, the url will be `/api/public/v2.beta`. 
+- All Partner APIs are prefixed with `/api/public/v{api_version}`. E.g. if the version of the API is `v2`, the url will be `/api/public/v2`. 
 - For V1 which worked under the previous paradigm of `/api/v1` will still work, but it is recommended to shift to the new url structure `/api/public/v1`.
 
 ## Authentication
 
-In dealing with `v1` and `v2.beta` APIs, it's important to note that while `v1` APIs have a mix of open APIs that don't require authentication and those that do, it's generally best to use authentication for all API calls. This eliminates the need to differentiate between those that require it and those that don't. However, in the case of `v2.beta` APIs, authentication is a mandatory requirement for every API call, without exception.
+In dealing with `v1` and `v2` APIs, it's important to note that while `v1` APIs have a mix of open APIs that don't require authentication and those that do, it's generally best to use authentication for all API calls. This eliminates the need to differentiate between those that require it and those that don't. However, in the case of `v2` APIs, authentication is a mandatory requirement for every API call, without exception.
 
 Currently, the authorization happens via api keys provided to concerned parties.
 
