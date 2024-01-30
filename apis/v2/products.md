@@ -5,7 +5,7 @@
 ## 1. <a name="GET - /products"></a>GET `/products`
 
 ### Overview
-The Partner Products API v2 provides endpoints for accessing the products. This API is designed to facilitate partners in fetching relevant data for different cities and languages.
+The Partner Products API v2 provides endpoints for accessing the products. This API is designed to facilitate partners in fetching relevant product information for different cities and languages.
 
 ### Curl
 
