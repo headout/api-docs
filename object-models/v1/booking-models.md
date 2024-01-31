@@ -22,7 +22,7 @@ startDateTime | string | `GET` | no | The start date time of the experience. Thi
 product | [`booking.product`](#booking-product) | `GET` | no | Minimalistic information about the product booked.
 customerDetails | [`booking-customers-details`](#booking-customers-details) | `GET` `POST` | no | All the details of the customers partaking in the booking.
 variantInputFields | array[[`booking-input-field`](#booking-input-field)] | `GET` `POST` | yes | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).
-price | [`price`](common-models.md#price) | `GET` `POST` | no | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.
+price | [`price`](../common-models.md#price) | `GET` `POST` | no | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.
 status | enum | `GET` `PUT` | no | The current status of the booking. After `POST` this will always be `UNCAPTURED`. The status can be changed using `PUT` to `PENDING` to specify to the backend. `enum: UNCAPTURED ,PENDING ,COMPLETED ,CANCELLED ,DIRTY , CAPTURE_TIMEDOUT`. *Ref: [`booking.status`](#booking.status)*
 voucherUrl | string | `GET` | no | Link to the voucher of the booking. Voucher is inherently a dynamic entity and currently can either be a PDF or an HTML page.
 tickets | array[[`ticket`](#ticket)] | `GET` | yes | An array of tickets associated with this booking. This can be empty if the booking hasn't been confirmed or cancelled.
@@ -88,7 +88,7 @@ Response object for booking create api (api has been deprecated).
 KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
 --- | --- | --- | --- | ---
 itineraryId | string | `GET` | no | The ID for the booking.
-price | [`price`](common-models.md#price) | `GET` | no | The price payed for the booking.
+price | [`price`](../common-models.md#price) | `GET` | no | The price payed for the booking.
 
 ### `ticket`
 

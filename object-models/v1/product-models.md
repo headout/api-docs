@@ -24,13 +24,13 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Product id
 name | string | no | Name of the product
 neighbourhood | string | yes | Neighbourhood of the location of the product
-city | [`city`](common-models.md#city) | no | City of the product
-currency | [`currency`](common-models.md#currency) | no | Native currency of the product. This depends on the country of the product.
-images | array[[`image`](common-models.md#image)] | no | Product images
+city | [`city`](../common-models.md#city) | no | City of the product
+currency | [`currency`](../common-models.md#currency) | no | Native currency of the product. This depends on the country of the product.
+images | array[[`image`](../common-models.md#image)] | no | Product images
 displayTags | array[string] | yes | Tags signifying the product
 content | array[[`product-content`](#product-content)] | no | Content specifying the details of the product
-startLocation | [`location`](common-models.md#location) | no | Location of the start point
-endLocation | [`location`](common-models.md#location) | no | Location of the end point
+startLocation | [`location`](../common-models.md#location) | no | Location of the start point
+endLocation | [`location`](../common-models.md#location) | no | Location of the end point
 productType | enum | no | Specifies the type of the product.`enum: TOUR, ACTIVITY, EVENT, ATTRACTION, TRANSFER`
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | Cumulative rating of the product
 hasInstantConfirmation | boolean | no | `true` if the booking will be instantly confirmed and the tickets will be delivered. If `false` then the booking confirmation and ticket delivery will happen within 20 minutes.
@@ -84,7 +84,7 @@ inputFields | [`product-variant-input-field`](#product-variant-input-field) | no
 * `PER_PERSON`: A `PER_PERSON` price type specifies that there is a price applicable for every person partaking in the booking. There can be different type of people like `Adult`, `Child`, `Senior` etc. with their own age specification. Each individual type can have it's own price point.
 * `PER_GROUP`: A `PER_GROUP` price type specifies that the inventory is on group pricing. Group pricing signifies that a singular price applies to a group of people and might vary for a given range. For example, 1-4 people $100, 5-7 people $120, 8-10 people $150.
 
-*See Also: [`inventory.pricing`](/object-models/inventory-pricing-models.md#inventory)*
+*See Also: [`inventory.pricing`](/object-models/v1/inventory-pricing-models.md.md#inventory)*
 
 ### `product-variant-pax`
 
@@ -153,11 +153,11 @@ KEY | TYPE | NULL/EMPTY | DESCRIPTION
 id | string | no | Product ID.
 name | string | no | Product name.
 url | string | no | URL for the product
-city | [`city`](common-models.md#city) | no | City of the product
-image | [`image`](common-models.md#image) | no | The primary image for the product.
+city | [`city`](../common-models.md#city) | no | City of the product
+image | [`image`](../common-models.md#image) | no | The primary image for the product.
 neighbourhood | string | yes | The neighbourhood of the location of the product.
 primaryCategory | [`product-category`](#product-category) | no | The primary category for the product.
-startGeolocation | [`geo-location`](common-models.md#geolocation) | no | The geo location of the product.
+startGeolocation | [`geo-location`](../common-models.md#geolocation) | no | The geo location of the product.
 ratingCumulative | [`rating-cumulative`](#rating-cumulative) | no | The cumulative rating of the product.
 pricing | [`product-listing-pricing`](#product-listing-pricing) | no | Specifies the pricing data for the product listing
 

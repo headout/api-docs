@@ -21,18 +21,15 @@ APIs run over `HTTPS`. If you specify `HTTP`, the url will be redirected to `HTT
 
 ## Versioning
 
-### Url Prefix
-
-All APIs are prefixed with `/api/public/v{version_number}`. If the current version number is `1` then the your API prefix will be `/api/public/v1`. All previous APIs which worked under the previous paradigm of `/api/v{version_numer}` will still work but it is recommended to shift to the new url structure.
-
-##### Deprecated
-~~All APIs are prefixed with `/api/v{version_number}`. If the current version number is `1` then the your api prefix will be `/api/v1`.~~
+### Endpoints
+- All Partner APIs are prefixed with `/api/public/v{api_version}`. E.g. if the version of the API is `v2`, the url will be `/api/public/v2`. 
+- For V1 which worked under the previous paradigm of `/api/v1` will still work, but it is recommended to shift to the new url structure `/api/public/v1`.
 
 ## Authentication
 
-There are certain APIs which can only be executed with appropriate authentication/authorization in place. Although there are open APIs which do not required authorization, it is recommended that you provide the authorization for every API call so that you do no need to care about which API mandates it.
+In dealing with `v1` and `v2` APIs, it's important to note that while `v1` APIs have a mix of open APIs that don't require authentication and those that do, it's generally best to use authentication for all API calls. This eliminates the need to differentiate between those that require it and those that don't. However, in the case of `v2` APIs, authentication is a mandatory requirement for every API call, without exception.
 
-Currently the authorization happens via api keys provided to concerned parties.
+Currently, the authorization happens via api keys provided to concerned parties.
 
 ### API Key based
 
@@ -57,7 +54,7 @@ Our testing sandbox can be accessed at <a href="https://sandbox.api.test-headout
 
 #### Get API Keys
 
-Please signup on our <a href="https://www.headout.com/concierge/signup">Affiliate platform</a> to receive your api keys via email.
+Please signup on our <a href="https://partner.headout.com/affiliate">Affiliate platform</a> to receive your api keys via email.
 
 ## Pagination
 
@@ -67,16 +64,16 @@ All apis which return a list result implement the pagination contract, until and
 
 You can provide the following **optional** params in the **query params** to control pagination for any request which supports pagination.
 
-KEY | TYPE | DESCRIPTION
---- | --- | ---
-offset | string | The offset from which the page should start. Typically this offset is an integer which starts from `0` and going on till `total - 1`, nevertheless, for cursor based apis this offset might be a cursor based string which may not have any correlation with subsequent keys. Such apis will mention this usage. If unspecified the default offset of `0` or the starting point of the cursor is assumed.
-limit | int | The number of elements to be fetched. If unspecified this defaults to `20` unless the API states otherwise.
+| KEY    | TYPE   | DESCRIPTION                                                                                                                                                                                                                                                                                                                                                                                               |
+|--------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| offset | string | The offset from which the page should start. Typically this offset is an integer which starts from `0` and going on till `total - 1`, nevertheless, for cursor based apis this offset might be a cursor based string which may not have any correlation with subsequent keys. Such apis will mention this usage. If unspecified the default offset of `0` or the starting point of the cursor is assumed. |
+| limit  | int    | The number of elements to be fetched. If unspecified this defaults to `20` unless the API states otherwise.                                                                                                                                                                                                                                                                                               |
 
 #### Response
 
 Pagination responses are wrapped with a [`pagination-wrapper<T>`](/object-models/common-models.md#pagination-wrapper). You can use the pagination wrapper to help with navigation along with getting to know other metadata about the current pagination.
 
-```javascript
+```json
 {
 	"items": [],
 	"nextUrl": "https://next-url",
