@@ -1,20 +1,20 @@
 # Web components
 
 ## Seatmap Inventory
-Since the inventory is seat-based in this situation, there is a unique inventory for each seat. Due to the possibility of various pricing and position for each seat, it is crucial to visualise the seatmap inventory.However, with just api support, drawing this layout can grow tiresome for our partners. Hence we offers it as ready-made web component for seatmap inventory and there is no api support. This web component can be loaded through Iframe within partners website.
+Given that the inventory in this scenario is based on seats, it implies that there is distinct inventory for each seat. Visualizing the seatmap inventory becomes essential due to the variations in pricing and positioning for each individual seat.However, with just api support, drawing this layout can grow tiresome for our partners, hence we offer it as ready-made web component to display seatmap inventory and there is no api support. This web component can be loaded through Iframe within partners website.
 
-All communication therefore happens through postMessage to Iframe and event listeners for receiving messages.
+All communication through Iframe therefore happens through postMessage for sending messages and event listeners for receiving messages.Here is the url structure for Iframe
 
-**Iframe Url** - /seatmap/tour-group/:productId
+**Iframe Url** - $baseUrl/seatmap/tour-group/:productId
 
-For this Iframe to work we need to set date, time, currencyCode, deviceType which is done by initPlugin explained below in events or you can you use directly use the Iframe by passing an additonal param showOnly=true along with these parameters
+For this Iframe to work we need to set date, time, currencyCode, deviceType which is done by initPlugin event explained below in events or you can you also directly use the Iframe by passing an additonal param showOnly=true along with parameters of initPlugin event
 
 Ex - 
 ```
 https://www.headout.com/seatmap/tour-group/3023?date=2023-03-11&time=19:30:00&deviceType=MOBILE&currencyCode=GBP&showOnly=true
 ```
 
-P.S - Not all domains are allowed to use this Iframe to prevent misue. Please register your domain with us to use this Iframe
+P.S - Not all domains are allowed to use this Iframe to prevent misuse. Iframe access will be blocked under the browser CSP policies.You have to register your domain with us to use this Iframe. To register talk to business team you are in touch or drop and emal to tech@headout.com
 
 ### Events can be sent to Iframe using postMessage. Ex -
 
@@ -68,7 +68,29 @@ Ex -
 sendMessageToIframe("addSeat", { id })
 ```
 
-**removeSeat** - This event is triggered to add a seat within seatmap from any interaction outside Iframe. This expects an object with id element as data along with the event. Id is part of seat object.
+This is the contract of Seat Object
+```javascript
+Object: Seat
+{
+	id
+	currency
+	seatNumber,
+	seatRow: row.attr("display"),
+	color: seat.attr("allotedSeatColor"),
+	seatCode: seat.attr("display").concat(row.attr("display")),
+	seatSection: section.attr("display"),
+	remaining: parseInt(seat.attr("remaining")),
+	maxAvailable: parseInt(seat.attr("max-available")),
+	description: seat.attr("description"),
+	price,
+	originalPrice,
+	discounted: originalPrice > price,
+}
+```
+
+If you are wondering how do you get these values. Most of these values are part of html itself in Iframe. If you have to fetch it you have to fetch it from html attributes of seat node.
+
+**removeSeat** - This event is triggered to remove a seat within seatmap from any interaction outside Iframe. This expects an object with id element as data along with the event. Id is part of seat object.
 
 **selectSeats** - This event removes the previous selected seats within Iframe and adds the new seats. This expects an object with bookableIds element as data along with the event
 
@@ -94,30 +116,12 @@ data is stringified object of actual data and type
 
 These are the types of events that you will receive from Iframe
 
-**onSeatAdded** - Triggerd when seat is selected within Iframe. With this event you will receive seat object being added as data. 
+**onSeatAdded** - Triggerd when seat is selected in Iframe. With this event you will receive seat object being added as data. 
 
-```javascript
-Object: Seat
-{
-	id
-	currency
-	seatNumber,
-	seatRow: row.attr("display"),
-	color: seat.attr("allotedSeatColor"),
-	seatCode: seat.attr("display").concat(row.attr("display")),
-	seatSection: section.attr("display"),
-	remaining: parseInt(seat.attr("remaining")),
-	maxAvailable: parseInt(seat.attr("max-available")),
-	description: seat.attr("description"),
-	price,
-	originalPrice,
-	discounted: originalPrice > price,
-}
-```
 
-**onSeatRemoved** - Triggered when seat is removed within Iframe. With this event you will receive seat object that is being removed.
+**onSeatRemoved** - Triggered when seat is removed in Iframe. With this event you will receive seat object that is being removed.
 
-**onSeatSelectionChanged** - Triggered when either seat is either added or removed.With this event you will recieve a current selection of seats as data
+**onSeatSelectionChanged** - Triggered when either seat is added or removed.With this event you will recieve a current selection of seats as data
 
 **inventoryUpdateStarted** - This is triggered when setInventorySlot method is called by consumner/parent window. This represents inventory update in progress corresponds to slot selected.
 
@@ -131,7 +135,7 @@ Object: Seat
 
 **onZoomLevelChanged** -Triggerd when zoom level has been changed for seatmap
 
-**onPriceFilterClick** - Triggerd on click of price filters within Iframe.Consumers will also receive an array of priceFilters as data along with this event
+**onPriceFilterClick** - Triggerd on click of price filters within Iframe.Consumers will also receive an array of selected priceFilters as data along with this event
 
 **priceListOpened** - In Mobile devices Price Filter is hidden by default. This event is triggered when a price list is openend in mobile
 
