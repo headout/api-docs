@@ -12,7 +12,7 @@
 | PUT    | [`/booking/{id}`](#PUT-/booking)                              | yes  | Modify the state of the booking given it's id.           |
 | POST   | *`DEPRECATED`* [~~`/booking/create`~~](#POST-/booking/create) | yes  | Create a booking. Use: [`POST /booking`](#POST-/booking) |
 
-### <a name="GET-/booking"></a>GET `/booking`
+### <a name="GET-/booking"></a>GET `get-booking`
 
 List all bookings.
 
@@ -80,7 +80,7 @@ List all bookings.
 
 ### <a name="GET-/booking/{id}"></a>GET `/booking/{id}`
 
-Get a booking by it's ID.
+Get a booking by its ID.
 
 #### Request
 
@@ -146,7 +146,7 @@ Get a booking by it's ID.
 
 Create a new booking object in `UNCAPTURED` state.
 
-The booking creation and acceptance flow is a 2 step flow. Calling this API creates the initial booking in `UNCAPTURED` state and returns back the same booking along with the new booking id. You should call this API before fulfilling the booking flow on your end. Once you get a response, you can then fulfill the booking flow on your end and then call [`PUT /booking`](#PUT-/booking) to capture the booking and start the fulfillment process of the booking on our end.
+The booking creation and acceptance flow is a 2-step flow. Calling this API creates the initial booking in `UNCAPTURED` state and returns back the same booking along with the new booking id. You should call this API before fulfilling the booking flow on your end. Once you get a response, you can then fulfill the booking flow on your end and then call [`PUT /booking`](#PUT-/booking) to capture the booking and start the fulfillment process of the booking on our end.
 
 If the booking capturing doesn't happen within an hour then the booking status is automatically changed to `CAPTURE_TIMEOUT`.
 
@@ -161,6 +161,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 {
 	"variantId": "1234",
 	"inventoryId": "1455",
+    "inventorySeatIds": ["SE-GRANDCIRCLE-A-20","SE-GRANDCIRCLE-A-21"], 
 	"customersDetails": {
 		"count": 3,
 		"customers": [{
@@ -237,7 +238,7 @@ If the booking capturing doesn't happen within an hour then the booking status i
 
 ### <a name="PUT-/booking"></a>PUT `/booking/{id}`
 
-Used to modify a booking. Currently this is only used for capturing the booking and assigning a `partnerReferenceId`. Use this method to capture the booking by specifying the status as `PENDING`. The booking will be fulfilled on our end only once you capture it.
+Used to modify a booking. Currently, this is only used for capturing the booking and assigning a `partnerReferenceId`. Use this method to capture the booking by specifying the status as `PENDING`. The booking will be fulfilled on our end only once you capture it.
 
 #### Request
 

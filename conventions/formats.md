@@ -12,4 +12,4 @@ Specifies an ISO 8601 local date time agnostic of timezone. `T` serves as a stat
 
 **Format:** milliseconds since epoch (1970-01-01T00:00:00)
 
-Specifies an instance in time which is futher in time by the milliseconds value from epoch (1970-01-01T00:00:00).
+Specifies an instance in time which is further in time by the milliseconds value from epoch (1970-01-01T00:00:00).
