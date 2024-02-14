@@ -12,21 +12,22 @@
 
 Represents the complete booking object.
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-bookingId | string | `GET` | no | The id of the booking.
-partnerReferenceId | string | `GET` `PUT` | yes | The reference id provided by a partner while making the booking. This is provided in the second booking step called using `PUT`.
-variantId | string | `GET` `POST` | no | ID of the variant of the product that needs to be booked. Every product has atleast 1 bookable variant entry.
-inventoryId | string | `POST` | no | ID of the inventory that needs to be booked. This id itself will not be stored, but will be used to fetch `startDateTime`, pricing profile for price validation etc.
-startDateTime | string | `GET` | no | The start date time of the experience. This could also signify the opening time for an attraction depending upon the inventory type. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)* *Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)*
-product | [`booking.product`](#booking-product) | `GET` | no | Minimalistic information about the product booked.
-customersDetails | [`booking-customers-details`](#booking-customers-details) | `GET` `POST` | no | All the details of the customers partaking in the booking.
-variantInputFields | array[[`booking-input-field`](#booking-input-field)] | `GET` `POST` | yes | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).
-price | [`price`](../common-models.md#price) | `GET` `POST` | no | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.
-status | enum | `GET` `PUT` | no | The current status of the booking. After `POST` this will always be `UNCAPTURED`. The status can be changed using `PUT` to `PENDING` to specify to the backend. `enum: UNCAPTURED ,PENDING ,COMPLETED ,CANCELLED ,DIRTY , CAPTURE_TIMEDOUT`. *Ref: [`booking.status`](#booking.status)*
-voucherUrl | string | `GET` | no | Link to the voucher of the booking. Voucher is inherently a dynamic entity and currently can either be a PDF or an HTML page.
-tickets | array[[`ticket`](#ticket)] | `GET` | yes | An array of tickets associated with this booking. This can be empty if the booking hasn't been confirmed or cancelled.
-creationTimestamp | int | `GET` | no | The epoch timestamp specifying the time when the booking was created. *Format: [fm-timestamp](/conventions/formats.md#fm-timestamp)*.
+| KEY                | TYPE                                                      | METHOD       | NULL/EMPTY | DESCRIPTION                                                                                                                                                                                                                                                                                   |
+|--------------------|-----------------------------------------------------------|--------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bookingId          | string                                                    | `GET`        | no         | The id of the booking.                                                                                                                                                                                                                                                                        |
+| partnerReferenceId | string                                                    | `GET` `PUT`  | yes        | The reference id provided by a partner while making the booking. This is provided in the second booking step called using `PUT`.                                                                                                                                                              |
+| variantId          | string                                                    | `GET` `POST` | no         | ID of the variant of the product that needs to be booked. Every product has atleast 1 bookable variant entry.                                                                                                                                                                                 |
+| inventoryId        | string                                                    | `POST`       | no         | ID of the inventory that needs to be booked. This id itself will not be stored, but will be used to fetch `startDateTime`, pricing profile for price validation etc.                                                                                                                          |
+| inventorySeatIds   | array[string]                                             | `POST`       | Yes        | Array of seat ids that are being booked. This is required only if the inventorySelectionType of product is `SEATMAP`.                                                                                                                                                                         |
+| startDateTime      | string                                                    | `GET`        | no         | The start date time of the experience. This could also signify the opening time for an attraction depending upon the inventory type. *Format: [fm-date-time](/conventions/formats.md#fm-date-time)* *Ref: [`product-variant.inventoryType`](product-models.md#product-variant.inventoryType)* |
+| product            | [`booking.product`](#booking-product)                     | `GET`        | no         | Minimalistic information about the product booked.                                                                                                                                                                                                                                            |
+| customersDetails   | [`booking-customers-details`](#booking-customers-details) | `GET` `POST` | no         | All the details of the customers partaking in the booking.                                                                                                                                                                                                                                    |
+| variantInputFields | array[[`booking-input-field`](#booking-input-field)]      | `GET` `POST` | yes        | Variant level input field. For `POST` the values that are required to be submitted are specified in [product-variant.inputFields](product-models.md#product-variant).                                                                                                                         |
+| price              | [`price`](../common-models.md#price)                      | `GET` `POST` | no         | The price at which the purchase needs is made. This needs to be submitted in `POST` for backend verification. The submitted currency currently should conform to the currency of the product.                                                                                                 |
+| status             | enum                                                      | `GET` `PUT`  | no         | The current status of the booking. After `POST` this will always be `UNCAPTURED`. The status can be changed using `PUT` to `PENDING` to specify to the backend. `enum: UNCAPTURED ,PENDING ,COMPLETED ,CANCELLED ,DIRTY , CAPTURE_TIMEDOUT`. *Ref: [`booking.status`](#booking.status)*       |
+| voucherUrl         | string                                                    | `GET`        | no         | Link to the voucher of the booking. Voucher is inherently a dynamic entity and currently can either be a PDF or an HTML page.                                                                                                                                                                 |
+| tickets            | array[[`ticket`](#ticket)]                                | `GET`        | yes        | An array of tickets associated with this booking. This can be empty if the booking hasn't been confirmed or cancelled.                                                                                                                                                                        |
+| creationTimestamp  | int                                                       | `GET`        | no         | The epoch timestamp specifying the time when the booking was created. *Format: [fm-timestamp](/conventions/formats.md#fm-timestamp)*.                                                                                                                                                         |
 
 ##### <a name="booking.status"></a>`booking.status`
 
@@ -85,10 +86,10 @@ An input field which represents the submission of the contract represented by [`
 
 Response object for booking create api (api has been deprecated).
 
-KEY | TYPE | METHOD | NULL/EMPTY | DESCRIPTION
---- | --- | --- | --- | ---
-itineraryId | string | `GET` | no | The ID for the booking.
-price | [`price`](../common-models.md#price) | `GET` | no | The price payed for the booking.
+| KEY         | TYPE                                 | METHOD | NULL/EMPTY | DESCRIPTION                      |
+|-------------|--------------------------------------|--------|------------|----------------------------------|
+| itineraryId | string                               | `GET`  | no         | The ID for the booking.          |
+| price       | [`price`](../common-models.md#price) | `GET`  | no         | The price payed for the booking. |
 
 ### `ticket`
 
